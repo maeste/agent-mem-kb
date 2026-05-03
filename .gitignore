@@ -16,3 +16,4 @@ venv/
 # Obsidian workspace (keep vault files, skip user-specific state)
 .obsidian/workspace*
 .obsidian/cache
+.obsidian
