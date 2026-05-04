@@ -17,3 +17,5 @@ venv/
 .obsidian/workspace*
 .obsidian/cache
 .obsidian
+
+.lince-dashboard
