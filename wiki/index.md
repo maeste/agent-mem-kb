@@ -13,3 +13,7 @@ Catalog of the vault. Updated on every write operation.
 ## Views
 
 <!-- Timelines, comparisons, slides, etc. -->
+
+## Reflections
+
+- [[wiki/compass.md]] — Bussola della vault

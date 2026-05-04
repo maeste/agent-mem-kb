@@ -1,7 +1,7 @@
 ---
 type: page
 created: INIT
-updated: INIT
+updated: 2026-05-04
 tags: [hot-cache]
 ---
 
@@ -12,8 +12,8 @@ Read by the agent at session start.
 
 ## Recent sessions
 
-<!-- Populated by /save and at session end. -->
+- **2026-05-04** — Prima esecuzione del cron giornaliero. Vault vuota, inbox vuoto. Eseguito REFLECT (lunedì): scritto compass.md iniziale. Lint passato a zero problemi.
 
 ## Open threads
 
-<!-- Things left hanging. -->
+- La vault attende il primo contenuto: aggiungere URL all'inbox.md per iniziare.
