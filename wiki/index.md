@@ -15,6 +15,7 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/pages/experience-reuse-continual-learning]] — Riutilizzo dell'Esperienza e Continual Learning
 - [[wiki/pages/forgetting-memory-governance]] — Dimenticanza e Governanza della Memoria
 - [[wiki/pages/memory-architectures-retrieval]] — Architetture di Memoria e Retrieval
+- [[wiki/pages/skill-extraction-from-memory]] — Estrazione di Skill dalla Memoria (ipotesi + gap registry esterno)
 
 ## Sources
 
