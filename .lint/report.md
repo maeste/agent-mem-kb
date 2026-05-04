@@ -1,4 +1,7 @@
 # Lint Report
 
-No lint run yet. Run `python .claude/skills/vault-linter/scripts/lint.py`
-from the vault root.
+Generated: 2026-05-04T08:30:31
+
+**Summary:** 0 blocking · 0 important · 0 advisory
+
+✅ Vault is clean. No findings.
