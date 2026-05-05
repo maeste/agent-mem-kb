@@ -1,8 +1,8 @@
 ---
 type: page
 created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, retrieval, context-management, graph-memory]
+updated: 2026-05-05
+tags: [llm-agents, memory, retrieval, context-management, graph-memory, agent-skills]
 ---
 
 # Architetture di Memoria e Retrieval
@@ -24,3 +24,11 @@ tags: [llm-agents, memory, retrieval, context-management, graph-memory]
 ## Grafi della conoscenza
 
 La survey di Yang et al. (2026) classifica la memoria basata su grafi secondo il lifecycle: estrazione, storage, retrieval ed evoluzione, coprendo knowledge vs. experience memory e implementazioni strutturate vs. non-strutturate [[wiki/sources/yang-2026-graph-memory]].
+
+## Skill Retrieval Augmentation come paradigma di scaling
+
+SRA formalizza un paradigma distinto da RAG classico: invece di iniettare tutte le skill disponibili nel prompt, le skill vivono in un corpus esterno e vengono recuperate, incorporate ed eseguite on-demand. La differenza è che gli item recuperati sono *capacità eseguibili* che aumentano la competenza funzionale, non conoscenza dichiarativa che ancora la generazione. SRA-Bench (5.400 task, 636 gold skill in un corpus di 26.262) decompone la pipeline in tre stadi (retrieval → incorporation → execution) ed evidenzia che il vero collo di bottiglia non è il retrieval ma l'*incorporation*: gli agenti caricano skill a tassi simili indipendentemente dal fatto che una gold skill sia stata recuperata o che il task la richieda davvero [[wiki/sources/arxiv-2604.24594]].
+
+## Portabilità cross-LLM delle skill
+
+SkVM applica i principi del compiler design alle skill — skill come codice, LLM come processori eterogenei. Su un corpus di 118.000 skill da clawhub.ai e skills.sh, gli autori mostrano che abilitare le skill *degrada* le prestazioni nel 15% dei task (7% per Opus 4.6, 25% per Qwen3-30B), rivelando un mismatch fondamentale tra spec statica e capacità variabile del modello. Il sistema introduce capability-based compilation (26 dimensioni primitive di capacità misurate per modello-harness), JIT code solidification per template ad alta frequenza, e recompilation adattiva quando il gap di capacità emerge in esecuzione: +15.3% di completion rate, fino a -40% di token, 3.2×–50× di speedup [[wiki/sources/arxiv-2604.03088]].

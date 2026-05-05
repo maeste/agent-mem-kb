@@ -1,7 +1,7 @@
 ---
 type: page
 created: INIT
-updated: 2026-05-04
+updated: 2026-05-05
 tags: [index]
 ---
 
@@ -16,6 +16,7 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/pages/forgetting-memory-governance]] — Dimenticanza e Governanza della Memoria
 - [[wiki/pages/memory-architectures-retrieval]] — Architetture di Memoria e Retrieval
 - [[wiki/pages/skill-extraction-from-memory]] — Estrazione di Skill dalla Memoria (ipotesi + gap registry esterno)
+- [[wiki/pages/agent-skills-ecosystem]] — L'ecosistema delle Agent Skills (registry, distribuzione, discovery, lifecycle, governance)
 
 ## Sources
 
@@ -48,12 +49,30 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/du-2026-memory-survey]] — Memory Survey: Mechanisms, Evaluation, Frontiers
 - [[wiki/sources/yang-2026-graph-memory]] — Graph-based Agent Memory Survey
 
-### Agent Skills
+### Agent Skills — Foundations & Surveys
 - [[wiki/sources/wang-2023-voyager]] — VOYAGER: Embodied Agent con Skill Library in Minecraft
 - [[wiki/sources/li-2026-skillflow]] — SkillFlow: Retrieval Multi-Stage per Agent Skills
 - [[wiki/sources/ling-2026-agent-skills-analysis]] — Analisi Empirica dell'Ecosistema Agent Skills
 - [[wiki/sources/xia-2026-skill-rl]] — SKILL RL: Evoluzione Ricorsiva delle Skill via RL
 - [[wiki/sources/xu-2026-agent-skills-survey]] — Survey: Agent Skills Architecture, Acquisition, Security
+- [[wiki/sources/arxiv-2602.20867]] — SoK Agentic Skills: lifecycle a sette stadi e definizione formale S=(C,π,T,R)
+
+### Agent Skills — Extraction & Self-Evolution
+- [[wiki/sources/arxiv-2603.02766]] — EvoSkill: skill discovery automatico via failure analysis multi-agente
+- [[wiki/sources/arxiv-2603.11808]] — Mining sistematico di repo agentici open-source verso SKILL.md
+- [[wiki/sources/arxiv-2604.03964]] — SkillFoundry: skill library self-evolving da risorse scientifiche
+- [[wiki/sources/arxiv-2604.04804]] — SkillX: knowledge base di skill auto-costruita e cross-agente
+
+### Agent Skills — Ecosystem, Registry & Discovery
+- [[wiki/sources/arxiv-2603.02176]] — AgentSkillOS: orchestrazione DAG su capability tree a scala 280K
+- [[wiki/sources/arxiv-2604.16911]] — Skilldex: package manager + registry MCP per skill
+- [[wiki/sources/arxiv-2604.22446]] — From Skills to Talent: layer organizzativo OneManCompany
+- [[wiki/sources/arxiv-2604.23080]] — Usable Agent Discovery: P2P decentralizzato con doppio churn
+
+### Agent Skills — Runtime, Representation & Retrieval
+- [[wiki/sources/arxiv-2604.03088]] — SkVM: VM cross-LLM con capability-based compilation
+- [[wiki/sources/arxiv-2604.24026]] — Skill SSL: rappresentazione Scheduling/Structural/Logical
+- [[wiki/sources/arxiv-2604.24594]] — SRA: Skill Retrieval Augmentation come paradigma di scaling
 
 ## Views
 
