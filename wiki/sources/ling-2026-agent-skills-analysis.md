@@ -16,6 +16,6 @@ Analisi quantitativa su larga scala di 40.285 skill pubbliche da un marketplace 
 
 ## Key claims
 
-- L'ecosistema delle agent skills cresce rapidamente ma in modo diseguale: supply dominata da software engineering, adozione concentrata su IR e content creation [[wiki/pages/skill-extraction-from-memory]]
+- L'ecosistema delle agent skills cresce rapidamente ma in modo diseguale: supply dominata da software engineering, adozione concentrata su IR e content creation [[wiki/pages/agent-skills-ecosystem]] [[wiki/pages/skill-extraction-from-memory]]
 - La ridondanza a livello di intent è pervasiva — molte skill differiscono nella forma ma condividono lo stesso proposito, suggerendo la necessità di de-duplicazione semantica
 - Un sottoinsieme non banale di skill pubbliche abilita azioni a livello di sistema, creando superfici di attacco per prompt injection realistici e banali
