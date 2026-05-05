@@ -48,6 +48,13 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/du-2026-memory-survey]] — Memory Survey: Mechanisms, Evaluation, Frontiers
 - [[wiki/sources/yang-2026-graph-memory]] — Graph-based Agent Memory Survey
 
+### Agent Skills
+- [[wiki/sources/wang-2023-voyager]] — VOYAGER: Embodied Agent con Skill Library in Minecraft
+- [[wiki/sources/li-2026-skillflow]] — SkillFlow: Retrieval Multi-Stage per Agent Skills
+- [[wiki/sources/ling-2026-agent-skills-analysis]] — Analisi Empirica dell'Ecosistema Agent Skills
+- [[wiki/sources/xia-2026-skill-rl]] — SKILL RL: Evoluzione Ricorsiva delle Skill via RL
+- [[wiki/sources/xu-2026-agent-skills-survey]] — Survey: Agent Skills Architecture, Acquisition, Security
+
 ## Views
 
 <!-- Timelines, comparisons, slides, etc. -->

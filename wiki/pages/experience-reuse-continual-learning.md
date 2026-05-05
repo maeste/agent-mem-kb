@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-05-04
-updated: 2026-05-04
+updated: 2026-05-05
 tags: [llm-agents, memory, continual-learning, experience-reuse]
 ---
 
@@ -15,6 +15,8 @@ Il continual learning negli agenti LLM con memoria esterna riposiziona il proble
 - **Self-updating LLMs**: pipeline automatizzate che generano curriculum, recuperano info dal web, distillano dati QA e fine-tunano il modello (SFT + DPO) [[wiki/sources/atreja-2025-alas]]
 - **Proactive retrieval**: recuperare esperienza proattivamente quando si rileva un knowledge gap, piuttosto che solo all'inizio di un task [[wiki/sources/cai-2026-proactagent]]
 - **Memory consolidation**: processo offline che astrae evidenze di interazione riutilizzabili e le integra incrementalmente nella LTM [[wiki/sources/zhang-2026-lightmem]]
+- **Skill library con code-as-action**: VOYAGER memorizza programmi JavaScript di successo e li recupera per embedding similarity, abilitando composizione di skill temporally extended senza fine-tuning [[wiki/sources/wang-2023-voyager]]
+- **Skill distillation + evoluzione ricorsiva**: SKILL RL distilla traiettorie grezze in skill gerarchiche (generali + task-specific) e le fa co-evolvere con la policy durante RL, riducendo l'footprint di token e migliorando il reasoning [[wiki/sources/xia-2026-skill-rl]]
 
 ## Risultati chiave
 
