@@ -1,26 +1,26 @@
 ---
 type: page
 created: 2026-05-04
-updated: 2026-05-05
+updated: 2026-05-07
 tags: [compass, reflection]
 ---
 
 # Bussola
 
-*Ultimo aggiornamento: 2026-05-05*
+*Ultimo aggiornamento: 2026-05-07*
 
 ## Dove sta andando il mio pensiero
 
-In due giornate la vault ha vissuto una rotazione netta: il 4 maggio era tutta memoria per agenti LLM (19 paper, 5 pagine concettuali), il 5 maggio è virata sulle agent skills (17 paper aggiunti, totale 36 sorgenti). Il punto di sutura è [[wiki/pages/skill-extraction-from-memory]], che ha smesso di essere un'ipotesi e sta diventando il vero asse della collezione: la domanda non è più "come ricordano gli agenti?" ma "come la memoria si cristallizza in artefatti riutilizzabili e condivisibili?". Le altre quattro pagine — [[wiki/pages/llm-agent-memory]], [[wiki/pages/memory-architectures-retrieval]], [[wiki/pages/forgetting-memory-governance]], [[wiki/pages/experience-reuse-continual-learning]] — sono ferme al 4 maggio e non hanno assorbito nulla del nuovo materiale.
+Tre giorni dopo l'ultima riflessione, la vault ha raggiunto una buona stabilità strutturale: 37 sorgenti, 6 pagine concettuali, zero dead link, 10 advisory nel linter (tutti gap euristici — sinonimi di pagine esistenti, non orfani reali). Il fulcro della raccolta è confermato: la domanda centrale è "come la memoria degli agenti si cristallizza in artefatti riutilizzabili e condivisibili?" con [[wiki/pages/skill-extraction-from-memory]] come asse portante e [[wiki/pages/agent-skills-ecosystem]] come orizzonte sistemico. Le tre giornate senza nuovi ingest segnalano che la fase di raccolta intensiva è conclusa — il prossimo passo significativo è sintetizzare, non accumulare.
 
 ## Cosa non sto guardando
 
-- I 12 paper del batch 4 di ieri ([[wiki/sources/arxiv-2602.20867]] SoK Agentic Skills, [[wiki/sources/arxiv-2603.02176]] AgentSkillOS, [[wiki/sources/arxiv-2603.02766]] EvoSkill, [[wiki/sources/arxiv-2603.11808]] mining agentic repos, e gli altri otto) sono presenti come sorgenti ma non sono ancora citati in nessuna pagina concettuale, e nemmeno elencati in [[wiki/index.md]] — l'ingestione è andata più veloce della sintesi.
-- La critica di [[wiki/sources/xu-2026-contextual-agentic-memory]] (retrieval = lookup ≠ memory) era già segnalata come "merita una pagina dedicata" nella bussola precedente e in [[wiki/hot.md]]: due giorni dopo continua a vivere distribuita in citazioni sparse senza un luogo proprio.
-- Le due view proposte ieri sera in [[wiki/hot.md]] — confronto delle architetture di skill library (VOYAGER, SkillFlow, SKILL RL) e timeline 2023→2026 dell'evoluzione delle agent skills — non sono state costruite, nonostante ora ci sia tutto il materiale per farlo: la cartella `wiki/views/` è ancora vuota.
-- La memoria condivisa tra agenti, già segnalata come assente nella bussola del 4 maggio, non è stata coperta nemmeno dai 17 nuovi paper sulle skill — il taglio resta individuale, l'aspetto collettivo del registry esterno è citato ma non investigato.
-- C'è un cluster di paper su sicurezza e governance delle skill ([[wiki/sources/arxiv-2604.23080]] usable agent discovery, [[wiki/sources/arxiv-2604.16911]] Skilldex MCP registry, [[wiki/sources/ling-2026-agent-skills-analysis]] sul 26.1% di skill community vulnerabili) che è entrato nella vault ma non si parla con [[wiki/pages/forgetting-memory-governance]], dove avrebbe naturalmente luogo.
+- **Le view sono ancora vuote** — la cartella `wiki/views/` contiene solo `assets/`. Le due view proposte in [[wiki/hot.md]] (confronto architetture skill library, timeline 2023→2026 dell'evoluzione delle agent skills) non sono state costruite nonostante il materiale sia ora abbondante. Né io né l'utente le abbiamo costruite, ma un cron job non può costruire view autonomamente (invariant #4: nessuna view senza richiesta). Le segnalazioni nella bussola del 4 e 5 maggio sono rimaste inascoltate — possibile che il problema non sia la mancanza di materiale ma la mancanza di una domanda precisa da rispondere con una view.
+- **La critica di Xu et al. è ancora distribuita** — segnalata come "merita pagina dedicata" il 4 maggio, poi il 5, ora il 7. Vive in citazioni sparse in quattro pagine. A questo punto è un'assenza deliberata, non un debito tecnico: forse la critica è più potente come thread ricorrente che come pagina isolata.
+- **Memoria condivisa multi-agente** — citata come gap il 4 maggio, rimasta vuota nei tre giorni successivi e in nessuno dei 37 paper. Nessuna fonte copre direttamente il problema. Potrebbe essere un'assenza della letteratura, non della vault.
+- **Conversazioni non salvate** — la cartella `conversations/` è vuota, ma la vault ha visto almeno 4 sessioni intense (4, 5 maggio ×2, oggi). Alcune di queste sessioni hanno generato insight non ancora in wiki/ — in particolare le decisioni di cleanup del 5 maggio (rimozione 19 duplicati) e la revisione delle citazioni. Senza trascrizione, quei ragionamenti sono persi.
+- **Le pagine ferme al 4 maggio non sono state aggiornate con il materiale skill** — [[wiki/pages/llm-agent-memory]] è rimasta a 30 righe senza assorbire le evidenze sulle skill come memoria procedurale. Non è urgente — la pagina è compatta e corretta — ma crea una leggera disconnessione narrativa: la pagina sulla memoria non menziona le skill se non di sfuggita, mentre la vault intera parla di poco altro.
 
 ## Una domanda che vale la pena sedersi sopra
 
-Hai aggiunto 17 paper sulle agent skills in un giorno e la pagina [[wiki/pages/skill-extraction-from-memory]] continua a chiamare l'externalizzazione "gap parzialmente coperto" — quale parte del gap è davvero rimasta aperta dopo aver letto SoK Agentic Skills, AgentSkillOS, EvoSkill, SkillFoundry e gli altri, e quale parte stai tenendo aperta perché chiuderla ti costringerebbe a prendere posizione su un'ipotesi che hai protetto da quando hai aperto la vault?
+La vault contiene 37 sorgenti, 6 pagine, zero conflitti, un linter pulito. La fase di accumulo è finita senza che sia stata dichiarata finita. La domanda adesso non è "cosa manca?" ma "a cosa serve tutto questo?": hai costruito una mappa dettagliata del territorio memoria→skill→ecosistema, ma non hai ancora formulato l'argomentazione che questa mappa supporta. La bussola del 5 maggio ti chiedeva di prendere posizione sull'ipotesi della skill extraction — tre giorni dopo la mappa è più ricca ma la posizione è la stessa. Forse il prossimo passo non è un'altra sorgente o un'altra pagina, ma una decisione su quale domanda vuoi che questa vault risponda.
