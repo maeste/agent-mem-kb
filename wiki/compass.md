@@ -1,26 +1,26 @@
 ---
 type: page
 created: 2026-05-04
-updated: 2026-05-05
+updated: 2026-05-11
 tags: [compass, reflection]
 ---
 
 # Bussola
 
-*Ultimo aggiornamento: 2026-05-05*
+*Ultimo aggiornamento: 2026-05-11*
 
 ## Dove sta andando il mio pensiero
 
-In due giornate la vault ha vissuto una rotazione netta: il 4 maggio era tutta memoria per agenti LLM (19 paper, 5 pagine concettuali), il 5 maggio è virata sulle agent skills (17 paper aggiunti, totale 36 sorgenti). Il punto di sutura è [[wiki/pages/skill-extraction-from-memory]], che ha smesso di essere un'ipotesi e sta diventando il vero asse della collezione: la domanda non è più "come ricordano gli agenti?" ma "come la memoria si cristallizza in artefatti riutilizzabili e condivisibili?". Le altre quattro pagine — [[wiki/pages/llm-agent-memory]], [[wiki/pages/memory-architectures-retrieval]], [[wiki/pages/forgetting-memory-governance]], [[wiki/pages/experience-reuse-continual-learning]] — sono ferme al 4 maggio e non hanno assorbito nulla del nuovo materiale.
+Sei giorni dopo il burst iniziale (19 paper il 4 maggio, 17 il 5 maggio), la vault si è stabilizzata: 36 sorgenti, 6 pagine concettuali, zero gap di ingestione. L'asse dominante è passato dalla domanda "come ricordano gli agenti?" a "come la memoria si cristallizza in artefatti riutilizzabili e condivisibili?" — e poi ancora più in là, verso "come si governa un ecosistema di 280K+ artefatti eseguibili condivisi tra agenti eterogenei?". La pagina [[wiki/pages/agent-skills-ecosystem]] è diventata la più ricca e la più vicina a un'ipotesi operativa: le agent skills seguono la traiettoria dei package manager, con gli stessi problemi di sicurezza e composizione che npm e pip hanno dovuto affrontare — solo che qui il costo di una dipendenza malevola è esfiltrazione di API key, non un build rotto.
 
 ## Cosa non sto guardando
 
-- I 12 paper del batch 4 di ieri ([[wiki/sources/arxiv-2602.20867]] SoK Agentic Skills, [[wiki/sources/arxiv-2603.02176]] AgentSkillOS, [[wiki/sources/arxiv-2603.02766]] EvoSkill, [[wiki/sources/arxiv-2603.11808]] mining agentic repos, e gli altri otto) sono presenti come sorgenti ma non sono ancora citati in nessuna pagina concettuale, e nemmeno elencati in [[wiki/index.md]] — l'ingestione è andata più veloce della sintesi.
-- La critica di [[wiki/sources/xu-2026-contextual-agentic-memory]] (retrieval = lookup ≠ memory) era già segnalata come "merita una pagina dedicata" nella bussola precedente e in [[wiki/hot.md]]: due giorni dopo continua a vivere distribuita in citazioni sparse senza un luogo proprio.
-- Le due view proposte ieri sera in [[wiki/hot.md]] — confronto delle architetture di skill library (VOYAGER, SkillFlow, SKILL RL) e timeline 2023→2026 dell'evoluzione delle agent skills — non sono state costruite, nonostante ora ci sia tutto il materiale per farlo: la cartella `wiki/views/` è ancora vuota.
-- La memoria condivisa tra agenti, già segnalata come assente nella bussola del 4 maggio, non è stata coperta nemmeno dai 17 nuovi paper sulle skill — il taglio resta individuale, l'aspetto collettivo del registry esterno è citato ma non investigato.
-- C'è un cluster di paper su sicurezza e governance delle skill ([[wiki/sources/arxiv-2604.23080]] usable agent discovery, [[wiki/sources/arxiv-2604.16911]] Skilldex MCP registry, [[wiki/sources/ling-2026-agent-skills-analysis]] sul 26.1% di skill community vulnerabili) che è entrato nella vault ma non si parla con [[wiki/pages/forgetting-memory-governance]], dove avrebbe naturalmente luogo.
+- **La critica di Xu et al. merita ancora una pagina dedicata.** La tesi "lookup ≠ memory" è citata in tre pagine ([[wiki/pages/llm-agent-memory]], [[wiki/pages/skill-extraction-from-memory]], [[wiki/pages/forgetting-memory-governance]]) ma non ha un luogo proprio dove il suo argomento — generalizzazione compositiva, teoria CLS, proposta di co-esistenza peso+retrieval — possa essere sviluppato in profondità. Rimane la domanda più teoricamente ambiziosa della vault.
+- **Due view proposte e mai costruite:** confronto architetture skill library (VOYAGER, SkillFlow, SKILL RL, SkillFoundry, SkillX) e timeline 2023→2026 dell'evoluzione delle agent skills. La cartella `wiki/views/` è vuota dopo una settimana. Il materiale c'è, la sintesi no.
+- **Le pagine sulla memoria pura ([[wiki/pages/llm-agent-memory]], [[wiki/pages/memory-architectures-retrieval]], [[wiki/pages/experience-reuse-continual-learning]], [[wiki/pages/forgetting-memory-governance]])** sono ferme al 4-5 maggio. Nessuna ha assorbito i paper più recenti (arxiv-2604.*) che riguardano contestualmente il loro dominio — ad esempio ContextWeaver ([[wiki/sources/wu-2026-contextweaver]]) è citato solo in architetture-retrieval, ma la sua tesi sulle dipendenze causali tra step di reasoning potrebbe arricchire la pagina sul riutilizzo dell'esperienza.
+- **Memoria condivisa multi-agente:** nessuna delle 36 fonti la affronta direttamente. Il più vicino è MIRIX con il suo modulo Knowledge Vault, ma il focus resta individuale. Il discovery decentralizzato (Dazzi et al.) tocca la coordinazione ma non la memoria condivisa *per sé*.
+- **Tensione non risolta tra ottimismo e cautela sulle skill auto-generate:** SkVM mostra che il 15% dei task peggiora con skill abilitate, il SoK avverte che skill auto-generate possono degradare la performance, SRA mostra che l'incorporation è il collo di bottiglia — ma SkillFoundry (71.1% di skill uniche) e SkillX (miglioramento su agenti più deboli) spingono nella direzione opposta. Non c'è una pagina che metta sistematicamente a confronto l'evidenza pro e contro.
 
 ## Una domanda che vale la pena sedersi sopra
 
-Hai aggiunto 17 paper sulle agent skills in un giorno e la pagina [[wiki/pages/skill-extraction-from-memory]] continua a chiamare l'externalizzazione "gap parzialmente coperto" — quale parte del gap è davvero rimasta aperta dopo aver letto SoK Agentic Skills, AgentSkillOS, EvoSkill, SkillFoundry e gli altri, e quale parte stai tenendo aperta perché chiuderla ti costringerebbe a prendere posizione su un'ipotesi che hai protetto da quando hai aperto la vault?
+Hai costruito una vault che documenta come un intero campo di ricerca sta passando dal "come faccio ricordare un agente?" al "come faccio condividere ciò che ha imparato con altri agenti?" — ma tutte le 36 fonti descrivono sistemi chiusi, experimental, single-agent o multi-agent con memoria privata. Se il passo successivo è davvero un ecosistema condiviso (registry, discovery, governance), chi sono gli utenti finali che lo richiedono? Sono gli sviluppatori che orchestrano agenti, oppure gli agenti stessi che negoziano? La risposta cambia radicalmente l'architettura di trust che stai documentando.
