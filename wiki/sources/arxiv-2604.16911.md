@@ -1,13 +1,31 @@
 ---
 type: source
-created: 2026-05-05
-updated: 2026-05-05
-tags: [skills, agents, llm]
+created: 2026-05-19
+updated: 2026-05-19
+tags: [skills, package-manager, registry, distribution, tooling]
 source_path: raw/papers/arxiv-2604.16911.pdf
 ---
 
-# Skilldex: A Package Manager and Registry for Agent Skill Packages with Hierarchical Scope-Based Distribution
+# Skilldex: Package Manager and Registry for Agent Skill Packages
 
-Saha, Hemanth (Pandemonium Research), April 2026.
+**Autori:** Sampriti Saha, Pranav Hemanth (Pandemonium Research)
+**arXiv:** 2604.16911 (apr 2026)
 
-Skilldex is a package manager and registry for LLM agent skill packages, addressing two gaps in existing skill tooling: the lack of spec-grounded conformance scoring against Anthropic's SKILL.md format specification, and the absence of a mechanism for bundling related skills with shared context assets. The system introduces compiler-style format conformance scoring (0–100 scale) that produces line-level diagnostics on description specificity, frontmatter validity, and structural adherence. Its novel *skillset abstraction* bundles related skills with shared assets (vocabulary files, templates, reference documents) to enforce cross-skill behavioral coherence — a property that independently installed skills cannot guarantee. Supporting infrastructure includes a three-tier hierarchical scope system (global, shared, project), a human-in-the-loop agent suggestion loop, a metadata-only community registry with trust tiers seeded from Anthropic's official skills, and a Model Context Protocol (MCP) server that exposes all operations to agents natively. The system is implemented as a TypeScript CLI (`skillpm`/`spm`) with a Hono/Supabase registry backend. Skilldex positions skill packages as analogous to software libraries, arguing that they need the same packaging, versioning, and dependency management disciplines that npm or pip provide for code.
+## Summary
+
+Skilldex è un **package manager e registry per skill packages** di agenti LLM. Chiude due gap nel tooling esistente: (1) nessuno strumento punteggia le skill contro la specifica formato di Anthropic, (2) nessun meccanismo bundle skill correlate con shared context per coerenza reciproca.
+
+## Contributi chiave
+
+1. **Compiler-style format conformance scoring**: validazione contro spec Anthropic con diagnostics line-level (description specificity, frontmatter validity, structural adherence)
+2. **Skillset abstraction**: bundle di skill correlate + asset condivisi (vocabulary, templates, reference docs) che enforce cross-skill behavioral coherence
+3. **Three-tier hierarchical scope system**: global / shared / project
+4. **Human-in-the-loop agent suggestion loop**
+5. **MCP server** che espone tutte le operazioni agli agenti nativamente
+6. Implementazione: TypeScript CLI (`skillpm`/`spm`) + registry Hono/Supabase, open-source
+
+## Relazione con altri lavori
+
+- Complementare a [[wiki/sources/arxiv-2604.24026]] (SSL): Skilldex gestisce *packaging/distribuzione* delle skill, SSL gestisce *rappresentazione interna*
+- Si collega a [[wiki/sources/arxiv-2604.22446]] (OMC): Talent Market di OMC potrebbe usare Skilldex come infrastruttura di distribuzione
+- Rilevante per l'ecosistema skills di [[wiki/sources/xu-2026-agent-skills-survey]]

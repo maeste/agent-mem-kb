@@ -1,13 +1,36 @@
 ---
 type: source
-created: 2026-05-05
-updated: 2026-05-05
-tags: [skills, agents, llm]
+created: 2026-05-19
+updated: 2026-05-19
+tags: [skills, VM, compilation, portability, cross-model]
 source_path: raw/papers/arxiv-2604.03088.pdf
 ---
 
-# SkVM: Revisiting Language VM for Skills across Heterogeneous LLMs and Harnesses
+# SkVM: Language VM for Skills across Heterogeneous LLMs and Harnesses
 
-**Authors:** Le Chen, Erhu Feng, Yubin Xia, Haibo Chen (Shanghai Jiao Tong University), 2026.
+**Autori:** Le Chen, Erhu Feng, Yubin Xia, Haibo Chen (Shanghai Jiao Tong University)
+**arXiv:** 2604.03088 (apr 2026)
 
-SkVM tackles the portability and efficiency problem in the agent skill ecosystem by applying classical compiler design principles: skills are treated as code, LLMs as heterogeneous processors. Based on analysis of 118,000 skills from clawhub.ai and skills.sh, the authors find that enabling skills degrades performance on 15% of tasks overall (7% for Opus 4.6, 25% for Qwen3-30B) and yields no improvement on up to 87% of tasks for at least one model, revealing a fundamental mismatch between static skill specifications and variable model capabilities (Chen et al., 2026). SkVM addresses this with a compilation and runtime system: at **compile time**, capability-based compilation extracts 26 primitive capability dimensions, measures model-harness proficiency against them, and adapts skill specifications; environment binding generates setup scripts from implicit dependencies; and concurrency extraction exposes data-, instruction-, and thread-level parallelism to the agent harness. At **runtime**, JIT code solidification materializes high-frequency parameterized script templates into executable code (bypassing LLM parsing), and adaptive recompilation recompiles skills when capability gaps emerge mid-execution. Across eight LLMs and three harnesses, SkVM improves task completion rates by an average of 15.3%, reduces token consumption up to 40%, and achieves 3.2×–50× wall-clock speedups through parallelization and solidification.
+## Summary
+
+SkVM tratta **skills come codice e LLM come processor eterogenei**, ispirandosi al compiler design tradizionale. Il problema: skill condivise across piattaforme sono trattate come raw context, causando comportamento inconsistente tra agenti diversi.
+
+## Architettura
+
+Analizza 118.000 skills per decomporre i requisiti in **primitive capabilities**, misura quanto bene ogni pair model-harness le supporta.
+
+- **Compile time**: capability-based compilation, environment binding, concurrency extraction
+- **Runtime**: JIT code solidification, adaptive recompilation
+
+## Risultati
+
+- Migliora task completion rates across 8 LLM + 3 harness
+- Token consumption ridotto fino al **40%**
+- Fino a **3.2× speedup** con enhanced parallelism
+- **19–50× latency reduction** via code solidification
+
+## Relazione con altri lavori
+
+- Complementare a [[wiki/sources/arxiv-2604.24026]] (SSL): SkVM gestisce *compilazione/execution* portabile delle skill, SSL gestisce *rappresentazione*
+- Si collega a [[wiki/sources/arxiv-2604.16911]] (Skilldex): Skilldex distribuisce, SkVM compila/esegue
+- Approccio unico nel vault: compiler theory applicato a agent skills

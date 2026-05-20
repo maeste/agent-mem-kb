@@ -1,13 +1,37 @@
 ---
 type: source
-created: 2026-05-05
-updated: 2026-05-05
-tags: [skills, agents, llm]
+created: 2026-05-19
+updated: 2026-05-19
+tags: [discovery, distributed-systems, multi-agent, p2p, infrastructure]
 source_path: raw/papers/arxiv-2604.23080.pdf
 ---
 
 # Usable Agent Discovery for Decentralized AI Systems
 
-Dazzi, Carlini, Mordacchini, Urso (University of Pisa, CNR Italy), April 2026.
+**Autori:** Patrizio Dazzi, Emanuele Carlini, Matteo Mordacchini, Saul Urso (UniPisa, CNR Italy)
+**arXiv:** 2604.23080 (apr 2026)
 
-This paper studies decentralized agent discovery in large-scale distributed agentic systems where multiple agents share physical hosts and are discovered via peer-to-peer overlays. The key insight is that discovery must handle two distinct churn dimensions simultaneously: *node-level churn* (host failures and departures affecting all agents on a node) and *agent-level churn* (demand-driven activation, deactivation, and warm/cold state transitions of individual agents). The authors compare structured overlays (Kademlia DHT) against gossip-based overlays (Cyclon+Vicinity) across four regimes: stable, node-churn-only, agent-cooling-only, and combined. Their empirical regime map shows that structured overlays are more robust and efficient in stable and node-churn regimes, while gossip-based overlays remain competitive and can be faster when agent readiness dominates the workload. The contribution is primarily analytical rather than constructing a new system — it provides a system model with warm/cold agent states, observables separating efficiency, resilience, and service readiness, and practical guidance on overlay choice based on operating conditions. The work is positioned within the AGNTCY framework for skill-based agent discovery.
+## Summary
+
+Studio su discovery decentralizzato di agenti in infrastrutture distribuite a larga scala. Il problema: discovery deve trovare non solo il nodo giusto ma un **target eseguibile usabile** (agent possono essere warm, cold, o off). Due livelli di churn interagenti:
+
+1. **Node-level churn**: failure, departures, recoveries dei nodi fisici
+2. **Agent-level churn**: lifecycle demand-driven (warm ↔ cold transitions)
+
+## Confronto overlay
+
+- **Structured (Kademlia)**: lookup a bassa latenza, stato routing compatto. Più robusto ed efficiente in regimi stabili e node-churn.
+- **Gossip-based (Cyclon+Vicinity)**: overhead messaging più alto, degrada più graceful sotto change. Può essere più veloce quando la readiness domina.
+
+## Metriche chiave
+
+Introduce **Useful Availability UΔ(q,a)**: probabilità che una route scoperta produca un servizio entro un deadline significativo. Separa efficienza (latenza), resilienza (success rate), e readiness (stato agent).
+
+## Regime map empirico
+
+4 regimi studiati: stable, node-churn-only, agent-cooling-only, combined. Nessun overlay è universalmente superiore; la scelta dipende dalle condizioni operative.
+
+## Relazione con altri lavori
+
+- Infrastrutturale rispetto ai paper core del vault; rilevante per deployment di sistemi multi-agent a scala
+- Si collega al tema skill-based discovery di [[wiki/sources/arxiv-2604.24594]] (SRA) e [[wiki/sources/arxiv-2604.24026]] (SSL) ma a livello infrastrutturale invece che di rappresentazione

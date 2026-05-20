@@ -1,13 +1,36 @@
 ---
 type: source
-created: 2026-05-05
-updated: 2026-05-05
-tags: [skills, agents, llm]
+created: 2026-05-19
+updated: 2026-05-19
+tags: [skills, scientific-agents, knowledge-mining, self-evolving]
 source_path: raw/papers/arxiv-2604.03964.pdf
 ---
 
-# SkillFoundry: Building Self-Evolving Agent Skill Libraries from Heterogeneous Scientific Resources
+# SkillFoundry: Self-Evolving Agent Skill Libraries from Heterogeneous Scientific Resources
 
-**Authors:** Shuaike Shen, Wenduo Cheng, Mingqian Ma, Alistair Turcan, Martin Jinye Zhang, Jian Ma (CMU Computational Biology / Machine Learning), 2026.
+**Autori:** Shuaike Shen, Wenduo Cheng, Mingqian Ma, Alistair Turcan, Martin Jinye Zhang, Jian Ma (CMU)
+**arXiv:** 2604.03964 (apr 2026) | **Code:** github.com/ma-compbio-lab/SkillFoundry
 
-SkillFoundry addresses the gap between abundant scientific procedural knowledge (scattered across repos, APIs, notebooks, papers, databases) and usable agent capabilities by converting heterogeneous domain resources into validated agent skills. The framework organizes a target domain as a **domain knowledge tree** where internal nodes represent subdomains and leaves represent actionable skill targets; under-covered branches trigger targeted mining, producing a closed-loop acquisition process rather than open-ended collection (Shen et al., 2026). Mined artifacts are compiled into structured skill cards specifying scope, dependencies, inputs/outputs, provenance, and tests, then validated through execution testing, system testing, and synthetic-data testing. Skills that pass are added as new leaves; redundant or low-value ones are consolidated or pruned, making the library self-evolving. The framework produces a substantially novel library: 71.1% of mined skills differ from existing libraries like SkillHub and SkillSMP. Evaluated on MoSciBench, mined skills improve coding agent performance on five of six datasets. SkillFoundry can also design task-specific skills on demand — demonstrated on two challenging genomics tasks (cell type annotation and scDRS workflow), where newly synthesized skills substantially boost agent performance. The work is skill-centric rather than tool-centric, focusing on packaging procedural knowledge rather than merely exposing executable interfaces.
+## Summary
+
+SkillFoundry è un framework self-evolving che converte risorse scientifiche eterogenee (repo, API, script, notebook, docs, database, paper) in **validated agent skills**. Il gap: ecosistemi scientifici sono ricchi di conoscenza procedurale ma frammentata in artifact che gli agenti non possono operazionalizzare.
+
+## Pipeline
+
+1. Organizza il target domain come **domain knowledge tree**
+2. Mine resources da high-value branches
+3. Estrae **operational contracts** (task scope, I/O, execution steps, env assumptions, provenance, tests)
+4. Compila in **executable skill packages**
+5. Closed-loop validation: expand / repair / merge / prune iterativamente
+
+## Risultati
+
+- **71.1%** delle skill mined differiscono da skill libraries esistenti (SkillHub, SkillSMP) → sostanzialmente novel
+- Migliora coding agent performance su **5/6** dataset MoSciBench
+- Task-specific skills per genomics: cell type annotation + scDRR workflow — miglioramenti sostanziali
+
+## Relazione con altri lavori
+
+- Complementare a [[wiki/sources/arxiv-2604.04804]] (SkillX): SkillFoundry è domain-specific (scientifico), SkillX è general-purpose
+- Si collega a [[wiki/sources/arxiv-2604.24594]] (SRA): SkillFoundry produce le skill che SRA deve recuperare
+- Rilevante per [[wiki/sources/xu-2026-agent-skills-survey]] come caso d'uso domain-specific
