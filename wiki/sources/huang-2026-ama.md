@@ -1,20 +1,36 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, multi-agent, consistency, hierarchical]
+created: 2026-05-25
+updated: 2026-05-25
+tags: [multi-agent-memory, adaptive-retrieval, hierarchical-memory, memory-consistency]
 source_path: raw/papers/arxiv-2601.20352.pdf
 ---
 
 # AMA: Adaptive Memory via Multi-Agent Collaboration
 
-**Autori:** Weiquan Huang et al. (HKUST(GZ), Shandong University, NTU)
-**Data:** 2026-04-15 (v3)
+**Autori:** Weiquan Huang et al. (HKUST-Guangzhou, Shandong NTU, SUSTech) | **arXiv:** 2601.20352 | **Gennaio 2026**
 
-## Summary
+## Sintesi
 
-AMA usa agenti coordinati (Constructor, Retriever, Judge, Refresher) per gestire memoria multi-granularità. Il Constructor e Retriever abilitano costruzione e routing adattivo; il Judge verifica rilevanza e consistenza, triggerando retrieval iterativo o refresh; il Refresher esegue aggiornamenti mirati e rimozione di entry obsolete.
+AMA (Adaptive Memory via multi-Agent collaboration) usa agent coordinati per gestire memoria a multiple granularita, superando le limitazioni di retrieval rigido e aggiornamenti grossolani dei sistemi esistenti.
 
-Supera SOTA su benchmark long-context con ~80% riduzione consumo token vs. full-context. Il contributo chiave è il rilevamento automatico di contraddizioni logiche e il refresh selettivo, risolvendo il problema dell'accumulo incontrollato di incoerenze nella memoria.
+## Architettura multi-agent
 
-[[wiki/pages/memory-architectures-retrieval]]
+- **Constructor + Retriever:** costruzione e adaptive query routing a multi-granularita
+- **Judge:** verifica rilevanza e consistenza del contenuto recuperato; triggera iterative retrieval se insufficiente
+- **Refresher:** aggiorna o rimuove entry outdated quando il Judge rileva conflitti logici
+
+## Design chiave
+
+- **Hierarchical memory:** allinea dinamicamente la granularita di retrieval con la complessita del task
+- Mantiene consistenza logica nel tempo evitando accumulo di inconsistenze
+
+## Risultati
+
+- Supera SOTA baselines su benchmark long-context
+- Riduzione token consumption ~**80%** vs metodi full-context
+- Mantenimento di retrieval precision e consistenza long-term
+
+## Collegamenti nel vault
+
+- [[wiki/pages/memory-architectures-retrieval]] — approccio multi-agent alla gestione memoria adattiva

@@ -31,11 +31,12 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/li-2026-ocr-memory]] — OCR-Memory: Optical Context Retrieval
 
 ### Continual Learning & Experience
-- [[wiki/sources/atreja-2025-alas]] — ALAS: Autonomous Learning Agent for Self-Updating
-- [[wiki/sources/wei-2026-evo-memory]] — Evo-Memory: Self-Evolving Memory Benchmark
-- [[wiki/sources/hu-2026-continual-learning-memory]] — Continual Learning via Memory Reuse
-- [[wiki/sources/cai-2026-proactagent]] — ProactAgent: Proactive Retrieval
-- [[wiki/sources/actmem]] — ActMem: Memory Retrieval + Reasoning
+|- [[wiki/sources/atreja-2025-alas]] — ALAS: Autonomous Learning Agent for Self-Updating
+|- [[wiki/sources/wei-2026-evo-memory]] — Evo-Memory: Self-Evolving Memory Benchmark
+|- [[wiki/sources/hu-2026-continual-learning-memory]] — Continual Learning via Memory Reuse (framework k,v)
+|- [[wiki/sources/cai-2026-proactagent]] — ProactAgent: Proactive Retrieval
+|- [[wiki/sources/actmem]] — ActMem: Memory Retrieval + Reasoning
+|- [[wiki/sources/arxiv-2604.27003]] — Continual Learning via Memory: Experience Reuse (NTU)
 
 ### Forgetting & Governance
 - [[wiki/sources/simsek-2026-when-to-forget]] — When to Forget: Memory Worth

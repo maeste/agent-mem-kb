@@ -1,9 +1,9 @@
 ---
 type: source
-created: 2026-05-04
+created: 2026-05-25
 updated: 2026-05-25
 tags: [optical-memory, visual-retrieval, long-horizon-agents, context-compression, ocr]
-source_path: raw/papers/arxiv-2604.26622.pdf
+source_path: raw/papers/arxiv-2604.26622.md
 ---
 
 # OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory

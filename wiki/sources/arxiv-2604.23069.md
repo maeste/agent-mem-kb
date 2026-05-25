@@ -1,6 +1,6 @@
 ---
 type: source
-created: 2026-05-04
+created: 2026-05-25
 updated: 2026-05-25
 tags: [dependency-graph, context-management, memory-structure, swe-bench, agent-reasoning]
 source_path: raw/papers/arxiv-2604.23069.pdf

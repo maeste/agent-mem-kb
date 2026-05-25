@@ -1,18 +1,26 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, reasoning, bridging-gap, long-memeval]
+created: 2026-05-25
+updated: 2026-05-25
+tags: [actionable-memory, causal-reasoning, counterfactual-reasoning, conflict-detection]
 source_path: raw/papers/arxiv-2603.00026.pdf
 ---
 
 # ActMem: Bridging the Gap Between Memory Retrieval and Reasoning in LLM Agents
 
-**Autori:** (non disponibili dall'estratto)
-**Data:** 2026 (arXiv 2603.00026)
+**Autori:** vari | **arXiv:** 2603.00026 | **Marzo 2026**
 
-## Summary
+## Sintesi
 
-ActMem affronta il divario fondamentale tra recuperare informazioni dalla memoria e usarle effettivamente per ragionare. I framework esistenti si concentrano sull'espansione della finestra di contesto o sul RAG per memorizzare e recuperare, ma non colmano il gap tra remembering e using. ActMem propone di integrare il reasoning strutturato nel processo di retrieval per superare le limitazioni della recall pura su benchmark come LongMemEval.
+ActMem affronta il divario tra ricordare e usare efficacemente la memoria. I framework esistenti trattano gli agent come "recorder" passivi che recuperano informazioni senza comprenderne le implicazioni profonde. ActMem integra retrieval con **ragionamento causale attivo**.
 
-[[wiki/pages/experience-reuse-continual-learning]] [[wiki/pages/memory-architectures-retrieval]]
+## Architettura
+
+- Trasforma la storia di dialogo non strutturata in un **grafo causale e semantico**
+- Usa **counterfactual reasoning** e **commonsense completion** per dedurre vincoli impliciti
+- Risolve potenziali conflitti tra stati passati e intenzioni correnti
+- Introduce **ActMemEval**, dataset per valutare ragionamento logic-driven in scenari memory-dependent
+
+## Collegamenti nel vault
+
+- [[wiki/pages/memory-architectures-retrieval]] — approccio causal-graph alla memoria agent

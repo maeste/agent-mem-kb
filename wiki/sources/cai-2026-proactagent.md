@@ -1,20 +1,32 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, proactive-retrieval, lifelong-learning, reinforcement-learning]
+created: 2026-05-25
+updated: 2026-05-25
+tags: [proactive-retrieval, lifelong-learning, experience-reuse, reinforcement-learning, agent-memory]
 source_path: raw/papers/arxiv-2604.20572.pdf
 ---
 
-# ProactAgent: Ask Only When Needed — Proactive Retrieval for Lifelong Agents
+# ProactAgent: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents
 
-**Autori:** Yuxuan Cai et al. (East China Normal U., Shanghai AI Lab)
-**Data:** 2026-04-22
+**Autori:** Yuxuan Cai, Jie Zhou et al. (ECNU, Shanghai AI Lab) | **arXiv:** 2604.20572 | **Aprile 2026**
 
-## Summary
+## Sintesi
 
-ProactAgent insegna all'agente quando recuperare esperienza dalla memoria in modo proattivo, piuttosto che solo all'inizio del task o dopo ogni step. Due componenti: (1) Experience-Enhanced Online Evolution (EXPONEVO) per miglioramento continuo via policy update e memory refinement, con experience base strutturata (factual, episodic, behavioral skills); (2) Proactive RL-based Retrieval (PROACTRL) che modella il retrieval come azione esplicita di policy, apprendendo quando e cosa recuperare via paired-branch process rewards.
+ProactAgent affronta il problema del retrieval passivo negli agent lifelong learning. Invece di recuperare memoria solo all'inizio task o dopo un passo, impara **quando e cosa** recuperare tramite segnali di reward a due rami, modellando il retrieval come azione di policy esplicita.
 
-Su SciWorld (73.50%), AlfWorld (71.28%) e StuLife, riduce significativamente l'overhead di retrieval rispetto a retrieval continuo. Confronta in modo favorevole retrieval statico, continuo e LLM-gated.
+## Componenti principali
 
-[[wiki/pages/experience-reuse-continual-learning]] [[wiki/pages/memory-architectures-retrieval]]
+1. **EXPONEVO (Experience-Enhanced Online Evolution):** miglioramento continuo tramite aggiornamento policy + raffinamento memoria
+2. **Experience base strutturata:** repository tipizzati — factual memory, episodic memory, behavioral skills
+3. **PROACT-RL (Proactive Reinforcement Learning-based Retrieval):** apprende decisioni di retrieval a livello di passo confrontando continuazioni con/senza retrieval
+
+## Risultati
+
+- **73.50%** success rate su SciWorld, **71.28%** su AlfWorld
+- Riduzione sostanziale del retrieval overhead
+- Performance competitiva con modelli proprietari su StuLife
+
+## Collegamenti nel vault
+
+- [[wiki/pages/experience-reuse-continual-learning]] — contributo sul retrieval proattivo vs passivo
+- [[wiki/pages/memory-architectures-retrieval]] — approccio RL-based al controllo del retrieval
