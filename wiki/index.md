@@ -34,6 +34,7 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/atreja-2025-alas]] — ALAS: Autonomous Learning Agent for Self-Updating
 - [[wiki/sources/wei-2026-evo-memory]] — Evo-Memory: Self-Evolving Memory Benchmark
 - [[wiki/sources/hu-2026-continual-learning-memory]] — Continual Learning via Memory Reuse
+- [[wiki/sources/arxiv-2604.27003]] — When CL Moves to Memory: Experience Reuse in LLM Agents
 - [[wiki/sources/cai-2026-proactagent]] — ProactAgent: Proactive Retrieval
 - [[wiki/sources/actmem]] — ActMem: Memory Retrieval + Reasoning
 
@@ -44,6 +45,7 @@ Catalog of the vault. Updated on every write operation.
 
 ### Critique & Theory
 - [[wiki/sources/xu-2026-contextual-agentic-memory]] — Contextual Agentic Memory is a Memo
+- [[wiki/sources/arxiv-2604.27707]] — Contextual Agentic Memory is a Memo (full ingest)
 
 ### Surveys
 - [[wiki/sources/du-2026-memory-survey]] — Memory Survey: Mechanisms, Evaluation, Frontiers
