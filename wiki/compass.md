@@ -1,26 +1,29 @@
 ---
 type: page
 created: 2026-05-04
-updated: 2026-05-05
+updated: 2026-06-04
 tags: [compass, reflection]
 ---
 
 # Bussola
 
-*Ultimo aggiornamento: 2026-05-05*
+*Ultimo aggiornamento: 2026-06-04 (un mese dopo l'ultima)*
 
 ## Dove sta andando il mio pensiero
 
-In due giornate la vault ha vissuto una rotazione netta: il 4 maggio era tutta memoria per agenti LLM (19 paper, 5 pagine concettuali), il 5 maggio è virata sulle agent skills (17 paper aggiunti, totale 36 sorgenti). Il punto di sutura è [[wiki/pages/skill-extraction-from-memory]], che ha smesso di essere un'ipotesi e sta diventando il vero asse della collezione: la domanda non è più "come ricordano gli agenti?" ma "come la memoria si cristallizza in artefatti riutilizzabili e condivisibili?". Le altre quattro pagine — [[wiki/pages/llm-agent-memory]], [[wiki/pages/memory-architectures-retrieval]], [[wiki/pages/forgetting-memory-governance]], [[wiki/pages/experience-reuse-continual-learning]] — sono ferme al 4 maggio e non hanno assorbito nulla del nuovo materiale.
+La vault è rimasta ferma al 5 maggio per un mese intero: 36 sorgenti, 6 pagine concettuali, zero view costruite. L'asse principale resta [[wiki/pages/skill-extraction-from-memory]] — la domanda di come la memoria agentica si cristallizza in artefatti riutilizzabili (skill) — ed è la pagina più sviluppata della collezione con 4 mattoni empirici e una sezione di critica. Le altre pagine ([[wiki/pages/llm-agent-memory]], [[wiki/pages/experience-reuse-continual-learning]], [[wiki/pages/forgetting-memory-governance]], [[wiki/pages/memory-architectures-retrieval]], [[wiki/pages/agent-skills-ecosystem]]) sono meno dense e alcune non sono state aggiornate dall'ingest iniziale.
+
+La collection ha raggiunto una massa critica su due fronti: (1) la tassonomia dei sistemi di memoria agentica è completa con survey Du 2026 e Yang 2026 che coprono rispettivamente l'approccio generale e il sotto-campo graph-based; (2) l'ecosistema delle agent skills ha copertura da Voyager (2023) fino ai paper aprile 2026, includendo survey Xu & Yan 2026, benchmark (Evo-Memory), runtime (SkVM), registry (Skilldex), e rappresentazione (SSL). Il materiale per view strutturate c'è e non è stato sfruttato.
 
 ## Cosa non sto guardando
 
-- I 12 paper del batch 4 di ieri ([[wiki/sources/arxiv-2602.20867]] SoK Agentic Skills, [[wiki/sources/arxiv-2603.02176]] AgentSkillOS, [[wiki/sources/arxiv-2603.02766]] EvoSkill, [[wiki/sources/arxiv-2603.11808]] mining agentic repos, e gli altri otto) sono presenti come sorgenti ma non sono ancora citati in nessuna pagina concettuale, e nemmeno elencati in [[wiki/index.md]] — l'ingestione è andata più veloce della sintesi.
-- La critica di [[wiki/sources/xu-2026-contextual-agentic-memory]] (retrieval = lookup ≠ memory) era già segnalata come "merita una pagina dedicata" nella bussola precedente e in [[wiki/hot.md]]: due giorni dopo continua a vivere distribuita in citazioni sparse senza un luogo proprio.
-- Le due view proposte ieri sera in [[wiki/hot.md]] — confronto delle architetture di skill library (VOYAGER, SkillFlow, SKILL RL) e timeline 2023→2026 dell'evoluzione delle agent skills — non sono state costruite, nonostante ora ci sia tutto il materiale per farlo: la cartella `wiki/views/` è ancora vuota.
-- La memoria condivisa tra agenti, già segnalata come assente nella bussola del 4 maggio, non è stata coperta nemmeno dai 17 nuovi paper sulle skill — il taglio resta individuale, l'aspetto collettivo del registry esterno è citato ma non investigato.
-- C'è un cluster di paper su sicurezza e governance delle skill ([[wiki/sources/arxiv-2604.23080]] usable agent discovery, [[wiki/sources/arxiv-2604.16911]] Skilldex MCP registry, [[wiki/sources/ling-2026-agent-skills-analysis]] sul 26.1% di skill community vulnerabili) che è entrato nella vault ma non si parla con [[wiki/pages/forgetting-memory-governance]], dove avrebbe naturalmente luogo.
+- **wiki/views/ è vuota**: due view erano state identificate il 5 maggio (confronto architetture skill library, timeline 2023→2026) e non sono mai state costruite. Con 36 sorgenti sarebbe il momento giusto.
+- **La critica Xu et al.** (lookup ≠ memory, soffitto di generalizzazione provabile, memory poisoning strutturale) continua a vivere distribuita in citazioni sparse senza pagina dedicata, nonostante sia stata segnalata tre volte (bussola 4/5, bussola 5/5, hot.md).
+- **Tensione non risolta**: SoK avverte che skill auto-generate possono degradare performance; SkVM mostra 15% task peggiorano con skill abilitate; EvoSkill/SkillFoundry/SkillX sono ottimisti sull'estrazione automatica. Questa tensione meriterebbe sintesi esplicita.
+- **Memoria condivisa multi-agente**: nessuna delle 36 fonti affronta direttamente il problema. La vault è tutta sul singolo agente.
+- **Sicurezza e governance**: cluster di paper (26.1% skill vulnerabili, RSCB-MC con abstention, FSFM con security-triggered forgetting) presente in sorgenti ma non integrato in [[wiki/pages/forgetting-memory-governance]].
+- **ActMem** (retrieval-reasoning gap) è una sorgente sottile con implicazioni profonde per tutta la architettura della memoria, citata solo nella sezione critica di skill-extraction-from-memory.
 
 ## Una domanda che vale la pena sedersi sopra
 
-Hai aggiunto 17 paper sulle agent skills in un giorno e la pagina [[wiki/pages/skill-extraction-from-memory]] continua a chiamare l'externalizzazione "gap parzialmente coperto" — quale parte del gap è davvero rimasta aperta dopo aver letto SoK Agentic Skills, AgentSkillOS, EvoSkill, SkillFoundry e gli altri, e quale parte stai tenendo aperta perché chiuderla ti costringerebbe a prendere posizione su un'ipotesi che hai protetto da quando hai aperto la vault?
+La vault ha accumulato 36 sorgenti in due sessioni intense (4-5 maggio) e poi si è fermata per un mese. La struttura c'è, le connessioni tra sorgenti sono state tracciate nelle pagine, ma nessuna view è stata prodotta e la critica più radicale (Xu) non ha ancora un suo spazio. La domanda è: questa vault serve come bibliografia annotata (e in quel caso è completa e ben organizzata) o come motore di sintesi che deve ancora partire? Se è la seconda, il prossimo passo non è aggiungere sorgenti ma costruire le view che forcinganno a prendere posizione sui punti di tensione identificati.
