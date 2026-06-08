@@ -1,20 +1,30 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, visual, optical, multimodal, long-horizon]
+created: 2026-06-08
+updated: 2026-06-08
+tags: [visual-memory, optical-retrieval, long-horizon-memory, multimodal]
 source_path: raw/papers/arxiv-2604.26622.pdf
 ---
 
 # OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory
 
-**Autori:** Jinze Li et al. (HKU, UNT, U. Tsukuba, Yonsei)
-**Data:** 2026-04-29
+**Jinze Li et al.** (HKU, UNT, Tsukuba, Yonsei) — arXiv:2604.26622, Apr 2026
 
 ## Summary
 
-OCR-Memory sfrutta la modalità visiva come rappresentazione ad alta densità dell'esperienza dell'agente. Codifica traiettorie storiche come immagini con anchor visivi unici (bounding box indicizzate), recuperando info tramite paradigma locate-and-transcribe che seleziona regioni rilevanti e trascrive il testo verbatim corrispondente.
+OCR-Memory è un framework di memoria che sfrutta la **modalità visiva** come rappresentazione high-density dell'esperienza agente, abilitando la retention di storie arbitrarie lunghe con minimo prompt overhead al momento del retrieval. Il problema: i sistemi memoria esistenti sono vincolati dai budget testuali; memorizzare traiettorie grezze è proibitivo in token, mentre summarization e retrieval text-only scambiano risparmio token con perdita informativa.
 
-Evita il trade-off tra capacità di memoria e completezza informativa: storicizza tracce arbitrarie senza summarization lossy. Riduce l'allucinazione rispetto alla generazione free-form. Guadagni consistenti su benchmark long-horizon con limiti di contesto stretti.
+Approccio:
+- **Rendering**: traiettorie storiche renderizzate in immagini annotate con identificatori visivi unici
+- **Locate-and-transcribe paradigm**: seleziona regioni rilevanti tramite anchor visuali e trascrive il testo verbatim corrispondente, evitando free-form generation e riducendo hallucination
 
-[[wiki/pages/memory-architectures-retrieval]]
+La codifica ottica aumenta la capacità memoria effettiva preservando il recupero evidence fedele. Risultati consistenti su benchmark long-horizon agent con contesto limits stretti.
+
+## Key claims
+- La modalità visiva è superiore al testo per densità informativa nella memoria ([§Abstract](raw/papers/arxiv-2604.26622.pdf))
+- Il locate-and-transcribe riduce hallucination vs generazione libera ([§3](raw/papers/arxiv-2604.26622.pdf))
+- L'encoding ottico elimina il trade-off capacità/completezza dei metodi testuali ([§1](raw/papers/arxiv-2604.26622.pdf))
+
+## Connections
+- [[wiki/sources/li-2026-ocr-memory]] — fonte primaria
+- [[wiki/pages/multimodal-memory]] — memoria non-testuale per agenti

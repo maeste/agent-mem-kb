@@ -1,20 +1,26 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, reinforcement-learning, unified-memory]
+created: 2026-06-08
+updated: 2026-06-08
+tags: [unified-memory, reinforcement-learning, ltm-stm, agentic-memory]
 source_path: raw/papers/arxiv-2601.01885.pdf
 ---
 
-# Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management
+# Agentic Memory (AgeMem): Learning Unified LTM and STM Management
 
-**Autori:** Yi Yu et al. (Wuhan University, Alibaba Group)
-**Data:** 2026-04-30 (v2)
+**Yi Yu et al.** (Wuhan University, Alibaba) — arXiv:2601.01885, Apr 2026
 
 ## Summary
 
-AgeMem unifica gestione di LTM e STM direttamente nella policy dell'agente, esponendo operazioni di memoria come azioni tool-based (store, retrieve, update, summarize, discard). Addestra questi comportamenti con una strategia RL progressiva in tre fasi e step-wise GRPO per rewards sparsi e discontinui indotti dalle operazioni di memoria.
+AgeMem è un framework unificato che integra la gestione di memoria a lungo termine (LTM) e a breve termine (STM) direttamente nella policy dell'agente, esponendo le operazioni di memoria come azioni tool-based. A differenza dei metodi esistenti che trattano LTM e STM come componenti separate con euristiche o controller ausiliari, AgeMem permette all'LLM di decidere autonomamente cosa/quando memorizzare, recuperare, aggiornare, riassumere o scartare.
 
-Su cinque benchmark long-horizon, supera consistentemente baseline memory-augmented con miglior task performance, memoria LTM di qualità superiore e uso più efficiente del contesto. Dimostra che apprendere le decisioni di memoria end-to-end supera approcci euristici e controllori ausiliari separati.
+Per training di comportamenti unificati, propone una strategia **three-stage progressive RL** con **step-wise GRPO** per affrontare ricompense sparse e discontinue indotte dalle operazioni di memoria. Valutato su 5 benchmark long-horizon: supera consistentemente le baseline memory-augmented su multipli backbone LLM, con miglior task performance, memoria LTM di qualità superiore e uso del contesto più efficiente.
 
-[[wiki/pages/memory-architectures-retrieval]] [[wiki/pages/llm-agent-memory]]
+## Key claims
+- LTM e STM dovrebbero essere gestite in modo unificato, non come moduli separati ([§Abstract](raw/papers/arxiv-2601.01885.pdf))
+- Le operazioni di memoria possono essere imparate come azioni tool-based ([§3](raw/papers/arxiv-2601.01885.pdf))
+- Step-wise GRPO affronta il problema delle ricompense sparse nelle operazioni memoria ([§4](raw/papers/arxiv-2601.01885.pdf))
+
+## Connections
+- [[wiki/sources/yu-2026-agemem]] — fonte primaria
+- [[wiki/pages/unified-memory]] — gestione unificata LTM/STM

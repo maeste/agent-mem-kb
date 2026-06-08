@@ -1,18 +1,31 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, reasoning, bridging-gap, long-memeval]
+created: 2026-06-08
+updated: 2026-06-08
+tags: [memory-reasoning, causal-reasoning, memory-graph, conflict-detection]
 source_path: raw/papers/arxiv-2603.00026.pdf
 ---
 
-# ActMem: Bridging the Gap Between Memory Retrieval and Reasoning in LLM Agents
+# ActMem: Bridging Memory Retrieval and Reasoning in LLM Agents
 
-**Autori:** (non disponibili dall'estratto)
-**Data:** 2026 (arXiv 2603.00026)
+**Xiaohui Zhang et al.** (Nanjing University, Alibaba) — arXiv:2603.00026, Feb 2026
 
 ## Summary
 
-ActMem affronta il divario fondamentale tra recuperare informazioni dalla memoria e usarle effettivamente per ragionare. I framework esistenti si concentrano sull'espansione della finestra di contesto o sul RAG per memorizzare e recuperare, ma non colmano il gap tra remembering e using. ActMem propone di integrare il reasoning strutturato nel processo di retrieval per superare le limitazioni della recall pura su benchmark come LongMemEval.
+ActMem affronta il gap fondamentale tra **recuperare** la memoria e **usarla efficacemente**. I framework memoria esistenti trattano gli agenti come "recorder" passivi che recuperano informazioni senza comprenderne le implicazioni profonde. ActMem integra retrieval con **causal reasoning attivo**, trasformando la storia dialogica non strutturata in un grafo causale e semantico.
 
-[[wiki/pages/experience-reuse-continual-learning]] [[wiki/pages/memory-architectures-retrieval]]
+Meccanismi chiave:
+- **Counterfactual reasoning**: deduce vincoli impliciti tra stati passati e intenzioni correnti
+- **Commonsense completion**: risolve potenziali conflitti
+- **Grafo causale semantico**: struttura per ragionamento logic-driven
+
+Introduce **ActMemEval**, dataset per valutare capabilities di reasoning in scenari logic-driven (oltre al fact-retrieval dei benchmark esistenti). Risultati: supera SOTA in task memory-dependent complessi.
+
+## Key claims
+- Il recall non basta: serve causal reasoning sulla memoria ([§Abstract](raw/papers/arxiv-2603.00026.pdf))
+- I sistemi attuali falliscono nel detect conflitti e decisioni complesse ([§1](raw/papers/arxiv-2603.00026.pdf))
+- ActMemEval sposta il focus da fact-retrieval a reasoning con memoria ([§4](raw/papers/arxiv-2603.00026.pdf))
+
+## Connections
+- [[wiki/sources/actmem]] — fonte primaria
+- [[wiki/pages/memory-reasoning]] — integrazione memoria-ragionamento

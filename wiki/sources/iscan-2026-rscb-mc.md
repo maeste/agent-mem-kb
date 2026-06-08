@@ -1,20 +1,32 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, risk-sensitive, coding-agent, contextual-bandit, debugging]
+created: 2026-06-08
+updated: 2026-06-08
+tags: [memory-retrieval, contextual-bandits, coding-agents, abstention, safety]
 source_path: raw/papers/arxiv-2604.27283.pdf
 ---
 
 # RSCB-MC: Risk-Sensitive Contextual Bandits for Memory Retrieval in Coding Agents
 
-**Autore:** Mehmet Iscan (Yildiz Technical University)
-**Data:** 2026-04-30
+**Mehmet Iscan** (Yildiz Technical University) — arXiv:2604.27283, Apr 2026
 
 ## Summary
 
-Riformula l'uso della memoria issue per agenti coding come problema di controllo risk-sensitive piuttosto che retrieval top-k puro. Il sistema decide tra: nessuna memoria, top resolution, sommario multipli, alta precisione, alto recall, astensione, o richiesta feedback. Schema pattern-variant-episode per organizzare issue knowledge. Stato contestuale a 16 feature (rilevanza, incertezza, compatibilità, storia feedback, falso-positivo risk, latenza, costo token).
+RSCB-MC (Risk-Sensitive Contextual Bandit Memory Controller) affronta un problema pratico critico: **quando la memoria recuperata è pericolosa**. Nei coding agenti LLM, similarità superficiale tra errori può indurre l'agente ad applicare fix precedenti inappropriati, peggiorando la situazione. Il paper reframa l'uso della memoria issue come problema di **controllo risk-sensitive** piuttosto che puro top-k retrieval.
 
-Risultati: 62.5% replay success rate (non-oracle), 0.0% false-positive rate, 331µs p95 latenza decisionale. Il principio chiave: penalizza più fortemente false-positivi che mancati riutilizzi, rendendo non-iniezione e astensione azioni di sicurezza primarie.
+Il sistema:
+- Memorizza knowledge issue-reusable tramite schema **pattern-variant-episode**
+- Converte evidence retrieval in stato contestuale a 16 feature: rilevanza, incertezza, compatibilità strutturale, feedback history, false-positive risk, latenza, token cost
+- **Penalizza fortemente false-positive memory injection** più del missed reuse
+- Supporta azioni: no-memory, top-resolution injection, multi-candidate summary, high-precision/recall retrieval, abstention, ask-feedback
 
-[[wiki/pages/forgetting-memory-governance]] [[wiki/pages/memory-architectures-retrieval]]
+Risultati: 62.5% offline replay success rate (non-oracle), 0.0% false-positive rate, 331.466µs p95 decision latency.
+
+## Key claims
+- La domanda principale non è "quale memoria è più simile" ma "è abbastanza sicura?" ([§Abstract](raw/papers/arxiv-2604.27283.pdf))
+- La superficial similarity nel debugging è attivamente dannosa ([§1](raw/papers/arxiv-2604.27283.pdf))
+- Abstention e non-injection devono essere first-class safety actions ([§3](raw/papers/arxiv-2604.27283.pdf))
+
+## Connections
+- [[wiki/sources/iscan-2026-rscb-mc]] — fonte primaria
+- [[wiki/pages/memory-safety]] — sicurezza nel retrieval memoria

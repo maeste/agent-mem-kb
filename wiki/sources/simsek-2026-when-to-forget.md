@@ -1,20 +1,31 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, forgetting, staleness, memory-worth, convergence]
+created: 2026-06-08
+updated: 2026-06-08
+tags: [memory-governance, forgetting, memory-quality, staleness-detection]
 source_path: raw/papers/arxiv-2604.12007.pdf
 ---
 
 # When to Forget: A Memory Governance Primitive
 
-**Autore:** Baris Simsek
-**Data:** 2026-04-15
+**Baris Simsek** — arXiv:2604.12007, Apr 2026
 
 ## Summary
 
-Propone Memory Worth (MW), segnale per-memoria a due contatori che traccia co-occorrenza con outcome positivi/negativi. Dimostra convergenza quasi certa alla probabilità condizionale di successo p+(m) = Pr[yt=+1 | m ∈ Mt] sotto regime stazionario con condizione minima di esplorazione.
+Questo paper introduce **Memory Worth (MW)**: un segnale per-memoria a due contatori che traccia quanto spesso una memoria co-occorre con outcome di successo vs fallimento. Fornisce una base metodologica e teorica per **staleness detection**, retrieval suppression e deprecation decisioni.
 
-MW è una quantità associativa (non causale), ma rimane un segnale operativo utile per staleness detection, retrieval suppression e deprecation. Rappresenta una base teorica leggera per decidere quali memorie fidarsi, sopprimere o deprecare man mano che la distribuzione dei task dell'agente shifta.
+Risultati chiave:
+- MW converge almost surely alla conditional success probability p+(m) = Pr[yt = +1 |m ∈ Mt] sotto assunzioni esplicite
+- Dopo 10.000 episodi: Spearman rank-correlation ρ = 0.89 ± 0.02 tra MW e true utilities (vs ρ = 0.00 per sistemi senza update)
+- Micro-esperimento con embedding retrieval (all-MiniLM-L6-v2): stale memories attraversano soglia low-value (MW = 0.17), specialist memories rimangono high-value (MW = 0.77)
 
-[[wiki/pages/forgetting-memory-governance]]
+Il richiede solo due scalar counters per memoria unit + logging di retrievals e episode outcomes. Limitazione chiave: MW misura associazione outcome, non causazione.
+
+## Key claims
+- Gli attuali sistemi ignorano gli outcome signals disponibili ad ogni episodio ([§1](raw/papers/arxiv-2604.12007.pdf))
+- MW è un primitivo operativo minimale per la governance della memoria ([§Abstract](raw/papers/arxiv-2604.12007.pdf))
+- L'associazione (non causazione) è comunque utile come signal operativo ([§2](raw/papers/arxiv-2604.12007.pdf))
+
+## Connections
+- [[wiki/sources/simsek-2026-when-to-forget]] — fonte primaria
+- [[wiki/pages/memory-governance]] — gestione qualità e deprecazione memoria

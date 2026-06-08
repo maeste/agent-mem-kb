@@ -1,20 +1,26 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, continual-learning, self-updating, fine-tuning, autonomous]
+created: 2026-06-08
+updated: 2026-06-08
+tags: [self-updating-llm, autonomous-learning, continual-learning, fine-tuning]
 source_path: raw/papers/arxiv-2508.15805.pdf
 ---
 
 # ALAS: Autonomous Learning Agent for Self-Updating Language Models
 
-**Autore:** Dhruv Atreja
-**Data:** 2025-08-14
+**Dhruv Atreja** — arXiv:2508.15805, Aug 2025
 
 ## Summary
 
-ALAS è una pipeline modulare che aggiorna continuamente la conoscenza di un LLM con intervento umano minimo. Genera autonomamente curriculum di apprendimento, recupera informazioni aggiornate dal web con citazioni, distilla dati QA per training, e fine-tuna il modello via SFT e DPO. Valutato su domini in rapida evoluzione (nuovi release Python, CVE di sicurezza, trend accademici), migliora l'accuracy da ~15% a ~90% su query post-cutoff.
+ALAS (Autonomous Learning Agent System) è una pipeline modulare che aggiorna continuamente la conoscenza di un LLM con intervento umano minimo. Il sistema genera autonomamente un curriculum di apprendimento per un dominio target, recupera informazioni aggiornate dal web (con citazioni), le distilla in dati di training Q&A, e fine-tuna il modello tramite SFT e DPO. Valuta iterativamente le performance e revisa il curriculum.
 
-Dimostra che il fine-tuning supera il RAG puro per knowledge internalization, e che il loop autonomo può operare con overhead ingegneristico minimo componendo API esistenti (OpenAI Deep Research + LangGraph).
+Componenti modulari (ognuno intercambiabile): planning, retrieval, distillation, memory, fine-tuning. Testato su domini a rapida evoluzione (nuovi release Python, security CVEs, trend accademici): accuracy su query post-cutoff da ~15% al ~90% in media. Usa API standard (OpenAI Deep Research, Fine-Tuning) e LangGraph come orchestrator.
 
-[[wiki/pages/experience-reuse-continual-learning]]
+## Key claims
+- L'auto-generazione di dati di training con citazioni elimina la necessità di dataset curati ([§Abstract](raw/papers/arxiv-2508.15805.pdf))
+- La combinazione SFT + DPO supera RAG puro o SFT senza DPO ([§5](raw/papers/arxiv-2508.15805.pdf))
+- La modularità rende il sistema riproducibile con overhead ingegneristico minimo ([§4](raw/papers/arxiv-2508.15805.pdf))
+
+## Connections
+- [[wiki/sources/atreja-2025-alas]] — fonte primaria
+- [[wiki/pages/continual-learning]] — apprendimento continuo in agenti

@@ -1,20 +1,31 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, context-management, dependency-graph, code-agent]
+created: 2026-06-08
+updated: 2026-06-08
+tags: [dependency-structured-memory, context-management, reasoning-graph, swe-bench]
 source_path: raw/papers/arxiv-2604.23069.pdf
 ---
 
 # ContextWeaver: Selective and Dependency-Structured Memory Construction
 
-**Autori:** Yating Wu et al. (UT Austin, AWS AI Labs)
-**Data:** 2026-04-24
+**Yating Wu et al.** (UT Austin, AWS AI Labs) — arXiv:2604.23069, Apr 2026
 
 ## Summary
 
-ContextWeaver organizza la traccia di interazione dell'agente in un grafo di step di reasoning con dipendenze causali e logiche. Tre componenti: (1) costruzione basata su dipendenze che collega ogni step ai precedenti, (2) riepilogo compatto dei percorsi di ragionamento radice-step, (3) layer di validazione leggero con feedback di esecuzione.
+ContextWeaver è un framework di memoria **dependency-structured** che organizza la traccia di interazione di un agente in un grafo di step di reasoning e seleziona il contesto rilevante per azioni future. A differenza degli approcci esistenti (sliding window, prompt compression, retrieval-based) che selezionano contenuto basandosi su recency/salience/similarity semantica, ContextWeaver cattura la **struttura di dipendenza** che collega ogni reasoning step ai precedenti.
 
-Su SWE-Bench Verified e Lite migliora pass@1 rispetto a sliding-window baseline, riducendo sia gli step di reasoning che il consumo di token. Modella la struttura logica delle dipendenze come meccanismo di memoria stabile e scalabile per agenti tool-using.
+Tre componenti:
+1. **Dependency-based construction**: linka ogni reasoning step agli step precedenti da cui dipende
+2. **Compact dependency summarization**: condensa path root-to-step in unità riutilizzabili
+3. **Lightweight validation layer**: incorpora feedback di esecuzione
 
-[[wiki/pages/memory-architectures-retrieval]]
+Valutato su SWE-Bench Verified e Lite: migliora pass@1 vs sliding-window baseline, riducendo reasoning steps e token usage. L'osservazione chiave: modellare dipendenze logiche fornisce un meccanismo di memoria stabile e scalabile per agenti che usano tools.
+
+## Key claims
+- I segnali recency/salience non catturano dipendenze tra reasoning steps ([§Abstract](raw/papers/arxiv-2604.23069.pdf))
+- La perdita di dipendenze causa piani rotti, ripetizione explorazione, passi inconsistenti ([§1](raw/papers/arxiv-2604.23069.pdf))
+- Il grafo di dipendenza è più stabile dello sliding window per task multi-step ([§4](raw/papers/arxiv-2604.23069.pdf))
+
+## Connections
+- [[wiki/sources/wu-2026-contextweaver]] — fonte primaria
+- [[wiki/pages/structured-context]] — contesto strutturato per agenti

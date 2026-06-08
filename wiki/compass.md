@@ -1,26 +1,24 @@
 ---
 type: page
-created: 2026-05-04
-updated: 2026-05-05
+created: 2026-06-08
+updated: 2026-06-08
 tags: [compass, reflection]
 ---
 
-# Bussola
+# Bussola — 8 Giugno 2026
 
-*Ultimo aggiornamento: 2026-05-05*
+## Dove sta andando il pensiero
 
-## Dove sta andando il mio pensiero
+La vault ha raggiunto una **copertura completa delle fonti**: tutti e 44 i paper in `raw/papers/` hanno ora una entry in `wiki/sources/`. Il batch di oggi ha chiuso il gap rimasto da maggio, includendo i fondamenti (Voyager 2023), le survey principali (Du 2026, Yang 2026), i sistemi memoria più recenti (AgeMem, AMA, LightMem, Memanto) e la critica teorica di Xu. La struttura è solida: 5 pagine concettuali + 44 sorgenti organizzate in 8 categorie. La direzione naturale è ora verso **sintesi**: confronti tra architetture, view temporali, e integrazione della critica teorica nelle pagine esistenti.
 
-In due giornate la vault ha vissuto una rotazione netta: il 4 maggio era tutta memoria per agenti LLM (19 paper, 5 pagine concettuali), il 5 maggio è virata sulle agent skills (17 paper aggiunti, totale 36 sorgenti). Il punto di sutura è [[wiki/pages/skill-extraction-from-memory]], che ha smesso di essere un'ipotesi e sta diventando il vero asse della collezione: la domanda non è più "come ricordano gli agenti?" ma "come la memoria si cristallizza in artefatti riutilizzabili e condivisibili?". Le altre quattro pagine — [[wiki/pages/llm-agent-memory]], [[wiki/pages/memory-architectures-retrieval]], [[wiki/pages/forgetting-memory-governance]], [[wiki/pages/experience-reuse-continual-learning]] — sono ferme al 4 maggio e non hanno assorbito nulla del nuovo materiale.
+## Cosa non stiamo guardando
 
-## Cosa non sto guardando
+- **Confronti architetturali non scritti**: abbiamo materiale ricco per un confronto sistematico tra approcci alla memoria (graph-based vs typed vs dependency-structured vs retrieval-augmented), ma nessuna view lo formalizza
+- **La pagina "memory theory" manca**: la critica di Xu (lookup ≠ memory) è citata in 4 pagine ma non ha una sede dedicata dove sviluppare le implicazioni per system builder
+- **Agent skills vs memory: intersezione non mappata**: ProactAgent e SkillRL mostrano che skills e memoria sono due facce della stessa medaglia (entrambe forme di knowledge reuse), ma le pagine sono separate
+- **Valutazione empirica frammentata**: ogni paper usa benchmark diversi (LongMemEval, LoCoMo, SWE-Bench, ALFWorld, SciWorld); nessuna sintesi cross-benchmark
+- **Lato engineering sotto-rappresentato**: latenza, costo, multi-user, privacy — trattati solo marginalmente nelle sorgenti
 
-- I 12 paper del batch 4 di ieri ([[wiki/sources/arxiv-2602.20867]] SoK Agentic Skills, [[wiki/sources/arxiv-2603.02176]] AgentSkillOS, [[wiki/sources/arxiv-2603.02766]] EvoSkill, [[wiki/sources/arxiv-2603.11808]] mining agentic repos, e gli altri otto) sono presenti come sorgenti ma non sono ancora citati in nessuna pagina concettuale, e nemmeno elencati in [[wiki/index.md]] — l'ingestione è andata più veloce della sintesi.
-- La critica di [[wiki/sources/xu-2026-contextual-agentic-memory]] (retrieval = lookup ≠ memory) era già segnalata come "merita una pagina dedicata" nella bussola precedente e in [[wiki/hot.md]]: due giorni dopo continua a vivere distribuita in citazioni sparse senza un luogo proprio.
-- Le due view proposte ieri sera in [[wiki/hot.md]] — confronto delle architetture di skill library (VOYAGER, SkillFlow, SKILL RL) e timeline 2023→2026 dell'evoluzione delle agent skills — non sono state costruite, nonostante ora ci sia tutto il materiale per farlo: la cartella `wiki/views/` è ancora vuota.
-- La memoria condivisa tra agenti, già segnalata come assente nella bussola del 4 maggio, non è stata coperta nemmeno dai 17 nuovi paper sulle skill — il taglio resta individuale, l'aspetto collettivo del registry esterno è citato ma non investigato.
-- C'è un cluster di paper su sicurezza e governance delle skill ([[wiki/sources/arxiv-2604.23080]] usable agent discovery, [[wiki/sources/arxiv-2604.16911]] Skilldex MCP registry, [[wiki/sources/ling-2026-agent-skills-analysis]] sul 26.1% di skill community vulnerabili) che è entrato nella vault ma non si parla con [[wiki/pages/forgetting-memory-governance]], dove avrebbe naturalmente luogo.
+## Una domanda worth sitting with
 
-## Una domanda che vale la pena sedersi sopra
-
-Hai aggiunto 17 paper sulle agent skills in un giorno e la pagina [[wiki/pages/skill-extraction-from-memory]] continua a chiamare l'externalizzazione "gap parzialmente coperto" — quale parte del gap è davvero rimasta aperta dopo aver letto SoK Agentic Skills, AgentSkillOS, EvoSkill, SkillFoundry e gli altri, e quale parte stai tenendo aperta perché chiuderla ti costringerebbe a prendere posizione su un'ipotesi che hai protetto da quando hai aperto la vault?
+Se Xu ha ragione e l'attuale architettura di memoria agente ha un **generalization ceiling provabile**, allora tutto l'investimento su retrieval migliore, granularità adattiva e governance è ottimizzazione locale di un design fondamentalmente limitato. Quanto vale la pena costruire view e confronti prima di aver risposto a questa domanda? E soprattutto: quali evidenze empirche potrebbero confutare o confermare la tesi del ceiling?

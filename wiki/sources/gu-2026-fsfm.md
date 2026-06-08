@@ -1,20 +1,30 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, forgetting, neuro-inspired, security, privacy]
+created: 2026-06-08
+updated: 2026-06-08
+tags: [selective-forgetting, neuro-inspired-memory, memory-pruning, security]
 source_path: raw/papers/arxiv-2604.20300.pdf
 ---
 
-# FSFM: A Biologically-Inspired Framework for Selective Forgetting of Agent Memory
+# FSFM: A Biologically-Inspired Framework for Selective Forgetting
 
-**Autori:** Yingjie Gu et al. (China Mobile)
-**Data:** 2026-04-23
+**Yingjie Gu et al.** (China Mobile) — arXiv:2604.20300, Apr 2026
 
 ## Summary
 
-Framework neuro-ispirato per dimenticanza selettiva che trae da teoria dell'ippocampo (indicizzazione/consolidamento) e curva di dimenticanza di Ebbinghaus. Tassonomia in quattro categorie: decadimento passivo, cancellazione attiva, triggerata dalla sicurezza, e adattiva basata su RL.
+FSFM è un framework neuro-ispirato per il **selective forgetting** negli agenti LLM, disegnando paralleli diretti con processi cognitivi umani: teoria dell'indicizzazione/consolidazione ippocampale e curva di dimenticanza di Ebbinghaus. Argomenta che in ambienti resource-constrained, un meccanismo di forgetting ben progettato è cruciale quanto la retention per:
 
-Risultati: +8.49% efficienza di accesso, +29.2% signal-to-noise, 100% eliminazione rischi di sicurezza. Argomenta che in ambienti resource-constrained, un meccanismo di obsolescenza ben progettato è cruciale quanto la retention per efficienza computazionale, qualità del contenuto e sicurezza.
+1. **Efficienza computazionale e storage**: pruning intelligente della memoria
+2. **Qualità del contenuto**: aggiornamento dinamico di preferenze obsolete
+3. **Sicurezza**: active forgetting di input malevoli, dati sensibili, content privacy-compromising
 
-[[wiki/pages/forgetting-memory-governance]]
+Taxonomia dei meccanismi di forgetting: passive decay-based, active deletion-based, safety-triggered, adaptive reinforcement-based. Risultati: +8.49% efficienza accesso, +29.2% signal-to-noise ratio, 100% eliminazione rischi sicurezza.
+
+## Key claims
+- Il forgetting selettivo è fondamentale quanto la retention per agenti production-grade ([§Abstract](raw/papers/arxiv-2604.20300.pdf))
+- L'ispirazione biologica (ippocampo, Ebbinghaus) offre principi applicabili ([§1](raw/papers/arxiv-2604.20300.pdf))
+- Quattro categorie di forgetting coprono casi d'uso distinti ([§3](raw/papers/arxiv-2604.20300.pdf))
+
+## Connections
+- [[wiki/sources/gu-2026-fsfm]] — fonte primaria
+- [[wiki/pages/selective-forgetting]] — meccanismi di dimenticanza selettiva
