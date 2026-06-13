@@ -1,13 +1,27 @@
 ---
 type: source
 created: 2026-05-05
-updated: 2026-05-05
-tags: [skills, agents, llm]
+updated: 2026-06-13
+tags: [skills, retrieval, agents, benchmark, augmentation]
 source_path: raw/papers/arxiv-2604.24594.pdf
 ---
 
-# Skill Retrieval Augmentation for Agentic AI (SRA)
+# Skill Retrieval Augmentation (SRA) for Agentic AI
 
-Su, Long, Ai, Tang, Wang, Tu, Liu (Tsinghua University), April 2026.
+**Su, Long, Ai, Tang, Wang, Tu & Liu** (Tsinghua University) — arXiv:2604.24594, Apr 2026
 
-This paper formulates Skill Retrieval Augmentation (SRA) as a new paradigm for scaling agent capabilities beyond the context-window limits of explicit in-context skill injection. Rather than enumerating all available skills in the prompt, SRA treats skills as entries in a large external corpus and requires agents to dynamically retrieve, incorporate, and apply relevant skills on demand. The authors construct SRA-Bench, the first benchmark for decomposed evaluation of the full SRA pipeline across three stages: skill retrieval, skill incorporation (whether the agent correctly identifies useful skills among retrieved candidates), and end-task execution. SRA-Bench contains 5,400 capability-intensive test instances with 636 manually constructed gold skills mixed into a corpus of 26,262 skills. Key findings include: even a simple single-skill retrieval pipeline improves strong LLM agents over skill-free baselines; however, a fundamental bottleneck exists in skill incorporation — current agents load skills at similar rates regardless of whether a gold skill was retrieved or whether the task actually requires external capabilities. The authors argue SRA is distinct from classical RAG because retrieved items are executable capabilities (augmenting functional competence) rather than declarative knowledge (grounding generation). The paper positions skill incorporation — not retrieval — as the critical unsolved problem for scalable skill augmentation.
+## Summary
+
+Introduce **Skill Retrieval Augmentation (SRA)**, un nuovo paradigma in cui agenti dynamicamente recuperano e applicano skills da corpora esterni su demanda, invece di enumerarle esplicitamente nel context window. Costruisce **SRA-Bench**, il primo benchmark per valutazione decomposta del pipeline SRA.
+
+## Key claims
+
+- **Enumerazione in-context non scala**: quando i corpora di skill crescono, i context budget si consumano rapidamente e l'agent perde accuratezza nell'identificare la skill giusta.
+- **SRA-Bench**: 5.400 test instances capability-intensive, 636 gold skills manuali + 26.262 skill totali (con distrattori web-collected). Valuta retrieval, incorporation ed end-task execution separatamente.
+- **Retrieval-based skill augmentation migliora sostanzialmente** le performance dell'agente.
+- **Bottleneck nell'incorporation**: gli attuali LLM agent tendono a caricare skill a tassi simili indipendentemente dal fatto che una gold skill sia stata recuperata o che il task richieda effettivamente capacità esterne.
+- **Il gap non è solo nel retrieval**: il modello base deve determinare *quale* skill caricare e *quando* il loading esterno è necessario.
+
+## Positioning
+
+Primo benchmark strutturato per il problema del skill retrieval negli agenti. Rileva un gap fondamentale tra "trovare la skill giusta" e "usarla al momento giusto".

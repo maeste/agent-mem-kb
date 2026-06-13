@@ -43,7 +43,7 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/iscan-2026-rscb-mc]] — RSCB-MC: Risk-Sensitive Memory Retrieval
 
 ### Critique & Theory
-- [[wiki/sources/xu-2026-contextual-agentic-memory]] — Contextual Agentic Memory is a Memo
+|- [[wiki/sources/xu-2026-contextual-agentic-memory]] — Contextual Agentic Memory is a Memo
 
 ### Surveys
 - [[wiki/sources/du-2026-memory-survey]] — Memory Survey: Mechanisms, Evaluation, Frontiers

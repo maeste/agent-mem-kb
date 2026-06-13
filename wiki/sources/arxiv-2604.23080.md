@@ -1,13 +1,29 @@
 ---
 type: source
 created: 2026-05-05
-updated: 2026-05-05
-tags: [skills, agents, llm]
+updated: 2026-06-13
+tags: [multi-agent, discovery, distributed, p2p, churn]
 source_path: raw/papers/arxiv-2604.23080.pdf
 ---
 
 # Usable Agent Discovery for Decentralized AI Systems
 
-Dazzi, Carlini, Mordacchini, Urso (University of Pisa, CNR Italy), April 2026.
+**Dazzi, Carlini, Mordacchini & Urso** (UniPisa, CNR) — arXiv:2604.23080, Apr 2026
 
-This paper studies decentralized agent discovery in large-scale distributed agentic systems where multiple agents share physical hosts and are discovered via peer-to-peer overlays. The key insight is that discovery must handle two distinct churn dimensions simultaneously: *node-level churn* (host failures and departures affecting all agents on a node) and *agent-level churn* (demand-driven activation, deactivation, and warm/cold state transitions of individual agents). The authors compare structured overlays (Kademlia DHT) against gossip-based overlays (Cyclon+Vicinity) across four regimes: stable, node-churn-only, agent-cooling-only, and combined. Their empirical regime map shows that structured overlays are more robust and efficient in stable and node-churn regimes, while gossip-based overlays remain competitive and can be faster when agent readiness dominates the workload. The contribution is primarily analytical rather than constructing a new system — it provides a system model with warm/cold agent states, observables separating efficiency, resilience, and service readiness, and practical guidance on overlay choice based on operating conditions. The work is positioned within the AGNTCY framework for skill-based agent discovery.
+## Summary
+
+Studia la **scoperta decentralizzata di agenti** in infrastrutture distribuite con due livelli di churn: node-level (fallimenti, partenze) e agent-level (lifecycles demand-driven con stati warm/cold). Compara overlay strutturati (Kademlia) vs gossip-based (Cyclon+Vicinity) sotto quattro regimi.
+
+## Key claims
+
+- **Due fonti di instabilità distinte**: node-level churn (infrastrutturale) e agent-level churn (demand-driven cooling/riattivazione) stressano la scoperta in modi diversi.
+- **Agenti definiti da skills** (come in AGNTCY): la query di discovery targetta le capabilities, non i nodi.
+- **Il target non è un nodo raggiungibile ma un *usable execution target***: un host può essere up ma l'agente richiesto cold/suspended.
+- **Risultati sperimentali**:
+  - Overlay strutturati (Kademlia): più robusti ed efficienti in regimi stabili e node-churn.
+  - Gossip-based (Cyclon+Vicinity): competitivi e più veloci quando la *readiness* domina.
+  - Nessun vincitore universale: il design ottimale dipende dalle condizioni operative.
+
+## Positioning
+
+Lavoro di sistemi distribuiti rilevante per architetture multi-agenti su larga scala. Non riguarda direttamente la memoria ma l'organizzazione e discovery di agenti con skills.

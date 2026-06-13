@@ -1,13 +1,28 @@
 ---
 type: source
 created: 2026-05-05
-updated: 2026-05-05
-tags: [skills, agents, llm]
+updated: 2026-06-13
+tags: [multi-agent, organization, talent-market, orchestration]
 source_path: raw/papers/arxiv-2604.22446.pdf
 ---
 
-# From Skills to Talent: Organising Heterogeneous Agents as a Real-World Company
+# From Skills to Talent: OneManCompany (OMC)
 
-Yu, Fu, He, Huang, Lee Ka Yiu, Fang, Luo, Wang (Huawei Noah's Ark Lab, UCL, University of Liverpool), April 2026.
+**Yu, Fu, He, Huang, Ka Yiu, Fang, Luo & Wang** (Huawei Noah's Ark Lab, UCL, Liverpool) — arXiv:2604.22446, Apr 2026
 
-OneManCompany (OMC) proposes an organisational layer for multi-agent systems that sits above individual agent skills and below task execution, governing how a workforce of heterogeneous agents is assembled, coordinated, and improved over time. The framework introduces *Talents* — portable agent identities that encapsulate skills, tools, and runtime configurations — orchestrated through typed organisational interfaces that abstract over heterogeneous backends. A community-driven *Talent Market* enables on-demand recruitment to close capability gaps dynamically. Organisational decision-making is operationalised through an *Explore-Execute-Review (E²R) tree search* that unifies planning, execution, and evaluation in a single hierarchical loop: tasks decompose top-down into accountable units, and outcomes aggregate bottom-up to drive systematic review. The authors claim formal guarantees on termination and deadlock freedom. Evaluated on PRDBench, OMC achieves an 84.67% success rate, surpassing the prior state of the art by 15.48 percentage points. The core argument is that the field needs to move from skills ("what can an agent do?") through multi-agent interaction ("how do agents interact?") to an organisation-level abstraction ("how should a workforce of agents be structured and managed?").
+## Summary
+
+Framework che eleva i sistemi multi-agente al livello **organizzativo**: incapsula skills, tools e runtime configurazioni in identità agent portatili chiamate **Talents**, orchestrate tramite interfacce organizzative tipate. Un **Talent Market** community-driven abilita recruiting on-demand.
+
+## Key claims
+
+- **Gap identificato**: manca un layer organizzativo principiato che governa come una forza lavoro di agenti è assemblata, governata e migliorata nel tempo, **decoupled da ciò che i singoli agenti sanno**.
+- **Talent = Container**: profili per-employee con skills, performance, configurazioni runtime.
+- **E2R tree search (Explore-Execute-Review)**: unifica pianificazione, esecuzione e valutazione in un loop gerarchico con garanzie formali su terminazione e deadlock-freedom.
+- **Typed organisational interfaces**: astraggono su backend eterogenei.
+- **Org Knowledge**: workflow SOPs editabili e company culture rules che persistono cross-project.
+- **Risultati su PRDBench**: 84.67% success rate (+15.48pp vs SOTA). Case studies cross-domain confermano generalità.
+
+## Positioning
+
+Visione ambiziosa di multi-agent systems come organizzazioni auto-organizzanti. Rilevante per architetture di agent orchestration a larga scala.
