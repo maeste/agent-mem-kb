@@ -1,20 +1,21 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, survey, evaluation, applications]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [memory-survey, agent-memory, taxonomy, evaluation, long-term-memory]
 source_path: raw/papers/arxiv-2603.07670.pdf
 ---
 
 # Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers
 
-**Autore:** Pengfei Du (HK Research Institute of Technology)
-**Data:** 2026-03-08
+**Pengfei Du** (HK Research Institute of Technology), arXiv:2603.07670, Mar 2026.
 
 ## Summary
 
-Survey strutturato sulla memoria nei agenti LLM (2022–early 2026). Formalizza la memoria come ciclo write–manage–read accoppiato con percezione e azione. Tassonomia tri-dimensionale: scope temporale, substrato rappresentazionale, policy di controllo. Cinque famiglie di meccanismi: compressione in-contesto, store retrieval-augmented, self-improvement riflessivo, contesto virtuale gerarchico, gestione appresa via policy.
+Survey strutturato sulla memoria in agenti LLM moderni (2022-early 2026). Formalizza la memoria agentic come loop write-manage-read accoppiato con percezione e azione. Introduce tassonomia tri-dimensionale: scope temporale, substrato rappresentazionale, policy di controllo. Esamina cinque famiglie di meccanismi: context-resident compression, retrieval-augmented stores, reflective self-improvement, hierarchical virtual context, policy-learned management.
 
-Traccia l'evoluzione da benchmark di recall statico a test agentic multi-sessione che interlacciano memoria con decision-making. Copre applicazioni dove la memoria è il fattore differenziante: assistenti personali, coding agent, giochi open-world, reasoning scientifico, teamwork multi-agente. Sfide aperte: consolidamento continuo, retrieval causalmente fondato, reflection affidabile, dimenticanza appresa, memoria multimodale embodied.
+## Key Claims
 
-[[wiki/pages/llm-agent-memory]]
+- La memoria trasforma un LLM stateless in un agente **self-evolving** che accumula conoscenza fattuale, sviluppa pattern comportamentali, evita errori ripetuti e migliora continuamente [[wiki/sources/du-2026-memory-survey]](raw/papers/arxiv-2603.07670.pdf).
+- Cinque sfide aperte identificate: continual consolidation, causally grounded retrieval, trustworthy reflection, learned forgetting, multimodal embodied memory [[wiki/sources/du-2026-memory-survey]](raw/papers/arxiv-2603.07670.pdf).
+- La valutazione è spostata da benchmark recall statici a test multi-sessione che interlacciano memoria con decision-making [[wiki/sources/du-2026-memory-survey]](raw/papers/arxiv-2603.07670.pdf).

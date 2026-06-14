@@ -1,20 +1,21 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, visual, optical, multimodal, long-horizon]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [optical-memory, visual-retrieval, long-horizon-agents, multimodal]
 source_path: raw/papers/arxiv-2604.26622.pdf
 ---
 
 # OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory
 
-**Autori:** Jinze Li et al. (HKU, UNT, U. Tsukuba, Yonsei)
-**Data:** 2026-04-29
+**Jinze Li et al.** (HKU et al.), arXiv:2604.26622, Apr 2026.
 
 ## Summary
 
-OCR-Memory sfrutta la modalità visiva come rappresentazione ad alta densità dell'esperienza dell'agente. Codifica traiettorie storiche come immagini con anchor visivi unici (bounding box indicizzate), recuperando info tramite paradigma locate-and-transcribe che seleziona regioni rilevanti e trascrive il testo verbatim corrispondente.
+OCR-Memory è un framework di memoria che sfrutta la **modalità visuale** come rappresentazione ad alta densità dell'esperienza agente, abilitando la retention di storie arbitrarie lunghe con minimo overhead prompt al momento del retrieval. Renderizza traiettorie storiche in immagini annotate con identificatori visivi univoci, recuperando esperienza tramite paradigma **locate-and-transcribe**: seleziona regioni rilevanti via anchor visivi e trascrive il testo verbatim corrispondente.
 
-Evita il trade-off tra capacità di memoria e completezza informativa: storicizza tracce arbitrarie senza summarization lossy. Riduce l'allucinazione rispetto alla generazione free-form. Guadagni consistenti su benchmark long-horizon con limiti di contesto stretti.
+## Key Claims
 
-[[wiki/pages/memory-architectures-retrieval]]
+- L'encoding ottico aumenta la capacità memoria effettiva preservando il recupero fedele delle evidenze [[wiki/sources/li-2026-ocr-memory]](raw/papers/arxiv-2604.26622.pdf).
+- Evita free-form generation riducendo l'allucinazione rispetto a retrieval puramente testuale [[wiki/sources/li-2026-ocr-memory]](raw/papers/arxiv-2604.26622.pdf).
+- I sistemi esistenti sono fondamentalmente limitati dai budget testuali: memorizzare traiettorie raw è proibitivo, mentre summarization trade token savings per information loss [[wiki/sources/li-2026-ocr-memory]](raw/papers/arxiv-2604.26622.pdf).

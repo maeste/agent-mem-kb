@@ -1,20 +1,21 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, risk-sensitive, coding-agent, contextual-bandit, debugging]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [coding-agents, memory-retrieval, contextual-bandits, risk-sensitive, abstention]
 source_path: raw/papers/arxiv-2604.27283.pdf
 ---
 
 # RSCB-MC: Risk-Sensitive Contextual Bandits for Memory Retrieval in Coding Agents
 
-**Autore:** Mehmet Iscan (Yildiz Technical University)
-**Data:** 2026-04-30
+**Mehmet Iscan** (Yildiz Technical University), arXiv:2604.27283, Apr 2026.
 
 ## Summary
 
-Riformula l'uso della memoria issue per agenti coding come problema di controllo risk-sensitive piuttosto che retrieval top-k puro. Il sistema decide tra: nessuna memoria, top resolution, sommario multipli, alta precisione, alto recall, astensione, o richiesta feedback. Schema pattern-variant-episode per organizzare issue knowledge. Stato contestuale a 16 feature (rilevanza, incertezza, compatibilità, storia feedback, falso-positivo risk, latenza, costo token).
+Riformula l'uso di issue-memory in coding agenti LLM come problema di **controllo risk-sensitive** selettivo piuttosto che puro top-k retrieval. Introduce **RSCB-MC**, un memory controller contextual bandit risk-sensitive che decide se usare nessuna memoria, iniettare la top resolution, riassumere candidati multipli, fare high-precision/high-recall retrieval, astenersi, o chiedere feedback.
 
-Risultati: 62.5% replay success rate (non-oracle), 0.0% false-positive rate, 331µs p95 latenza decisionale. Il principio chiave: penalizza più fortemente false-positivi che mancati riutilizzi, rendendo non-iniezione e astensione azioni di sicurezza primarie.
+## Key Claims
 
-[[wiki/pages/forgetting-memory-governance]] [[wiki/pages/memory-architectures-retrieval]]
+- In validazione smoke-scale deterministica, RSCB-MC raggiunge **62.5% offline replay success rate** con **0.0% false-positive rate** [[wiki/sources/iscan-2026-rscb-mc]](raw/papers/arxiv-2604.27283.pdf).
+- In validazione hotpath 200-case: **60.5% proxy success**, **0.0% false positives**, **331.466 µs p95 decision latency** [[wiki/sources/iscan-2026-rscb-mc]](raw/papers/arxiv-2604.27283.pdf).
+- Per coding-agent memory, la domanda principale non è solo quale memoria è più simile, ma **se qualsiasi memoria recuperata è abbastanza sicura** da influenzare la trajectory di debugging [[wiki/sources/iscan-2026-rscb-mc]](raw/papers/arxiv-2604.27283.pdf).

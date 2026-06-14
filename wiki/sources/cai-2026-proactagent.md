@@ -1,20 +1,21 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, proactive-retrieval, lifelong-learning, reinforcement-learning]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [proactive-retrieval, lifelong-learning, experience-driven-agents, reinforcement-learning]
 source_path: raw/papers/arxiv-2604.20572.pdf
 ---
 
-# ProactAgent: Ask Only When Needed — Proactive Retrieval for Lifelong Agents
+# ProactAgent: Proactive Retrieval from Memory and Skills for Lifelong Agents
 
-**Autori:** Yuxuan Cai et al. (East China Normal U., Shanghai AI Lab)
-**Data:** 2026-04-22
+**Yuxuan Cai et al.** (East China Normal University, Shanghai AI Lab), arXiv:2604.20572, Apr 2026.
 
 ## Summary
 
-ProactAgent insegna all'agente quando recuperare esperienza dalla memoria in modo proattivo, piuttosto che solo all'inizio del task o dopo ogni step. Due componenti: (1) Experience-Enhanced Online Evolution (EXPONEVO) per miglioramento continuo via policy update e memory refinement, con experience base strutturata (factual, episodic, behavioral skills); (2) Proactive RL-based Retrieval (PROACTRL) che modella il retrieval come azione esplicita di policy, apprendendo quando e cosa recuperare via paired-branch process rewards.
+ProactAgent è un framework **experience-driven lifelong learning** per proactive retrieval su una base esperienza strutturata. Introduce **ExpoNEvo** (Experience-Enhanced Online Evolution) per miglioramento continuo tramite policy updates e memory refinement, e **ProactRL** (Proactive RL-based Retrieval) che modella retrieval come azione di policy esplicita, imparando quando e cosa recuperare via paired-branch process rewards.
 
-Su SciWorld (73.50%), AlfWorld (71.28%) e StuLife, riduce significativamente l'overhead di retrieval rispetto a retrieval continuo. Confronta in modo favorevole retrieval statico, continuo e LLM-gated.
+## Key Claims
 
-[[wiki/pages/experience-reuse-continual-learning]] [[wiki/pages/memory-architectures-retrieval]]
+- ProactAgent raggiunge **73.50% success rate su SciWorld** e **71.28% su ALFWorld** riducendo sostanzialmente l'overhead di retrieval [[wiki/sources/cai-2026-proactagent]](raw/papers/arxiv-2604.20572.pdf).
+- Il confronto tra continuazioni con e senza retrieval fornisce supervisione step-level per decisioni di retrieval [[wiki/sources/cai-2026-proactagent]](raw/papers/arxiv-2604.20572.pdf).
+- Performance competitive con modelli proprietari su StuLife [[wiki/sources/cai-2026-proactagent]](raw/papers/arxiv-2604.20572.pdf).

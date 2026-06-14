@@ -1,20 +1,21 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, context-management, dependency-graph, code-agent]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [dependency-structured-memory, context-management, reasoning-graph, tool-use]
 source_path: raw/papers/arxiv-2604.23069.pdf
 ---
 
 # ContextWeaver: Selective and Dependency-Structured Memory Construction
 
-**Autori:** Yating Wu et al. (UT Austin, AWS AI Labs)
-**Data:** 2026-04-24
+**Yating Wu et al.** (UT Austin, AWS AI Labs), arXiv:2604.23069, Apr 2026.
 
 ## Summary
 
-ContextWeaver organizza la traccia di interazione dell'agente in un grafo di step di reasoning con dipendenze causali e logiche. Tre componenti: (1) costruzione basata su dipendenze che collega ogni step ai precedenti, (2) riepilogo compatto dei percorsi di ragionamento radice-step, (3) layer di validazione leggero con feedback di esecuzione.
+ContextWeaver è un framework di memoria **selective e dependency-structured** che organizza la traccia di interazione di un agente in un grafo di passaggi di ragionamento e seleziona il contesto rilevante per azioni future. Supporta: (1) costruzione e traversamento basati su dipendenze, (2) riassunti compatti delle dipendenze, (3) un layer lightweight di validazione con feedback di esecuzione.
 
-Su SWE-Bench Verified e Lite migliora pass@1 rispetto a sliding-window baseline, riducendo sia gli step di reasoning che il consumo di token. Modella la struttura logica delle dipendenze come meccanismo di memoria stabile e scalabile per agenti tool-using.
+## Key Claims
 
-[[wiki/pages/memory-architectures-retrieval]]
+- Su **SWE-Bench Verified e Lite**, ContextWeaver migliora performance rispetto a sliding-window baseline in **pass@1**, riducendo reasoning steps e token usage [[wiki/sources/wu-2026-contextweaver]](raw/papers/arxiv-2604.23069.pdf).
+- I segnali di recency/salience/semantic similarity non catturano la struttura di dipendenza che collega un passo di ragionamento al successivo [[wiki/sources/wu-2026-contextweaver]](raw/papers/arxiv-2604.23069.pdf).
+- La modellazione delle dipendenze logiche fornisce un meccanismo di memoria stabile e scalabile per agenti LLM che usano tools [[wiki/sources/wu-2026-contextweaver]](raw/papers/arxiv-2604.23069.pdf).

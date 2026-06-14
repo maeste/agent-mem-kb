@@ -1,20 +1,21 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, multi-agent, consistency, hierarchical]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [multi-agent-memory, adaptive-memory, memory-consistency, multi-granularity]
 source_path: raw/papers/arxiv-2601.20352.pdf
 ---
 
 # AMA: Adaptive Memory via Multi-Agent Collaboration
 
-**Autori:** Weiquan Huang et al. (HKUST(GZ), Shandong University, NTU)
-**Data:** 2026-04-15 (v3)
+**Weiquan Huang et al.** (HKUST-Guangzhou), arXiv:2601.20352, Apr 2026.
 
 ## Summary
 
-AMA usa agenti coordinati (Constructor, Retriever, Judge, Refresher) per gestire memoria multi-granularità. Il Constructor e Retriever abilitano costruzione e routing adattivo; il Judge verifica rilevanza e consistenza, triggerando retrieval iterativo o refresh; il Refresher esegue aggiornamenti mirati e rimozione di entry obsolete.
+AMA (Adaptive Memory via Multi-Agent Collaboration) è un framework che usa agenti coordinati per gestire memoria su **multiple granularità**. Impiega una gerarchia di memoria che allinea dinamicamente la granularità di retrieval con la complessità del task. Il Constructor e Retriever abilitano costruzione e routing adattivo; il Judge verifica rilevanza e consistenza; il Refresher esegue aggiornamenti targetizzati o rimuove entry obsolete.
 
-Supera SOTA su benchmark long-context con ~80% riduzione consumo token vs. full-context. Il contributo chiave è il rilevamento automatico di contraddizioni logiche e il refresh selettivo, risolvendo il problema dell'accumulo incontrollato di incoerenze nella memoria.
+## Key Claims
 
-[[wiki/pages/memory-architectures-retrieval]]
+- AMA supera significativamente gli SOTA baselines riducendo il **consumo di token di circa l'80%** rispetto a metodi full-context [[wiki/sources/huang-2026-ama]](raw/papers/arxiv-2601.20352.pdf).
+- La granularità statica crea un mismatch persistente tra informazioni memorizzate e esigenze di ragionamento task-specific [[wiki/sources/huang-2026-ama]](raw/papers/arxiv-2601.20352.pdf).
+- L'architettura multi-agent previene l'accumulo non controllato di inconsistenze logiche nel tempo [[wiki/sources/huang-2026-ama]](raw/papers/arxiv-2601.20352.pdf).

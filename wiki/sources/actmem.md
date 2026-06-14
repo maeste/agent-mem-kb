@@ -1,18 +1,21 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, reasoning, bridging-gap, long-memeval]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [memory-reasoning, causal-reasoning, memory-graph, conflict-detection]
 source_path: raw/papers/arxiv-2603.00026.pdf
 ---
 
-# ActMem: Bridging the Gap Between Memory Retrieval and Reasoning in LLM Agents
+# ActMem: Bridging Memory Retrieval and Reasoning in LLM Agents
 
-**Autori:** (non disponibili dall'estratto)
-**Data:** 2026 (arXiv 2603.00026)
+**ActMem authors**, arXiv:2603.00026, Mar 2026.
 
 ## Summary
 
-ActMem affronta il divario fondamentale tra recuperare informazioni dalla memoria e usarle effettivamente per ragionare. I framework esistenti si concentrano sull'espansione della finestra di contesto o sul RAG per memorizzare e recuperare, ma non colmano il gap tra remembering e using. ActMem propone di integrare il reasoning strutturato nel processo di retrieval per superare le limitazioni della recall pura su benchmark come LongMemEval.
+ActMem è un framework di **actionable memory** che integra retrieval memoria con ragionamento causale attivo. Trasforma la storia dialogica non strutturata in un grafo causale e semantico, usando counterfactual reasoning e commonsense completion per dedurre vincoli impliciti e risolvere conflitti tra stati passati e intenzioni correnti. Introduce il dataset **ActMemEval** per valutare capacità di ragionamento logic-driven in scenari memory-dependent.
 
-[[wiki/pages/experience-reuse-continual-learning]] [[wiki/pages/memory-architectures-retrieval]]
+## Key Claims
+
+- I framework memoria esistenti trattano gli agenti come "recorder" passivi che recuperano informazioni senza comprenderne le implicazioni profonde [[wiki/sources/actmem]](raw/papers/arxiv-2603.00026.pdf).
+- ActMem supera significativamente gli SOTA baselines su task complessi dipendenti dalla memoria [[wiki/sources/actmem]](raw/papers/arxiv-2603.00026.pdf).
+- Il benchmark ActMemEval sposta il focus dal fact-retrieval al reasoning logic-driven con dipendenza dalla memoria [[wiki/sources/actmem]](raw/papers/arxiv-2603.00026.pdf).

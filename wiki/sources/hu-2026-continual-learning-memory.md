@@ -1,20 +1,21 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, continual-learning, experience-reuse, stability-plasticity]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [continual-learning, experience-reuse, memory-representation, negative-transfer]
 source_path: raw/papers/arxiv-2604.27003.pdf
 ---
 
-# When Continual Learning Moves to Memory: A Study of Experience Reuse in LLM Agents
+# When Continual Learning Moves to Memory: Experience Reuse in LLM Agents
 
-**Autori:** Qisheng Hu, Quanyu Long, Wenya Wang (NTU Singapore)
-**Data:** 2026-04-29
+**Qisheng Hu et al.** (NTU Singapore), arXiv:2604.27003, Apr 2026.
 
 ## Summary
 
-Dimostra che la memoria esterna non risolve il problema del continual learning ma lo riposiziona: il collo di bottiglia si sposta dall'aggiornamento parametrico al retrieval sotto finestra di contesto finita. Introduce un framework (k, v) che disaccoppia come l'esperienza è rappresentata (k) e come è organizzata per il retrieval (v).
+Studio di come il **continual learning** si manifesta in agenti memoria-augmented. Mostra che la memoria esterna non elimina la sfida stability-plasticità ma la **relocalizza al livello della memoria**: sotto una context window limitata, esperienze vecchie e nuove competono durante retrieval. Introduce un framework (k, v) che disentangle rappresentazione dell'esperienza e organizzazione per retrieval.
 
-Su ALFWorld e BabyAI: memorie procedurali astratte si trasferiscono più affidabilmente delle traiettorie dettagliate; il negative transfer danneggia sproporzionatamente i casi hard; organizzazione più fine della memoria non è universalmente benefica e può indurre grave forgetting. Il dilemma stabilità-plasticità persiste, solo in una forma diversa.
+## Key Claims
 
-[[wiki/pages/experience-reuse-continual-learning]] [[wiki/pages/llm-agent-memory]]
+- Le memorie procedurali astratte transferiscono più affidabilmente delle traiettorie dettagliate [[wiki/sources/hu-2026-continual-learning-memory]](raw/papers/arxiv-2604.27003.pdf).
+- Il **negative transfer** danneggia sproporzionatamente i casi difficili [[wiki/sources/hu-2026-continual-learning-memory]](raw/papers/arxiv-2604.27003.pdf).
+- L'organizzazione a granularità fine non è universalmente benefica: design che producono strong forward transfer possono simultaneamente indurre severe forgetting [[wiki/sources/hu-2026-continual-learning-memory]](raw/papers/arxiv-2604.27003.pdf).

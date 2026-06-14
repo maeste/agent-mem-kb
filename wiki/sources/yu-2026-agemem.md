@@ -1,20 +1,21 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, reinforcement-learning, unified-memory]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [unified-memory, long-term-memory, short-term-memory, reinforcement-learning]
 source_path: raw/papers/arxiv-2601.01885.pdf
 ---
 
-# Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management
+# Agentic Memory (AgeMem): Learning Unified LTM and STM Management
 
-**Autori:** Yi Yu et al. (Wuhan University, Alibaba Group)
-**Data:** 2026-04-30 (v2)
+**Yi Yu et al.** (Wuhan University, Alibaba), arXiv:2601.01885, Apr 2026.
 
 ## Summary
 
-AgeMem unifica gestione di LTM e STM direttamente nella policy dell'agente, esponendo operazioni di memoria come azioni tool-based (store, retrieve, update, summarize, discard). Addestra questi comportamenti con una strategia RL progressiva in tre fasi e step-wise GRPO per rewards sparsi e discontinui indotti dalle operazioni di memoria.
+AgeMem è un framework unificato che integra gestione **long-term memory (LTM)** e **short-term memory (STM)** direttamente nella policy dell'agente. Espone operazioni di memoria come azioni tool-based, permettendo all'agente LLM di decidere autonomamente cosa e quando memorizzare, recuperare, aggiornare, riassumere o scartare informazioni. Usa una strategia RL a tre stadi progressivi con step-wise GRPO per gestire reward sparse e discontinue indotte dalle operazioni memoria.
 
-Su cinque benchmark long-horizon, supera consistentemente baseline memory-augmented con miglior task performance, memoria LTM di qualità superiore e uso più efficiente del contesto. Dimostra che apprendere le decisioni di memoria end-to-end supera approcci euristici e controllori ausiliari separati.
+## Key Claims
 
-[[wiki/pages/memory-architectures-retrieval]] [[wiki/pages/llm-agent-memory]]
+- AgeMem supera consistentemente i baseline memory-augmented su **5 benchmark long-horizon** con multiple LLM backbones [[wiki/sources/yu-2026-agemem]](raw/papers/arxiv-2601.01885.pdf).
+- Migliora task performance, qualità della LTM e uso efficiente del contesto rispetto a sistemi che trattano LTM e STM come componenti separati [[wiki/sources/yu-2026-agemem]](raw/papers/arxiv-2601.01885.pdf).
+- L'approccio unificato elimina la necessità di euristiche o controller ausiliari per la gestione memoria [[wiki/sources/yu-2026-agemem]](raw/papers/arxiv-2601.01885.pdf).

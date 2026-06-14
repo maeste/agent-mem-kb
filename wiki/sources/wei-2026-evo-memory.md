@@ -1,20 +1,21 @@
 ---
 type: source
-created: 2026-05-04
-updated: 2026-05-04
-tags: [llm-agents, memory, benchmark, self-evolving, test-time-learning]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [memory-benchmark, test-time-learning, self-evolving-memory, lifelong-learning]
 source_path: raw/papers/arxiv-2511.20857.pdf
 ---
 
-# Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory
+# Evo-Memory: Benchmarking LLM Agent Test-Time Learning with Self-Evolving Memory
 
-**Autori:** Tianxin Wei et al. (UIUC, Google DeepMind)
-**Data:** 2025-11-25
+**Tianxin Wei et al.** (UIUC, Google DeepMind), arXiv:2511.20857, Nov 2025.
 
 ## Summary
 
-Evo-Memory è un benchmark e framework per valutare memoria self-evolving in agenti LLM. Struttura dataset in stream sequenziali di task, richiedendo ricerca, adattamento ed evoluzione della memoria dopo ogni interazione. Implementa >10 moduli di memoria rappresentativi valutati su 10 dataset multi-turno e single-turn.
+Evo-Memory è un benchmark e framework comprehensivo per valutare **self-evolving memory** in agenti LLM. Struttura dataset in stream sequenziali di task, richiedendo alle LLM di cercare, adattare ed evolvere la memoria dopo ogni interazione. Implementa oltre 10 moduli memoria rappresentativi e li valuta su 10 dataset multi-turn goal-oriented, single-turn reasoning e QA. Propone **ReMem**, un pipeline action-think-memory refine che integra ragionamento, azioni task e aggiornamenti memoria per miglioramento continuo.
 
-Introduce due baseline: ExpRAG per retrieval di esperienza priore, e ReMem, una pipeline action-think-memory-refine che integra reasoning, azioni e aggiornamenti di memoria per miglioramento continuo. Il benchmark espone il gap tra recall conversazionale statica e riutilizzo dell'esperienza per reasoning futuro.
+## Key Claims
 
-[[wiki/pages/experience-reuse-continual-learning]] [[wiki/pages/llm-agent-memory]]
+- I sistemi memoria esistenti sono largamente statici: recuperano informazioni passivamente piuttosto che evolversi attraverso l'uso [[wiki/sources/wei-2026-evo-memory]](raw/papers/arxiv-2511.20857.pdf).
+- Gli agenti "ricordano cosa è stato detto" ma non "cosa hanno imparato": la conversational recall recupera fatti passati, mentre l'experience reuse astrae strategie di ragionamento per task futuri [[wiki/sources/wei-2026-evo-memory]](raw/papers/arxiv-2511.20857.pdf).
+- ReMem dimostra che l'integrazione stretta tra ragionamento, azioni e aggiornamenti memoria abilita miglioramento continuo [[wiki/sources/wei-2026-evo-memory]](raw/papers/arxiv-2511.20857.pdf).

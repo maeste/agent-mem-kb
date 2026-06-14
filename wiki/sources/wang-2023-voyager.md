@@ -1,21 +1,31 @@
 ---
 type: source
-created: 2026-05-05
-updated: 2026-05-05
-tags: [llm-agents, skills, skill-library, embodied-agent, minecraft, lifelong-learning, code-as-action]
+created: 2026-06-14
+updated: 2026-06-14
+tags: [agents, embodied-ai, minecraft, skill-library, lifelong-learning, llm]
 source_path: raw/papers/arxiv-2305.16291.pdf
 ---
 
-# VOYAGER: An Open-Ended Embodied Agent with Large Language Models
+# Voyager: An Open-Ended Embodied Agent with LLMs
 
-Guanzhi Wang et al. (NVIDIA, Caltech, UT Austin, Stanford, UW Madison), arXiv:2305.16291, 2023.
+**Guanzhi Wang et al.** (NVIDIA, Caltech, UT Austin, Stanford), arXiv:2305.16291, Oct 2023.
 
 ## Summary
 
-VOYAGER è il primo agente LLM-powered per lifelong learning embodied in Minecraft. L'agente esplora autonomamente il mondo, acquisisce skill diversificate e compie scoperte senza intervento umano. Si compone di tre moduli: (1) un curriculum automatico che genera task progressivamente più difficili in base allo stato dell'agente e dell'ambiente; (2) una skill library in crescita dove i programmi JavaScript di successo vengono memorizzati e recuperati per similarity embedding al momento del bisogno; (3) un meccanismo di prompting iterativo che usa il codice come spazio d'azione e incorpora feedback dall'ambiente ed errori di esecuzione per raffinare i programmi. Le skill sono temporally extended, interpretabili e composable. Risultati: 3.3× più item unici, 2.3× distanze di viaggio più lunghe, milestone della tech tree fino a 15.3× più veloci rispetto allo SOTA precedente. La skill library permette zero-shot generalizzazione a nuovi mondi e task.
+Voyager è il primo agente LLM-powered con apprendimento lifelong in Minecraft, capace di esplorare continuamente il mondo, acquisire skills diverse e fare scoperte senza intervento umano. L'architettura si compone di tre componenti chiave:
 
-## Key claims
+1. **Automatic Curriculum**: massimizza l'esplorazione proponendo automaticamente nuovi obiettivi adattivi basati sullo stato corrente dell'agente e sulle capacità già acquisite.
+2. **Skill Library**: un repository in crescita di codice eseguibile che memorizza e recupera comportamenti complessi come funzioni riutilizzabili.
+3. **Iterative Prompting Mechanism**: incorpora feedback dall'ambiente, errori di esecuzione e auto-verifica per migliorare iterativamente i programmi generati.
 
-- Una skill library di codice riutilizzabile con retrieval per embedding similarity abilita transfer e mitiga catastrophic forgetting senza fine-tuning [[wiki/pages/skill-extraction-from-memory]] [[wiki/pages/experience-reuse-continual-learning]]
-- Il curriculum automatico basato su GPT-4 funziona come novelty search in-context, proponendo task calibrati sullo stato corrente dell'agente
-- L'accuratezza di retrieval delle skill (top-5: 96.5%) dimostra che il recupero per similarità è affidabile per skill di codice in domini strutturati
+Voyager interagisce con GPT-4 tramite query blackbox, bypassando la necessità di fine-tuning. Le skills sviluppate sono temporalmente estese, interpretabili e componibili, permettendo una rapida composizione delle capacità dell'agente e mitigando il catastrophic forgetting.
+
+## Key Claims
+
+- Voyager ottiene **3.3x più item unici**, percorre **2.3x distanze più lunghe** e sblocca milestone tech-tree fino a **15.3x più velocemente** rispetto allo SOTA precedente [[wiki/sources/wang-2023-voyager]](raw/papers/arxiv-2305.16291.pdf).
+- Le skills acquisite possono essere riutilizzate in un nuovo mondo Minecraft per risolvere task novel da zero, mentre altre tecniche faticano a generalizzare [[wiki/sources/wang-2023-voyager]](raw/papers/arxiv-2305.16291.pdf).
+- L'approccio dimostra che le LLM possono essere usate come motori di ragionamento per agenti embodied senza training dedicato sull'ambiente specifico [[wiki/sources/wang-2023-voyager]](raw/papers/arxiv-2305.16291.pdf).
+
+## Significato per la ricerca su agentic memory
+
+Voyager rappresenta uno dei primi esempi di **skill library** come forma di memoria procedurale per agenti LLM. Il concetto di memorizzare comportamenti come codice eseguibile piuttosto che come testo ha influenzato successivamente sistemi come MemTool, SkillFlow e altri approcci di agent skills.
