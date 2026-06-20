@@ -1,6 +1,6 @@
 # Lint Report
 
-Generated: 2026-05-05T15:24:01
+Generated: 2026-06-20T08:34:03
 
 **Summary:** 0 blocking · 0 important · 10 advisory
 
@@ -13,8 +13,8 @@ Generated: 2026-05-05T15:24:01
 - `(multiple files)` — 'Skill Retrieval Augmentation' mentioned 4 times but no wiki page exists
 - `(multiple files)` — 'Continual Learning' mentioned 3 times but no wiki page exists
 - `(multiple files)` — 'Agentic Memory' mentioned 3 times but no wiki page exists
-- `(multiple files)` — 'Level Skills Design' mentioned 3 times but no wiki page exists
-- `(multiple files)` — 'Talent Market' mentioned 3 times but no wiki page exists
 - `(multiple files)` — 'Small Language Models' mentioned 3 times but no wiki page exists
+- `(multiple files)` — 'Talent Market' mentioned 3 times but no wiki page exists
+- `(multiple files)` — 'Level Skills Design' mentioned 3 times but no wiki page exists
 - `(multiple files)` — 'Agent Memory' mentioned 3 times but no wiki page exists
 - `(multiple files)` — 'Zhejiang University' mentioned 3 times but no wiki page exists
