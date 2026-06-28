@@ -44,6 +44,7 @@ Catalog of the vault. Updated on every write operation.
 
 ### Critique & Theory
 - [[wiki/sources/xu-2026-contextual-agentic-memory]] — Contextual Agentic Memory is a Memo
+- [[wiki/sources/arxiv-2604.27707]] — Memory is a Memo Not True Memory (taxonomy, CLS theory)
 
 ### Surveys
 - [[wiki/sources/du-2026-memory-survey]] — Memory Survey: Mechanisms, Evaluation, Frontiers
