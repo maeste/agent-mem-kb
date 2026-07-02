@@ -1,21 +1,41 @@
 ---
 type: source
-created: 2026-05-05
-updated: 2026-05-05
-tags: [llm-agents, skills, reinforcement-learning, skill-distillation, recursive-evolution, grpo]
+created: 2026-07-02
+updated: 2026-07-02
+tags: [skill-discovery, reinforcement-learning, skill-library, recursive-evolution, alfworld, webshop]
 source_path: raw/papers/arxiv-2602.08234.pdf
 ---
 
-# SKILL RL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning
+# SkillRL: Evolving Agents via Recursive Skill-Augmented Reinforcement Learning
 
-Peng Xia et al. (UNC Chapel Hill, U Chicago, UCSD, NEC Labs, UC Berkeley, UCSC), arXiv:2602.08234, 2026.
+**Autori:** Peng Xia, Jianwen Chen, Hanyang Wang, Jiaqi Liu, Kaide Zeng, Yu Wang, Siwei Han, Yiyang Zhou, Xujiang Zhao, Haifeng Chen, Zeyu Zheng, Cihang Xie, Huaxiu Yao  
+**Data:** Febbraio 2026 | arXiv:2602.08234
 
-## Summary
+## Sintesi
 
-SKILL RL è un framework che collega esperienza grezza e miglioramento di policy tramite scoperta automatica di skill ed evoluzione ricorsiva. Tre componenti chiave: (1) meccanismo di distillazione experience-based che trasforma traiettorie in skill — episodi di successo diventano dimostrazioni, fallimenti vengono sintetizzati in lezioni di failure concisi per ridurre il rumore contestuale; (2) SKILL BANK gerarchico che distingue general skills (guida strategica universale) da task-specific skills (euristica per task specifici), con retrieval adattivo; (3) meccanismo di evoluzione ricorsiva dove la skill library e la policy dell'agente co-evolvono durante RL — dopo ogni epoch di validazione, i failure modes vengono analizzati per generare o raffinare skill. Su ALFWorld, WebShop e 7 task search-augmented supera i baseline del 15.3% con significativamente meno contesto rispetto a metodi memory-based.
+SkillRL bridge il gap tra raw experience e policy improvement attraverso **skill discovery automatica ed evoluzione ricorsiva**. Il problema di partenza: i metodi memory-based esistenti salvano raw trajectories che sono ridondanti e noise-heavy, impedendo agli agent di estrarre pattern comportamentali riutilizzabili di alto livello.
 
-## Key claims
+### Architettura
 
-- La distillazione da traiettoria a skill astratta riduce l'footprint di token e migliora l'utilità di reasoning rispetto alla memorizzazione di traiettorie grezze [[wiki/pages/skill-extraction-from-memory]] [[wiki/pages/experience-reuse-continual-learning]]
-- La co-evoluzione di skill library e policy durante RL supera il paradigma di memoria statica — le skill vengono raffinate in base ai failure modes osservati
-- Le skill gerarchiche (generali + task-specific) abilitano un retrieval adattivo che bilancia transfer e specificity
+1. **Experience-based distillation mechanism:** trasforma esperienze diverse in **skill strutturate**
+2. **SKILL BANK (hierarchical skill library):** libreria di skills organizzata gerarchicamente
+3. **Adaptive retrieval strategy:** per euristiche generali e task-specific
+4. **Recursive evolution mechanism:** la skill library co-evolve con la policy dell'agente durante RL
+
+### Risultati
+
+- **ALFWorld:** SOTA, convergenza piu' rapida e success rate superiore vs vanilla GRPO e memory-augmented RL
+- **WebShop:** SOTA
+- **7 search-augmented tasks:** outperform strong baselines di **>15.3%**
+- Robustness mantenuta con l'aumentare della complessita' del task
+- Riduzione significativa del token footprint con miglioramento del reasoning utility
+
+## Claim chiave
+
+- Le raw trajectories non sono il formato giusto per l'apprendimento agentico; le skills estratte (alta compressione, behavioral patterns) lo sono [[wiki/sources/arxiv-2604.27707.md]]
+- L'evoluzione ricorsiva della skill library insieme alla policy e' chiave per il lifelong improvement
+- La distillazione da esperienza (sia successo che fallimento, unlike sistemi che scartano i fallimenti) arricchisce lo spazio delle skills
+
+## Posizione nelvault
+
+Contributo all'intersezione tra memory/experience e RL per agent. Collega il tema "skills come memoria compressa" (Xu et al. 27707 spectrum) con implementazione RL concreta.

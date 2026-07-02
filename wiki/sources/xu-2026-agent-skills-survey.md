@@ -1,21 +1,56 @@
 ---
 type: source
-created: 2026-05-05
-updated: 2026-05-05
-tags: [llm-agents, skills, survey, skill-library, mcp, security, progressive-disclosure, agentskills]
+created: 2026-07-02
+updated: 2026-07-02
+tags: [agent-skills, skill-survey, mcp, progressive-disclosure, skill-security, computer-use-agents]
 source_path: raw/papers/arxiv-2602.12430.pdf
 ---
 
 # Agent Skills for LLMs: Architecture, Acquisition, Security, and the Path Forward
 
-Renjun Xu, Yang Yan (Zhejiang University), arXiv:2602.12430, 2026.
+**Autori:** Renjun Xu, Yang Yan (Zhejiang University)  
+**Data:** Febbraio 2026 | arXiv:2602.12430
 
-## Summary
+## Sintesi
 
-Prima survey dedicata esclusivamente al paradigma delle agent skills — pacchetti compostabili di istruzioni, codice e risorse che gli agenti caricano on-demand senza retraining. Il lavoro copre quattro assi: (i) fondamenti architetturali — specifica SKILL.md, progressive disclosure a tre livelli (metadata → instructions → resources), rapporto complementare con MCP ("skills = what to do, MCP = how to connect"); (ii) acquisizione di skill — RL con skill library (SAGE), scoperta autonoma (SEAgent), sintesi composizionale; (iii) deployment — stack CUA (Computer Use Agent), benchmark OSWorld e SWE-bench; (iv) sicurezza — il 26.1% delle skill contribuite dalla community contiene vulnerabilità, propone un Skill Trust and Lifecycle Governance Framework a quattro tier con permission model basato su provenienza. Identifica 7 sfide aperte: portabilità cross-platform, modelli di permission basati su capability, ecc. La specifica SKILL.md è diventata standard aperto (dic 2025), con 62K+ stelle GitHub in 4 mesi.
+Primo survey completo sul paradigma **agent skills**: pacchetti componibili di istruzioni, codice e risorse che gli agent caricano on-demand per estendere le loro capabilities senza retraining.
 
-## Key claims
+### Evoluzione storica
 
-- Le agent skills sono il layer di astrazione emergente che risolve la tensione tra modelli generalisti e procedura specializzata — una skill non è un tool (che esegue e ritorna) ma un pacchetto che modifica il contesto esecutivo dell'agente [[wiki/pages/skill-extraction-from-memory]]
-- Il progressive disclosure a tre livelli (metadata ~30 token, instructions 200-2K token, resources on-demand) è l'innovazione architetturale chiave che permette skill library grandi senza penalità di contesto
-- La governance della sicurezza richiede mappare provenienza → verifica gates → permessi graduati, dato che una frazione significativa delle skill community è vulnerabile
+1. **Prompt engineering (2022-2023):** istruzioni craftate, efimere e non modulari
+2. **Tool use / function calling (2023-2024):** API invocabili, ma atomiche; tools eseguono e ritornano non reshape l'understanding dell'agente
+3. **Skill engineering (2025-present):** bundle auto-contenuti con SKILL.md, script, documenti di riferimento, metadata
+
+### Quattro assi di analisi
+
+1. **Architectural foundations:** SKILL.md specification, progressive context loading, relazione tra skills e MCP (Model Context Protocol)
+2. **Skill acquisition:** RL con skill libraries (SAGE), autonomous discovery (SEAgent), compositional synthesis
+3. **Deployment at scale:** Computer-Use Agent stack, GUI grounding, benchmark su OSWorld e SWE-bench
+4. **Security:** **26.1% delle community skills contengono vulnerabilita'**. Proposta dello Skill Trust and Lifecycle Governance Framework (4-tier, gate-based permission model)
+
+### Contesto di mercato
+
+- Anthropic ha lanciato Agent Skills (ottobre 2025), open standard (dicembre 2025)
+- Repository anthropics/skills: **62,000+ GitHub stars** in 4 mesi
+- Partner skills da Atlassian, Figma, Canva, Stripe, Notion
+- MCP donato alla Linux Foundation's Agentic AI Foundation (dicembre 2025)
+
+### Sette open challenges
+
+1. Cross-platform skill portability
+2. Capability-based permission models
+3. Skill composition verification
+4. Runtime skill adaptation
+5. Skill quality at scale
+6. Multi-agent skill coordination
+7. Standardized evaluation
+
+## Claim chiave
+
+- Skills = "what to do", MCP = "how to connect": insieme definiscono lo stack agentic emergente [[wiki/pages/agent-skills]]
+- La sicurezza delle skills e' un problema reale e quantificabile (26.1% vulnerabili) [[wiki/sources/xu-2026-agent-skills-survey.md]]
+- Il paradigm shift da tools a skills e' paragonabile al passaggio da functions a objects nel software
+
+## Posizione nelvault
+
+Survey di riferimento sui agent skills. Fondamentale per comprendere il livello di astrazione "skill" che sta emergendo come standard de facto.
