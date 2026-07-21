@@ -21,6 +21,17 @@ Catalog of the vault. Updated on every write operation.
 ## Sources
 
 ### Memory Systems
+- [[wiki/sources/arxiv-2305.16291]] — VOYAGER: Embodied Agent con Skill Library in Minecraft (Wang et al. 2023)
+- [[wiki/sources/arxiv-2507.07957]] — MIRIX: Multi-Agent Multimodal Memory System (Wang & Chen 2025)
+- [[wiki/sources/arxiv-2507.21428]] — MemTool: Short-Term Memory per Dynamic Tool Calling (Lumer et al. 2025)
+- [[wiki/sources/arxiv-2601.01885]] — Agentic Memory (AgeMem): Unified LTM/STM via RL (Yu et al. 2026)
+- [[wiki/sources/arxiv-2601.20352]] — Memory Systems Survey: Comprehensive Overview (Du et al. 2026)
+- [[wiki/sources/arxiv-2602.05665]] — Graph Memory per LLM Agents (Yang et al. 2026)
+- [[wiki/sources/arxiv-2602.08004]] — Contextual Agentic Memory Systems (Xu et al. 2026)
+- [[wiki/sources/arxiv-2604.07798]] — LightMem: Lightweight Memory con SLMs (Zhang et al. 2026)
+- [[wiki/sources/arxiv-2604.22085]] — Memanto: Typed Semantic Memory IT-Based (Abtahi et al. 2026)
+- [[wiki/sources/arxiv-2604.23069]] — ContextWeaver: Dependency-Structured Memory (Wu et al. 2026)
+- [[wiki/sources/arxiv-2604.26622]] — OCR-Memory: Optical Context Retrieval (Li et al. 2026)
 - [[wiki/sources/wang-2025-mirix]] — MIRIX: Multi-Agent Memory System
 - [[wiki/sources/lumer-2025-memtool]] — MemTool: Short-Term Memory for Tool Calling
 - [[wiki/sources/huang-2026-ama]] — AMA: Adaptive Memory via Multi-Agent Collaboration
@@ -31,6 +42,9 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/li-2026-ocr-memory]] — OCR-Memory: Optical Context Retrieval
 
 ### Continual Learning & Experience
+- [[wiki/sources/arxiv-2508.15805]] — ALAS: Autonomous Self-Updating LLM Agent (Atreja 2025)
+- [[wiki/sources/arxiv-2511.20857]] — Evo-Memory: Test-Time Learning Benchmark (Wei et al. 2025)
+- [[wiki/sources/arxiv-2604.27003]] — Continual Learning via Memory Reuse (Hu et al. 2026)
 - [[wiki/sources/atreja-2025-alas]] — ALAS: Autonomous Learning Agent for Self-Updating
 - [[wiki/sources/wei-2026-evo-memory]] — Evo-Memory: Self-Evolving Memory Benchmark
 - [[wiki/sources/hu-2026-continual-learning-memory]] — Continual Learning via Memory Reuse
@@ -38,11 +52,15 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/actmem]] — ActMem: Memory Retrieval + Reasoning
 
 ### Forgetting & Governance
+- [[wiki/sources/arxiv-2604.12007]] — When to Forget: Memory Worth Signal (Simsek 2026)
+- [[wiki/sources/arxiv-2604.20300]] — FSFM: Biologically-Inspired Selective Forgetting (Gu et al. 2026)
+- [[wiki/sources/arxiv-2604.27283]] — RSCB-MC: Risk-Sensitive Bandits for Coding Agents (Iscan 2026)
 - [[wiki/sources/simsek-2026-when-to-forget]] — When to Forget: Memory Worth
 - [[wiki/sources/gu-2026-fsfm]] — FSFM: Selective Forgetting Framework
 - [[wiki/sources/iscan-2026-rscb-mc]] — RSCB-MC: Risk-Sensitive Memory Retrieval
 
 ### Critique & Theory
+- [[wiki/sources/arxiv-2604.27707]] — Contextual Agentic Memory is a Memo, Not True Memory (Xu et al. 2026)
 - [[wiki/sources/xu-2026-contextual-agentic-memory]] — Contextual Agentic Memory is a Memo
 
 ### Surveys
@@ -50,6 +68,11 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/yang-2026-graph-memory]] — Graph-based Agent Memory Survey
 
 ### Agent Skills — Foundations & Surveys
+- [[wiki/sources/arxiv-2504.06188]] — SkillFlow: Multi-Stage Skill Retrieval Pipeline (Li et al. 2026)
+- [[wiki/sources/arxiv-2602.08234]] — Agent Skills Analysis (Ling et al. 2026)
+- [[wiki/sources/arxiv-2602.12430]] — Agent Skills Survey (Xu et al. 2026)
+- [[wiki/sources/arxiv-2603.00026]] — LLM Agent Memory (TBD, Mar 2026)
+- [[wiki/sources/arxiv-2603.07670]] — LLM Agent Memory (TBD, Mar 2026)
 - [[wiki/sources/wang-2023-voyager]] — VOYAGER: Embodied Agent con Skill Library in Minecraft
 - [[wiki/sources/li-2026-skillflow]] — SkillFlow: Retrieval Multi-Stage per Agent Skills
 - [[wiki/sources/ling-2026-agent-skills-analysis]] — Analisi Empirica dell'Ecosistema Agent Skills
