@@ -1,4 +1,4 @@
-# CLAUDE.md — Second Brain Vault
+# CLAUDE.md — Second Brain Vault v2
 
 You maintain a personal knowledge vault for the user. The user curates
 sources and asks questions. You do the rest: reading, writing,
@@ -14,18 +14,20 @@ need to edit the wiki directly — that's your job.
 ## Vault structure
 
 ```
-inbox.md              URL queue — user adds URLs, you fetch them
+inbox.md              URL queue — user pastes URLs here, you queue them
 raw/                  Immutable sources. Never write here.
   papers/             PDFs
   web/<slug>/         Web articles converted to markdown
 wiki/                 Your domain
   pages/              All concepts, people, orgs, projects — one file each
-  sources/            One file per source in raw/, with summary
-  views/              Alternative representations: timelines, comparisons, charts, slides, posts
+  sources/            One file per source in raw/, with summary + ingested date
+  views/              Alternative representations: timelines, comparisons,
+                      charts, slides, posts, **weekly reviews**
+    weekly/           One file per week (Sat-Sat boundary)
   compass.md          Output of /reflect, rewritten each time
   hot.md              Where we left off, ~5-10 lines
-  index.md            Catalog of the whole wiki
-  log.md              Append-only log of operations
+  index.md            Catalog of the whole wiki + timeline table
+  log.md              Append-only log of operations (week-prefixed)
 conversations/        Transcripts saved with /save
 .lint/report.md       Latest lint output
 .claude/              Skills, commands, hooks (mechanisms, not content)
@@ -50,6 +52,20 @@ them, plus `compass.md`, `hot.md`, `index.md`, `log.md`.
 
 ---
 
+## Week boundary
+
+The vault uses a **custom week**: Saturday 13:00 → next Saturday 12:59.
+
+- Format: `YYYY-Www` where the week number aligns to this Sat-Sat cycle
+- In frontmatter and log entries, annotate as `2026-W30 (Sat-Sat)`
+- Weekly review runs every **Saturday at 13:00** via cron
+
+This means if you ingest something on Friday July 25 at 23:00, it belongs
+to the current week. If you ingest it Saturday July 26 at 13:01, it belongs
+to the next week.
+
+---
+
 ## Frontmatter
 
 Every file in `wiki/` has YAML frontmatter:
@@ -65,15 +81,35 @@ tags: [...]
 
 For `wiki/sources/`:
 ```yaml
+---
 source_path: raw/papers/name.pdf   # or raw/web/<slug>/index.md
+ingested: YYYY-Www (Sat-Sat)      # REQUIRED: week of ingestion
+---
 ```
+
+For `wiki/pages/`:
+(standard frontmatter above; track changes via `updated` field)
 
 For `wiki/views/`:
 ```yaml
-kind: timeline | comparison | concept-map | chart | slides | report | post
-shareable: false              # true only when produced to share externally
+---
+kind: timeline | comparison | concept-map | chart | slides | report | post | weekly
+shareable: false                  # true only when produced to share externally
 based_on:
   - [[wiki/pages/...]]
+  - [[wiki/sources/...]]
+---
+```
+
+For `wiki/views/weekly/<week>.md`:
+```yaml
+---
+kind: weekly
+week: YYYY-Www (Sat-Sat)
+shareable: false
+period_start: YYYY-MM-DD
+period_end: YYYY-MM-DD
+---
 ```
 
 When `shareable: true`, treat the view as frozen — don't silently
@@ -81,18 +117,33 @@ update it. When `shareable: false` (default), the view evolves.
 
 ---
 
-## Seven operations
+## Inbox: paste-to-queue
+
+The user can paste any URL in chat and say "add to inbox" (or just paste
+it with context). You append it to `inbox.md` under "To process" with this format:
+
+```markdown
+- https://example.com/paper  <!-- brief description -->
+```
+
+No fetch happens on paste. Fetch + ingest only when the user explicitly
+says "process inbox", "ingest", or "fetch".
+
+---
+
+## Eight operations
 
 ### FETCH
 User says "process inbox" → run `inbox-fetcher` skill, which pulls
-URLs from `inbox.md` and writes to `raw/web/<slug>/`. Mark URLs done.
+URLs from `inbox.md` and writes to `raw/web/`. Mark URLs done.
 
 ### INGEST
 User says "ingest X" → read the new `raw/` content, write or update:
-- `wiki/sources/<slug>.md` with summary and links
+- `wiki/sources/<slug>.md` with summary, links, and **`ingested` field**
 - any `wiki/pages/...` that should know about it
 - optionally propose new pages for concepts that don't exist yet
 Always ask before creating >3 new pages in one ingest.
+Update `index.md` timeline row for the current week.
 
 ### FORGET
 User says "forget X", "remove source X", or runs `/forget <source>` →
@@ -137,6 +188,24 @@ or runs `/view` → build a view in `wiki/views/`. Ask if it's for
 external sharing only when the `kind` suggests it (slides, report, post).
 See `.claude/skills/view-builder/SKILL.md`.
 
+### WEEKLY REVIEW
+Runs automatically every **Saturday at 13:00** via cron. Can also be
+triggered manually with "weekly review" or "/weekly".
+
+Generates or updates `wiki/views/weekly/<YYYY-Www>.md` with:
+
+1. **Sources ingested this week** — list with one-line summary, links
+   to both source page and raw file. Grouped by topic cluster.
+2. **Pages touched this week** — what changed, what was created,
+   what connections emerged between old and new content.
+3. **Connections discovered** — new sources that shed light on existing
+   pages, contradictions found, patterns across topics.
+4. **Open threads** — carried over from hot.md, plus anything new.
+5. **Metrics** — counts: N sources, M pages modified, K new links created.
+
+The weekly view updates `index.md` timeline row for the week.
+It also refreshes `hot.md` with current state.
+
 ### REFLECT
 User says "reflect on my vault" or runs `/reflect` → write
 `wiki/compass.md` with three sections in prose:
@@ -151,8 +220,8 @@ views that could expand pages, mention them there too.
 ### LINT
 User says "lint" or auto-trigger after 5 ingests / 7 days → run
 `vault-linter` skill. Deterministic checks only (dead links, missing
-frontmatter, naming consistency, view staleness). Output to
-`.lint/report.md`. Never auto-fix.
+frontmatter, naming consistency, view staleness, missing `ingested`
+fields on sources). Output to `.lint/report.md`. Never auto-fix.
 
 ---
 
@@ -170,12 +239,13 @@ When invoked with `--unattended`, `VAULT_UNATTENDED=1`, or the word
 "unattended" in the prompt:
 
 You CAN: read anything, run LINT, run REFLECT, update
-`wiki/compass.md`, `hot.md`, `log.md`, `.lint/report.md`.
+`wiki/compass.md`, `hot.md`, `log.md`, `.lint/report.md`,
+generate WEEKLY REVIEW.
 
-You CANNOT: ingest, forget, create views, modify `wiki/pages/`,
-delete anything from `raw/` or `wiki/sources/`, apply any structural
-change. Proposals stay as proposals until the user confirms
-interactively.
+You CANNOT: ingest, forget, create non-weekly views, modify
+`wiki/pages/`, delete anything from `raw/` or `wiki/sources/`,
+apply any structural change. Proposals stay as proposals until the
+user confirms interactively.
 
 ---
 
@@ -185,9 +255,12 @@ interactively.
 - `/view [kind] [topic]` — build a view (see VIEW above)
 - `/reflect` — produce `compass.md` (see REFLECT above)
 - `/forget <source>` — cascade-remove a source (see FORGET above)
+- `/weekly` — generate/update weekly review (see WEEKLY REVIEW above)
 
 Other requests are natural language. No command exists for "find more
 URLs on topic X" — just ask.
+
+To add a URL to inbox from chat, just paste it or say "inbox: <url>".
 
 ---
 
@@ -199,5 +272,7 @@ URLs on topic X" — just ask.
 - If you're about to create >3 pages or touch >15 files, stop and ask.
 - If the user seems to be working against the grain of the vault,
   point it out gently.
+- Every source MUST have an `ingested` field. Every ingest MUST
+  update the timeline table in `index.md`.
 
-Keep the vault honest. Keep it small. Keep it useful.
+Keep the vault honest. Keep it small. Keep it useful. Keep it timely.
