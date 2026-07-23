@@ -44,7 +44,7 @@ Catalog of the vault. Updated on every write operation.
 
 ## Views
 
-<!-- Timelines, comparisons, weekly reviews, slides, etc. -->
+- [[wiki/views/comparison-graph-vs-loop]] — Tutto grafo vs tutto loop: 4 tensioni irrisolte (routing, visibilità, design vs search, bitter lesson)
 
 ## Timeline
 
