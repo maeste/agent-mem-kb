@@ -1,19 +1,17 @@
----
-type: page
-created: 2026-07-22
-updated: 2026-07-22
-tags: [hot-cache]
----
-
 # Hot Cache
 
-Short rolling memory of recent sessions. Rewritten at session end.
-Read by the agent at session start.
+Ultimo aggiornamento: 2026-07-23
 
-## Current session
+## Cosa abbiamo coperto
+- Batch iniziale completo: 11 sources ingestate (6 web + 5 arxiv), 2 pagine create (ai-agents, frontier-llm-models)
+- Temi forti: harness engineering (Zhang RLM, MSCE memory-skill), software factory pattern (Osmani dark/light), failure analysis (OAT unsupervised, CLI failure as process)
+- Model frontier: Gemini 3.6 Flash/Lite/Cyber annunciati; Kimi K3 2.8T MoE (<2% active); routing diversity analysis (DeepMind)
 
-<!-- Filled after each meaningful session -->
+## Aperto
+- Qwen Image 3.0 fallito al fetch (JS-rendered): da riprovare con Playwright
+- La pagina ai-agents e densa: potrebbe splittare in sub-pagine (harnesses, failure-analysis, memory-skills) se cresce
+- Manca una view comparativa tra approcci harness (RLM vs Meta-Harness vs AEVO vs vanilla)
 
-## Open threads
-
-<!-- What's pending, what to pick up next -->
+## Prossimo passo
+- Valutare se creare pagine dedicate per: (a) compositional generalization, (b) MoE scaling laws, (c) agentic security incidents
+- Weekly review sabato 26/7 (prima della vault)
