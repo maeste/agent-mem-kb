@@ -11,7 +11,12 @@ Catalog of the vault. Updated on every write operation.
 
 ## Pages
 
-<!-- One line per page: [[wiki/pages/name]] — description -->
+- [[wiki/pages/harness-design]] — Harness come ambiente del loop; tre visioni (Osmani, Zhang, Wang); tensione struttura vs flessibilità
+- [[wiki/pages/comprehension-debt]] — Divario tra codice esistente e codice capito; dark vs lit factory; back pressure
+- [[wiki/pages/compositional-generalization]] — RLM, locally in-distribution, equivalence classes; generalizzazione via harness
+- [[wiki/pages/moe-sparsity]] — Trend sparsity nei modelli aperti; active vs total params; compute-to-storage shift
+- [[wiki/pages/agent-failure-analysis]] — Failure come processo temporale; errori epistemici; OAT attribution
+- [[wiki/pages/memory-skills-co-evolution]] — Memoria attiva vs passiva; gerarchia L1/L2/L3; skill crystallization
 
 ## Sources
 
@@ -45,7 +50,7 @@ Catalog of the vault. Updated on every write operation.
 
 | Week | Sources Ingested | Pages Touched | Notes |
 |------|-----------------|---------------|-------|
-| W30/2026 (Jul 25–Aug 1) | 12 | 0 | Vault v2 reset + bulk ingest: 3 web articles, 5 arXiv papers, 4 prior sources |
+| W30/2026 (Jul 25–Aug 1) | 12 | 6 | Vault v2 reset + bulk ingest + 6 conceptual pages created |
 
 ## Reflections
 
