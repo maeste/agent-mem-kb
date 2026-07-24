@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-22
-updated: 2026-07-23
+updated: 2026-07-24
 tags: [hot-cache]
 ---
 
@@ -12,6 +12,8 @@ Read by the agent at session start.
 
 ## Current session
 
+2026-07-24: Cron ingest. Fetched Pragmatic Engineer article on code review load bottleneck. Created source page + linked to comprehension-debt page (industrial evidence). 13 sources total now.
+
 2026-07-23: Completed bulk ingest (12 sources) + 6 conceptual pages. Vault now has real structure: sources → pages → cross-references. Tailscale installed (userspace, no sudo) + Quartz UI online on tailnet. 6 pages: harness-design, comprehension-debt, compositional-generalization, moe-sparsity, agent-failure-analysis, memory-skills-co-evolution.
 
 ## Open threads
@@ -20,4 +22,3 @@ Read by the agent at session start.
 - Weekly review W30 scheduled Saturday 13:00 (first run)
 - Inbox empty, ready for new URLs
 - Pages to expand: antirez-news-170, google-gemini-3-6-flash, openai-hf-security-incident, qwen-image-3 have no page references yet
-- git commit + PR pending for pages

@@ -5,10 +5,11 @@ the URLs into `raw/web/`. Check items after fetching.
 
 ## To process
 
-
 <!-- Paste URLs here. Agent will fetch + ingest on command. -->
 
 ## Done
+
+- https://newsletter.pragmaticengineer.com/p/the-pulse-new-trend-concern-about <!-- Pragmatic Engineer: code review load increase trend -->
 
 - https://antirez.com/news/170 <!-- antirez.com news #170 -->
 - https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/ <!-- Google: Gemini 3.6 Flash, 3.5 Flash Lite, 3.5 Flash Cyber -->

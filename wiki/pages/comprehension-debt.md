@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 tags: [comprehension-debt, dark-factory, verification, agentic, concept]
 ---
 
@@ -20,6 +20,10 @@ La regola cardine: puoi delegare a un loop solo tanta autonomia quanta ne puoi v
 ## Remediation
 
 La **lit factory** mantiene le luci accese dove serve giudizio umano. Non aggiunge review alla fine: sposta il giudizio a monte, su design e architettura, prima che l'agente inizi a generare. Il prezzo è banale: un'ora di design upfront risparmia ore di review su migliaia di righe generate.
+
+## Evidenza Industriale
+
+Orosz ([[wiki/sources/pragmatic-engineer-code-review-load]]) documenta il sintomo dal lato dell'industria: dal Q1 2026, con Opus 4.5 e GPT 5.4 che generano più codice e migliore, il collo di bottiglia si è spostato dalla generazione alla review. I reviewer mantengono il rigore si sentono sopraffatti da "AI slop PRs", mentre molti altri approvano senza leggere se l'AI review non segnala nulla. Boom di tool (CodeRabbit, Uber Code Inbox, Cloudflare AI Code Reviewer) e in-house solutions, ma le soluzioni sono ancora sperimentali. La discussione sul "verificare invece di review-are" (testing, fuzz, formal methods, observability) rimane aperta: quanto è "abbastanza" approfondito?
 
 ## Loop che meritano il dark
 

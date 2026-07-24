@@ -20,3 +20,5 @@ Week runs Saturday 13:00 → next Saturday 12:59 (custom week boundary).
 ## [W30/2026] 2026-07-23 | ingest | Created 6 conceptual pages: harness-design, comprehension-debt, compositional-generalization, moe-sparsity, agent-failure-analysis, memory-skills-co-evolution. Each page cross-references 2-4 sources. Graph now has real nodes and edges.
 
 ## [W30/2026] 2026-07-23 | view | Created comparison view: comparison-graph-vs-loop. Maps all-grafo vs all-loop across 8 dimensions, identifies 4 unresolved tensions (routing vs observation, visibility vs prevention, design vs search, structure vs bitter lesson). Based on 4 pages + 5 sources.
+
+## [W30/2026] 2026-07-24 | ingest | Fetched + ingested 1 source: pragmatic-engineer-code-review-load (Orosz on the code review bottleneck shift since Q1 2026). Updated comprehension-debt page with industrial evidence section. Index updated.

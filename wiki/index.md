@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-22
-updated: 2026-07-23
+updated: 2026-07-24
 tags: [index]
 ---
 
@@ -22,6 +22,7 @@ Catalog of the vault. Updated on every write operation.
 
 ### Agentic Engineering & Harness Design
 - [[wiki/sources/addy-osmani-software-factories]] — Software factories: loops, harnesses, dark vs lit, comprehension debt, back pressure
+- [[wiki/sources/pragmatic-engineer-code-review-load]] — Code review bottleneck: AI generation shifted load to review, tool boom, verification vs review
 - [[wiki/sources/alex-zhang-harness-2026]] — Harnesses as compositional generalizers: RLM, locally in-distribution, equivalence classes
 - [[wiki/sources/arxiv-2607-12227-harness-evaluation]] — Rethinking harness evolution evaluation: doesn't beat test-time scaling, limited generalization
 - [[wiki/sources/arxiv-2607-16621-msce-memory-skills]] — Memory-to-skills co-evolution: L1/L2/L3 memory hierarchy, skill crystallization
@@ -50,7 +51,7 @@ Catalog of the vault. Updated on every write operation.
 
 | Week | Sources Ingested | Pages Touched | Notes |
 |------|-----------------|---------------|-------|
-| W30/2026 (Jul 25–Aug 1) | 12 | 6 | Vault v2 reset + bulk ingest + 6 conceptual pages created |
+| W30/2026 (Jul 25–Aug 1) | 13 | 6 | Vault v2 reset + bulk ingest + 6 conceptual pages created. +1 source (code review load) Jul 24. |
 
 ## Reflections
 
