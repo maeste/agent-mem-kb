@@ -5,7 +5,6 @@ the URLs into `raw/web/`. Check items after fetching.
 
 ## To process
 
-- https://x.com/i/status/2079976006644072796 ⚠ walled domain (x.com) — try playwright <!-- X/Twitter post -->
 
 <!-- Paste URLs here. Agent will fetch + ingest on command. -->
 
@@ -26,3 +25,4 @@ the URLs into `raw/web/`. Check items after fetching.
 - https://arxiv.org/pdf/2607.09197 <!-- arXiv 2607.09197 -->
 - https://arxiv.org/pdf/2607.12747 <!-- arXiv 2607.12747 -->
 - https://arxiv.org/pdf/2607.09510 <!-- arXiv 2607.09510 -->
+- https://x.com/Vtrivedy10/status/2079976006644072796 → `raw/web/Vtrivedy10-2079976006644072796` (2026-07-25) <!-- X/Twitter: Vtrivedy10 (LangChain) on eval-driven agent dev -->
