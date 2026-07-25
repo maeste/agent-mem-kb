@@ -22,3 +22,5 @@ Week runs Saturday 13:00 → next Saturday 12:59 (custom week boundary).
 ## [W30/2026] 2026-07-23 | view | Created comparison view: comparison-graph-vs-loop. Maps all-grafo vs all-loop across 8 dimensions, identifies 4 unresolved tensions (routing vs observation, visibility vs prevention, design vs search, structure vs bitter lesson). Based on 4 pages + 5 sources.
 
 ## [W30/2026] 2026-07-24 | ingest | Fetched + ingested 1 source: pragmatic-engineer-code-review-load (Orosz on the code review bottleneck shift since Q1 2026). Updated comprehension-debt page with industrial evidence section. Index updated.
+
+## [W30/2026] 2026-07-25 | ingest | Cron run. Fetched 2 URLs via inbox-fetcher skill (web_extract backend unavailable, used script directly): arxiv-2607.13285 (Harness Handbook, PDF) + anthropic-claude-opus-5 (HTML). Created 2 source pages. Updated harness-design page with 4th perspective (behavior localization). Index + timeline updated. X.com URL remains walled (needs interactive Playwright).
