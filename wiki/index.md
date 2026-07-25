@@ -2,7 +2,7 @@
 type: page
 created: 2026-07-22
 updated: 2026-07-25
-tags: [index]
+tags: [index, weekly-review-W30]
 ---
 
 # Index
@@ -50,12 +50,13 @@ Catalog of the vault. Updated on every write operation.
 ## Views
 
 - [[wiki/views/comparison-graph-vs-loop]] — Tutto grafo vs tutto loop: 4 tensioni irrisolte (routing, visibilità, design vs search, bitter lesson)
+- [[wiki/views/weekly/2026-W30]] — Weekly review W30: 15 fonti, 6 pagine, harness come fulcro convergente
 
 ## Timeline
 
 | Week | Sources Ingested | Pages Touched | Notes |
 |------|-----------------|---------------|-------|
-| W30/2026 (Jul 25–Aug 1) | 15 | 6 | Vault v2 reset + bulk ingest + 6 conceptual pages created. +1 source (code review load) Jul 24. +2 sources (Harness Handbook, Claude Opus 5) Jul 25 via cron. |
+| W30/2026 (Jul 18–25) | 15 | 6 | Vault v2 reset + bulk ingest (12 sources Jul 23) + 6 conceptual pages + 1 comparison view. +1 source Jul 24 (code review load). +2 sources Jul 25 (Harness Handbook, Claude Opus 5). Weekly review generated. |
 
 ## Reflections
 
