@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-31
 tags: [moe, sparsity, inference, scaling, model-architecture, concept]
 ---
 
@@ -18,7 +18,10 @@ Dati da Bajwa ([[wiki/sources/akash-bajwa-sparse-by-design]]):
 | Mixtral | ~46B | ~13B | ~28% |
 | Kimi K2/K2.5/K2.6 | 1T | 32B | ~3% |
 | Kimi K3 | 2.8T | 16B | <2% |
+| Inkling-Small | 276B | 12B | ~4.4% |
 | GLM-5.2 | meno sparse di V4-Pro | - | - |
+
+Inkling-Small ([[wiki/sources/thinking-machines-inkling-small]], Thinking Machines Lab, Jul 2026) si colloca nel range 2-5%: meno estremo di K3 ma più efficiente di Mixtral. Raggiunge prestazioni comparabili al modello maggiore Inkling (41B/975B, ~4.2% attivi) a un quarto della dimensione, con reasoning effort controllabile come grado di libertà.
 
 Moonshot ha rilasciato K2, K2.5, K2.6 in 9 mesi con identico scheletro (1T/32B): **zero crescita nei parametri attivi**.
 

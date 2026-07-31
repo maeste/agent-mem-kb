@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-22
-updated: 2026-07-23
+updated: 2026-07-31
 tags: [log]
 ---
 
@@ -22,3 +22,5 @@ Week runs Saturday 13:00 → next Saturday 12:59 (custom week boundary).
 ## [W30/2026] 2026-07-23 | view | Created comparison view: comparison-graph-vs-loop. Maps all-grafo vs all-loop across 8 dimensions, identifies 4 unresolved tensions (routing vs observation, visibility vs prevention, design vs search, structure vs bitter lesson). Based on 4 pages + 5 sources.
 
 ## [W30/2026] 2026-07-24 | ingest | Fetched + ingested 1 source: pragmatic-engineer-code-review-load (Orosz on the code review bottleneck shift since Q1 2026). Updated comprehension-debt page with industrial evidence section. Index updated.
+
+## [W30/2026] 2026-07-31 | ingest | Cron daily fetch + ingest. Fetched 1 source: thinking-machines-inkling-small (Inkling-Small MoE 276B/12B, Thinking Machines Lab Jul 30 2026). Created source page + updated moe-sparsity page with new data point (12B/276B, ~4.4% attivi, reasoning effort controllabile). Index updated (W30 now 14 sources / 7 pages touched). Inbox empty again.
