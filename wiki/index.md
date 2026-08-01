@@ -61,12 +61,14 @@ Catalog of the vault. Updated on every write operation.
 ## Views
 
 - [[wiki/views/comparison-graph-vs-loop]] — Tutto grafo vs tutto loop: 4 tensioni irrisolte (routing, visibilità, design vs search, bitter lesson)
+- [[wiki/views/weekly/2026-W31]] — Weekly review W31: 24 sources, 6 pages, harness come variabile misurata, WHAT vs HOW, memoria 3 paradigmi
 
 ## Timeline
 
 | Week | Sources Ingested | Pages Touched | Notes |
 |------|-----------------|---------------|-------|
-| W30/2026 (Jul 25–Aug 1) | 24 | 11 | Vault v2 reset + bulk ingest + 6 conceptual pages. +1 source (code review load) Jul 24. +1 source (Inkling-Small) Jul 31. +6 sources (Gemini Robotics ER 2, GPT-5.6 pricing, ARC-AGI-3 harness, Claude 5 context eng, Harness Handbook, PRO-LONG) Aug 1. +4 sources (Agent Behavior, Miessler harness question, Kaitchup agentic two scales, DeepSeek V4 Flash) Aug 1 manual. harness-design (+WHAT/HOW cornice), moe-sparsity (+Looped Transformer, +DeepSeek V4) pages updated. |
+| W30/2026 (Jul 22–Aug 1) | 24 | 6 created + 6 modified | Vault v2 reset + bulk ingest + 6 conceptual pages. Crescita incremental fino al 1 ago. harness-design cresciuta da 3 a 5 visioni + cornice WHAT/HOW. Comparison view creata 23 lug. Weekly review W31 generata 1 ago. |
+| W31/2026 (Aug 1→) | 0 | 0 | Settimana appena iniziata. |
 
 ## Reflections
 
