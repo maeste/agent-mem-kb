@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-23
-updated: 2026-07-31
+updated: 2026-08-01
 tags: [moe, sparsity, inference, scaling, model-architecture, concept]
 ---
 
@@ -42,3 +42,13 @@ La sparsity degli expert riduce i weight-byte per token. La compressione attenti
 ## Bottleneck: routing
 
 I router attuali distribuiscono i token uniformemente, sconfiggendo il tiering hot/cold a scale. Routing con locality deliberata potrebbe rendere il tiering viable anche ad alto batch.
+
+## Alternativa: Looped Transformer (sparsity temporale)
+
+Nanbeige4.2-3B ([[wiki/sources/kaitchup-agentic-two-scales]]) usa 22 layer fisici eseguiti due volte (stessi pesi): profondità computazionale ~44 layer senza almacenare 44 layer indipendenti. Invece di sparsity spaziale (expert routing), è **sparsity temporale**: stessa compute ripetuta sullo stesso set di pesi. Riduce weight memory ma non inference compute. KV-cache alta (~176 KiB/token, 8 KV heads). L'agentic capability a 3B dense dimostra che l'architettura conta più della scala assoluta.
+
+Laguna S 2.1 (118B/8B MoE, 256 expert top-10 + 1 shared) per coding long-horizon: conferma il trend MoE ma con feedback community mixed sui benchmark (pool harness non open, presunto hidden advisor feature).
+
+## DeepSeek V4 Flash
+
+V4-Flash a $0.14/$0.28 per 1M token (cache miss/hit $0.0028), context 1M, max output 384K ([[wiki/sources/deepseek-v4-flash-api]]). Posizionamento ultra-competitivo per workload agentic. V4-Pro mantiene compressione KV cache (~10% predecessore a 1M context).

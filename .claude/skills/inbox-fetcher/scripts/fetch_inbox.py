@@ -76,7 +76,7 @@ USER_AGENT = (
     "+https://github.com/anthropic/skills)"
 )
 
-UNCHECKED_PATTERN = re.compile(r"^- \[ \] (https?://\S+)\s*$")
+UNCHECKED_PATTERN = re.compile(r"^- \[ \] (https?://\S+)")
 IMG_PATTERN = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 
 # YouTube domains
