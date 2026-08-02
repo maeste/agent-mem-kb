@@ -91,12 +91,16 @@ YOUTUBE_DOMAINS = frozenset({
 YOUTUBE_TRANSCRIPT_SCRIPT = Path.home() / ".hermes" / "skills" / "media" / "youtube-content" / "scripts" / "fetch_transcript.py"
 
 # Domains known to block plain HTTP fetchers (auth walls, aggressive
-# anti-bot, or JS-only rendering). Skip trafilatura entirely and mark
-# the URL for agent-driven Playwright MCP fallback.
-WALLED_DOMAINS = frozenset({
+# anti-bot, or JS-only rendering). X/Twitter is handled by OpenCLI
+# (fetch_x_thread) instead of being walled. Others are skipped upfront
+# and marked for agent-driven Playwright MCP fallback.
+OPENCLI_DOMAINS = frozenset({
     "x.com",
     "twitter.com",
     "mobile.twitter.com",
+})
+
+WALLED_DOMAINS = frozenset({
     "threads.net",
     "linkedin.com",
     "www.linkedin.com",
@@ -115,13 +119,25 @@ PLAYWRIGHT_HINT = "try playwright"
 def find_unchecked_entries(inbox_text: str) -> list[InboxEntry]:
     """Parse inbox.md and return list of unchecked URL entries.
     
+    Only processes URLs under a '## To process' section.
     HTML comments (<!-- ... -->) are stripped before parsing so example
     URLs inside comments are not picked up.
     """
     # Strip HTML comments (including multi-line) before parsing
     stripped = re.sub(r"<!--.*?-->", "", inbox_text, flags=re.DOTALL)
+    # After stripping, some lines may have trailing whitespace from comment removal
     entries = []
+    in_to_process = False
     for i, line in enumerate(stripped.splitlines()):
+        # Track sections
+        section_match = re.match(r"^##\s+(.+)$", line)
+        if section_match:
+            section_name = section_match.group(1).strip().lower()
+            in_to_process = section_name in ("to process",)
+            continue
+        # Only match URLs in the "To process" section
+        if not in_to_process:
+            continue
         match = UNCHECKED_PATTERN.match(line)
         if match:
             entries.append(InboxEntry(
@@ -219,6 +235,119 @@ def is_walled(url: str) -> bool:
     """Preflight check: URL host is in the walled-domain list."""
     host = urlparse(url).netloc.lower()
     return host in WALLED_DOMAINS
+
+
+def is_opencli(url: str) -> bool:
+    """Check: URL host is an OpenCLI-backed domain (X/Twitter)."""
+    host = urlparse(url).netloc.lower()
+    return host in OPENCLI_DOMAINS
+
+
+def extract_tweet_id(url: str) -> str | None:
+    """Extract the tweet ID from an X/Twitter URL."""
+    # Matches: x.com/user/status/123, twitter.com/user/status/123,
+    # x.com/i/status/123
+    m = re.search(r"/status/(\d+)", url)
+    if m:
+        return m.group(1)
+    # Bare ID: x.com/i/123
+    m = re.match(r"https?://(?:x|twitter)\.com/i/(\d+)", url)
+    if m:
+        return m.group(1)
+    return None
+
+
+def fetch_x_thread(url: str, web_dir: Path) -> FetchResult:
+    """Fetch an X/Twitter thread via OpenCLI and save as markdown."""
+    import json
+    import subprocess
+
+    tweet_id = extract_tweet_id(url)
+    if not tweet_id:
+        return FetchResult(url=url, ok=False, kind="failed",
+                           reason="could not extract tweet ID from URL")
+
+    try:
+        result = subprocess.run(
+            ["opencli", "twitter", "thread", url],
+            capture_output=True, text=True, timeout=30,
+        )
+    except subprocess.TimeoutExpired:
+        return FetchResult(url=url, ok=False, kind="failed",
+                           reason="opencli timeout (30s)")
+    except FileNotFoundError:
+        return FetchResult(url=url, ok=False, kind="failed",
+                           reason="opencli not found in PATH")
+    except Exception as e:
+        return FetchResult(url=url, ok=False, kind="failed",
+                           reason=f"opencli error: {e}")
+
+    if result.returncode != 0 or not result.stdout.strip():
+        return FetchResult(url=url, ok=False, kind="failed",
+                           reason=f"opencli returned empty or error: {result.stderr[:200]}")
+
+    # OpenCLI returns YAML. Parse it.
+    raw = result.stdout.strip()
+
+    # Try YAML parse for structured data, fallback to raw text
+    try:
+        import yaml
+        docs = list(yaml.safe_load_all(raw))
+        # OpenCLI returns a single YAML doc that is a list of tweet objects
+        if docs and isinstance(docs[0], list):
+            tweet_list = docs[0]
+        else:
+            tweet_list = docs
+
+        if tweet_list and isinstance(tweet_list[0], dict):
+            author = tweet_list[0].get("author", "unknown")
+            text = tweet_list[0].get("text", "")
+            created_at = tweet_list[0].get("created_at", "")
+            likes = tweet_list[0].get("likes", 0)
+            retweets = tweet_list[0].get("retweets", 0)
+
+            # Build full thread markdown
+            md_parts = [text]
+            for reply in tweet_list[1:]:
+                if isinstance(reply, dict):
+                    r_author = reply.get("author", "unknown")
+                    r_text = reply.get("text", "")
+                    md_parts.append(f"\n\n---\n\n**@{r_author}** (reply):\n\n{r_text}")
+        else:
+            raise ValueError("unexpected YAML structure")
+    except Exception:
+        # Fallback: use raw output
+        author = "unknown"
+        created_at = ""
+        likes = 0
+        retweets = 0
+        md_parts = [raw]
+
+    body = "\n".join(md_parts)
+    slug = f"{author}-{tweet_id}"
+
+    out_dir = web_dir / slug
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    frontmatter_lines = [
+        "---",
+        f"source_url: {url}",
+        f"title: @{author} — X thread {tweet_id}",
+        f"author: {author}",
+    ]
+    if created_at:
+        frontmatter_lines.append(f"published: {created_at}")
+    frontmatter_lines.append(f"likes: {likes}")
+    frontmatter_lines.append(f"retweets: {retweets}")
+    frontmatter_lines.append(f"fetched: {date.today().isoformat()}")
+    frontmatter_lines.append("fetched_via: opencli")
+    frontmatter_lines.append("---")
+    frontmatter = "\n".join(frontmatter_lines) + "\n\n"
+
+    md_content = f"# @{author} — X thread ({tweet_id})\n\n{body}\n"
+    (out_dir / "index.md").write_text(frontmatter + md_content, encoding="utf-8")
+
+    return FetchResult(url=url, ok=True, kind="html", out_path=out_dir)
 
 
 def rewrite_url_for_fetch(url: str) -> tuple[str, str | None]:
@@ -383,8 +512,8 @@ def update_inbox(
 ) -> str:
     """
     Rewrite inbox.md:
-    - successful URLs are moved under '## Processati'
-    - failed URLs stay unchecked with a ⚠ reason appended inline
+    - successful URLs are moved under '## Done'
+    - failed URLs stay with a ⚠ reason appended inline
     """
     lines = inbox_text.splitlines()
     today = date.today().isoformat()
@@ -392,43 +521,43 @@ def update_inbox(
     # Build result lookup by URL
     result_by_url = {r.url: r for r in results}
 
-    # Remove the processed unchecked lines; collect new "Processati" entries
-    new_processed_lines: list[str] = []
+    # Remove the processed unchecked lines; collect new "Done" entries
+    new_done_lines: list[str] = []
     out_lines: list[str] = []
 
     for line in lines:
         match = UNCHECKED_PATTERN.match(line)
         if not match:
-            out_lines.append(line)
-            continue
+            # Also try matching lines with HTML comments after the URL
+            comment_match = re.match(r"^- (?:\[ \] )?(https?://\S+)\s*<!--.*?-->\s*$", line)
+            if not comment_match:
+                out_lines.append(line)
+                continue
+            url = comment_match.group(1).strip()
+        else:
+            url = match.group(1).strip()
 
-        url = match.group(1).strip()
         if url not in result_by_url:
             out_lines.append(line)
             continue
 
         result = result_by_url[url]
-        if result.ok:
+        if result.ok and result.out_path:
             # vault-relative path for readability
-            rel = result.out_path
-            new_processed_lines.append(
-                f"- [x] {url} → `{rel}` ({today})"
+            try:
+                rel = result.out_path.relative_to(inbox_path.parent)
+            except ValueError:
+                rel = result.out_path
+            new_done_lines.append(
+                f"- {url} → `{rel}` ({today})"
             )
         else:
-            out_lines.append(f"- [ ] {url} ⚠ {result.reason}")
+            out_lines.append(f"- {url} ⚠ {result.reason}")
 
-    # Ensure "## Processati" section exists; append new entries there
+    # Append new entries to "## Done" section
     final_lines = list(out_lines)
-    if new_processed_lines:
-        if not any(l.strip() == "## Processati" for l in final_lines):
-            if final_lines and final_lines[-1].strip():
-                final_lines.append("")
-            final_lines.append("## Processati")
-            final_lines.append("")
-
-        # Find the section and append at the end of it (end of file is fine)
-        # Simple approach: append to the very end
-        final_lines.extend(new_processed_lines)
+    if new_done_lines:
+        final_lines.extend(new_done_lines)
 
     return "\n".join(final_lines) + ("\n" if inbox_text.endswith("\n") else "")
 
@@ -469,6 +598,8 @@ def process_vault(vault: Path, dry_run: bool = False) -> int:
             r = fetch_pdf(fetch_url, papers_dir, slug_override=slug_override)
         elif is_youtube_url(fetch_url):
             r = fetch_youtube(fetch_url, web_dir)
+        elif is_opencli(fetch_url):
+            r = fetch_x_thread(fetch_url, web_dir)
         elif is_walled(fetch_url):
             host = urlparse(fetch_url).netloc.lower()
             r = FetchResult(
