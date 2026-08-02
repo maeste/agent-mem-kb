@@ -9,7 +9,7 @@ tags: [harness, agentic, loop, architecture, concept]
 
 Il **harness** è il programma che sta tra l'ambiente esterno e il modello linguistico: decide come codificare lo stato, quali strumenti sono disponibili, cosa sopravvive tra le esecuzioni, e cosa definisce "fatto". Il loop è il comportamento; il harness è l'ambiente in cui quel comportamento gira.
 
-## Tre visioni complementari
+## Cinque visioni + una cornice unificante
 
 **Osmani** ([[wiki/sources/addy-osmani-software-factories]]) definisce il harness come "le pareti attorno al loop": sandbox, tool, memoria, gate di verifica. La qualità del harness determina quanto autonomia puoi delegare. Harness engineering da solo non basta: senza verifica umana (back pressure), si accumula [[wiki/pages/comprehension-debt|comprehension debt]].
 
@@ -29,6 +29,14 @@ Il **harness** è il programma che sta tra l'ambiente esterno e il modello lingu
 
 **Anthropic** ([[wiki/sources/anthropic-claude-5-context-engineering]]) ha rimosso oltre l'80% del system prompt di Claude Code per Opus 5/Fable 5 senza perdita sulle evals. Lo shift: da rules a judgement, da examples a interface design, da all-upfront a progressive disclosure, da manual memory a auto-memory. I modelli cresciuti rendono la micro-gestione controproducente; il system prompt è parte dell'harness e deve dimagrire con la capability del modello.
 
+## WHAT vs HOW: la chiave di lettura
+
+Miessler ([[wiki/sources/danielmiessler-harness-question]]) fornisce la cornice che risolve la tensione: l'harness è la somma di due metà che invecchiano in direzioni opposte. Il **HOW** (istruzioni operative, step-by-step) marcisce col Bitter Lesson: più smart il modello, più inutili le micro-istruzioni. Il **WHAT** (contesto, intent, identità, criteri di qualità) si apprezza: un modello più smart fa di più con quel contesto. I lab possono post-trainare il HOW nel modello, ma non possono post-trainare IL TUO contesto.
+
+Questo risolve direttamente la tensione ARC-AGI-3 vs Claude 5: retained reasoning preserva il **contenuto del pensiero** (WHAT), la rimozione delle regole alleggerisce i **vincoli operativi** (HOW). Entrambe le direzioni sono corrette perché operano su metà diverse.
+
+Agent Behavior ([[wiki/sources/agent-behavior]]) formalizza questo principio: `BEHAVIOR.md` cattura il WHAT (aspettative durature, failure modes per reviewer), mentre `AGENTS.md` gestisce il HOW (direttive runtime). Lo strato di intento sta sopra l'esecuzione.
+
 ## Tensione centrale
 
-Il harness deve essere abbastanza strutturato da rendere il comportamento dell'agente prevedibile e verificabile, ma abbastanza flessibile da non soffocare la generalizzazione. Osmani suggerisce **grafi** (state machine con edge condizionali) come via di mezzo tra loop liberi e workflow deterministici. Le nuove fonti complicano il quadro: l'evidenza ARC-AGI-3 (retained reasoning) suggerisce che più memoria cognitiva = meglio, mentre l'evoluzione di Claude Code (rimozione regole) suggerisce meno prescrizione = meglio. La risoluzione: distinguere tra **contenuto del pensiero** (da preservare) e **vincoli sul comportamento** (da alleggerire).
+Il harness deve essere abbastanza strutturato da rendere il comportamento dell'agente prevedibile e verificabile, ma abbastanza flessibile da non soffocare la generalizzazione. Osmani suggerisce **grafi** (state machine con edge condizionali) come via di mezzo tra loop liberi e workflow deterministici. La chiave WHAT/HOW di Miessler risolve la tensione ARC-AGI-3 vs Claude 5: preserva il contenuto del pensiero (WHAT), alleggerisci i vincoli operativi (HOW).

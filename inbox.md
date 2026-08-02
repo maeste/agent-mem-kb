@@ -37,4 +37,17 @@ the URLs into `raw/web/`. Check items after fetching.
 - https://arxiv.org/pdf/2607.09197 <!-- arXiv 2607.09197 -->
 - https://arxiv.org/pdf/2607.12747 <!-- arXiv 2607.12747 -->
 - https://arxiv.org/pdf/2607.09510 <!-- arXiv 2607.09510 -->
+- https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/?utm_source=tldrai <!-- Google DeepMind: Gemini Robotics ER 2 -->
+- https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/?utm_source=tldrai <!-- OpenAI: GPT-5.6 price-performance frontier -->
+- https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/?utm_source=tldrai <!-- OpenAI: two settings tripled ARC-AGI-3 scores -->
+- https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models?utm_source=tldrai <!-- Claude: new rules of context engineering for gen-5 models -->
+- https://arxiv.org/pdf/2607.13285 <!-- arXiv 2607.13285 -->
+- https://arxiv.org/pdf/2607.20064 <!-- arXiv 2607.20064 -->
+
+## Processati
+
+- [x] https://www.agentbehavior.dev/?utm_source=tldrai → `/home/maeste/knowledge-bases/agent-me-kb/raw/web/agent-behavior` (2026-08-01)
+- [x] https://danielmiessler.com/blog/the-answer-to-the-harness-question → `/home/maeste/knowledge-bases/agent-me-kb/raw/web/the-answer-to-the-harness-question` (2026-08-01)
+- [x] https://kaitchup.substack.com/p/agentic-ai-at-two-different-scales?utm_source=tldrai → `/home/maeste/knowledge-bases/agent-me-kb/raw/web/agentic-ai-at-two-different-scales-nanbeige4-2-3b-and-laguna-s2-1` (2026-08-01)
+- https://www.reddit.com/r/singularity/comments/1vbm5m8/deepseekv4flash_official_api_is_now_live_in/ <!-- Reddit: DeepSeek V4 Flash (post blocked, ingested from official docs) -->
 - https://x.com/Vtrivedy10/status/2079976006644072796 → `raw/web/Vtrivedy10-2079976006644072796` (2026-07-25) <!-- X/Twitter: Vtrivedy10 (LangChain) on eval-driven agent dev -->
