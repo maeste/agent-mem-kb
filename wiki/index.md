@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-22
-updated: 2026-07-26
+updated: 2026-07-31
 tags: [index, weekly-review-W30]
 ---
 
@@ -35,6 +35,7 @@ Catalog of the vault. Updated on every write operation.
 
 ### Model Scaling & Architecture
 - [[wiki/sources/akash-bajwa-sparse-by-design]] — MoE sparsity trend: Kimi K3, active vs total params, compute-to-storage shift
+- [[wiki/sources/thinking-machines-inkling-small]] — Inkling-Small: 276B/12B MoE open-weights, multimodal nativo, reasoning effort controllabile, 1M context
 - [[wiki/sources/google-gemini-3-6-flash]] — Gemini 3.6 Flash, 3.5 Flash Lite, 3.5 Flash Cyber
 
 ### Multimodal & Image Generation
@@ -56,7 +57,7 @@ Catalog of the vault. Updated on every write operation.
 
 | Week | Sources Ingested | Pages Touched | Notes |
 |------|-----------------|---------------|-------|
-| W30/2026 (Jul 18–25) | 15 | 6 | Vault v2 reset + bulk ingest (12 sources Jul 23) + 6 conceptual pages + 1 comparison view. +1 source Jul 24 (code review load). +2 sources Jul 25 (Harness Handbook, Claude Opus 5). Weekly review generated. |
+| W30/2026 (Jul 18–Aug 1) | 15 | 7 | Vault v2 reset + bulk ingest (12 sources Jul 23) + 6 conceptual pages + 1 comparison view. +1 source Jul 24 (code review load). +2 sources Jul 25 (Harness Handbook, Claude Opus 5). +1 source Jul 31 (Inkling-Small), moe-sparsity page updated. Weekly review W30 generated. |
 
 ## Reflections
 
