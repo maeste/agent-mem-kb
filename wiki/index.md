@@ -2,7 +2,7 @@
 type: page
 created: 2026-07-22
 updated: 2026-08-01
-tags: [index]
+tags: [index, weekly-review-W30, weekly-review-W31]
 ---
 
 # Index
@@ -58,16 +58,20 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/openai-hf-security-incident]] — OpenAI/Hugging Face model evaluation security incident
 - [[wiki/sources/antirez-news-170]] — antirez.com news #170
 
+### Model Releases
+- [[wiki/sources/anthropic-claude-opus-5]] — Claude Opus 5: near-Fable 5 intelligence at half cost; SOTA on Frontier-Bench, CursorBench, ARC-AGI 3; most aligned model to date
+
 ## Views
 
 - [[wiki/views/comparison-graph-vs-loop]] — Tutto grafo vs tutto loop: 4 tensioni irrisolte (routing, visibilità, design vs search, bitter lesson)
+- [[wiki/views/weekly/2026-W30]] — Weekly review W30: 15 fonti, 6 pagine, harness come fulcro convergente
 - [[wiki/views/weekly/2026-W31]] — Weekly review W31: 24 sources, 6 pages, harness come variabile misurata, WHAT vs HOW, memoria 3 paradigmi
 
 ## Timeline
 
 | Week | Sources Ingested | Pages Touched | Notes |
 |------|-----------------|---------------|-------|
-| W30/2026 (Jul 22–Aug 1) | 24 | 6 created + 6 modified | Vault v2 reset + bulk ingest + 6 conceptual pages. Crescita incremental fino al 1 ago. harness-design cresciuta da 3 a 5 visioni + cornice WHAT/HOW. Comparison view creata 23 lug. Weekly review W31 generata 1 ago. |
+| W30/2026 (Jul 22–Aug 1) | 24 | 6 created + 6 modified | Vault v2 reset + bulk ingest (12 sources Jul 23) + 6 conceptual pages + 1 comparison view. +1 source Jul 24 (code review load). +2 sources Jul 25 (Harness Handbook, Claude Opus 5). +1 source Jul 31 (Inkling-Small). +6 sources Aug 1 cron + 4 sources Aug 1 manual. harness-design cresciuta da 3 a 5 visioni + cornice WHAT/HOW. moe-sparsity (+Looped Transformer, +DeepSeek V4). Weekly reviews W30 + W31 generated. |
 | W31/2026 (Aug 1→) | 0 | 0 | Settimana appena iniziata. |
 
 ## Reflections
