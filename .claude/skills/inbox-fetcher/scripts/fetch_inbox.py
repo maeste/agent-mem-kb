@@ -79,6 +79,17 @@ USER_AGENT = (
 UNCHECKED_PATTERN = re.compile(r"^- (?:\[ \] )?(https?://\S+)\s*$")
 IMG_PATTERN = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 
+# YouTube domains
+YOUTUBE_DOMAINS = frozenset({
+    "youtube.com",
+    "www.youtube.com",
+    "youtu.be",
+    "m.youtube.com",
+})
+
+# Path to the youtube-content skill's transcript fetcher
+YOUTUBE_TRANSCRIPT_SCRIPT = Path.home() / ".hermes" / "skills" / "media" / "youtube-content" / "scripts" / "fetch_transcript.py"
+
 # Domains known to block plain HTTP fetchers (auth walls, aggressive
 # anti-bot, or JS-only rendering). X/Twitter is handled by OpenCLI
 # (fetch_x_thread) instead of being walled. Others are skipped upfront
@@ -140,6 +151,84 @@ def find_unchecked_entries(inbox_text: str) -> list[InboxEntry]:
 def is_pdf_url(url: str) -> bool:
     """Heuristic: URL path ends in .pdf."""
     return Path(urlparse(url).path).suffix.lower() == ".pdf"
+
+
+def is_youtube_url(url: str) -> bool:
+    """Check if URL is a YouTube video."""
+    host = urlparse(url).netloc.lower()
+    return host in YOUTUBE_DOMAINS
+
+
+def fetch_youtube(url: str, web_dir: Path) -> FetchResult:
+    """Fetch YouTube transcript and save as markdown."""
+    import json
+    import subprocess
+
+    if not YOUTUBE_TRANSCRIPT_SCRIPT.exists():
+        return FetchResult(url=url, ok=False, kind="failed",
+                           reason=f"youtube-content skill not found at {YOUTUBE_TRANSCRIPT_SCRIPT}")
+
+    try:
+        result = subprocess.run(
+            ["python3", str(YOUTUBE_TRANSCRIPT_SCRIPT), url, "--text-only"],
+            capture_output=True, text=True, timeout=30,
+        )
+        if result.returncode != 0:
+            err = result.stderr.strip() or result.stdout.strip()
+            return FetchResult(url=url, ok=False, kind="failed",
+                               reason=f"transcript fetch failed: {err}")
+    except subprocess.TimeoutExpired:
+        return FetchResult(url=url, ok=False, kind="failed",
+                           reason="transcript fetch timed out")
+    except Exception as e:
+        return FetchResult(url=url, ok=False, kind="failed",
+                           reason=f"transcript fetch error: {e}")
+
+    # Parse JSON output
+    data: dict | None = None
+    try:
+        parsed = json.loads(result.stdout)
+        if isinstance(parsed, dict):
+            data = parsed
+            if data.get("error"):
+                return FetchResult(url=url, ok=False, kind="failed",
+                                   reason=data["error"])
+            full_text = data.get("full_text", "").strip()
+            if not full_text:
+                return FetchResult(url=url, ok=False, kind="failed",
+                                   reason="transcript empty (likely disabled)")
+        else:
+            full_text = str(parsed).strip()
+    except json.JSONDecodeError:
+        # Script might output plain text
+        full_text = result.stdout.strip()
+
+    if not full_text:
+        return FetchResult(url=url, ok=False, kind="failed",
+                           reason="transcript output empty")
+
+    # Extract metadata if we have JSON
+    title = data.get("title", "") if data else ""
+    video_id = data.get("video_id", "") if data else ""
+
+    slug = slug_from(url, title or f"youtube-{video_id}")
+    out_dir = web_dir / slug
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    frontmatter_lines = [
+        "---",
+        f"source_url: {url}",
+        f"title: {yaml_escape(title) if title else 'YouTube Video'}",
+        f"video_id: {video_id}" if video_id else "",
+        f"fetched: {date.today().isoformat()}",
+        "---",
+    ]
+    frontmatter = "\n".join(filter(None, frontmatter_lines)) + "\n\n"
+
+    body = f"# {title or 'YouTube Video'}\n\n{full_text}\n"
+    (out_dir / "index.md").write_text(frontmatter + body, encoding="utf-8")
+
+    return FetchResult(url=url, ok=True, kind="youtube", out_path=out_dir)
 
 
 def is_walled(url: str) -> bool:
@@ -507,6 +596,8 @@ def process_vault(vault: Path, dry_run: bool = False) -> int:
 
         if is_pdf_url(fetch_url):
             r = fetch_pdf(fetch_url, papers_dir, slug_override=slug_override)
+        elif is_youtube_url(fetch_url):
+            r = fetch_youtube(fetch_url, web_dir)
         elif is_opencli(fetch_url):
             r = fetch_x_thread(fetch_url, web_dir)
         elif is_walled(fetch_url):
@@ -533,11 +624,14 @@ def process_vault(vault: Path, dry_run: bool = False) -> int:
     # Summary
     n_html = sum(1 for r in results if r.ok and r.kind == "html")
     n_pdf = sum(1 for r in results if r.ok and r.kind == "pdf")
+    n_yt = sum(1 for r in results if r.ok and r.kind == "youtube")
     n_fail = sum(1 for r in results if not r.ok)
     print()
     print(f"Processed {len(results)} URLs:")
     print(f"  ✓ {n_html} HTML article(s) → raw/web/")
     print(f"  ✓ {n_pdf} PDF(s) → raw/papers/")
+    if n_yt:
+        print(f"  ✓ {n_yt} YouTube transcript(s) → raw/web/")
     if n_fail:
         print(f"  ⚠ {n_fail} failed (see inbox.md for reasons)")
 
