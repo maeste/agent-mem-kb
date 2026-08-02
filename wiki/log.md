@@ -23,4 +23,8 @@ Week runs Saturday 13:00 → next Saturday 12:59 (custom week boundary).
 
 ## [W30/2026] 2026-07-24 | ingest | Fetched + ingested 1 source: pragmatic-engineer-code-review-load (Orosz on the code review bottleneck shift since Q1 2026). Updated comprehension-debt page with industrial evidence section. Index updated.
 
+## [W30/2026] 2026-07-25 | ingest | Cron run. Fetched 2 URLs via inbox-fetcher skill (web_extract backend unavailable, used script directly): arxiv-2607.13285 (Harness Handbook, PDF) + anthropic-claude-opus-5 (HTML). Created 2 source pages. Updated harness-design page with 4th perspective (behavior localization). Index + timeline updated. X.com URL remains walled (needs interactive Playwright).
+
+## [W30/2026] 2026-07-25 | weekly | First weekly review generated (2026-W30.md). 15 sources, 6 pages, 1 comparison view. Harness design identified as convergent fulcrum across 5 sources. 4 unresolved tensions mapped. 5 sources still without conceptual pages. Index + hot.md updated.
+
 ## [W30/2026] 2026-07-31 | ingest | Cron daily fetch + ingest. Fetched 1 source: thinking-machines-inkling-small (Inkling-Small MoE 276B/12B, Thinking Machines Lab Jul 30 2026). Created source page + updated moe-sparsity page with new data point (12B/276B, ~4.4% attivi, reasoning effort controllabile). Index updated (W30 now 14 sources / 7 pages touched). Inbox empty again.

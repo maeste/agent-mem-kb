@@ -2,7 +2,7 @@
 type: page
 created: 2026-07-22
 updated: 2026-07-31
-tags: [index]
+tags: [index, weekly-review-W30]
 ---
 
 # Index
@@ -25,6 +25,7 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/pragmatic-engineer-code-review-load]] — Code review bottleneck: AI generation shifted load to review, tool boom, verification vs review
 - [[wiki/sources/alex-zhang-harness-2026]] — Harnesses as compositional generalizers: RLM, locally in-distribution, equivalence classes
 - [[wiki/sources/arxiv-2607-12227-harness-evaluation]] — Rethinking harness evolution evaluation: doesn't beat test-time scaling, limited generalization
+- [[wiki/sources/arxiv-2607-13285-harness-handbook]] — Harness Handbook: behavior localization as prerequisite to harness evolution; behavior-centric representation via static analysis + LLM
 - [[wiki/sources/arxiv-2607-16621-msce-memory-skills]] — Memory-to-skills co-evolution: L1/L2/L3 memory hierarchy, skill crystallization
 - [[wiki/sources/arxiv-2607-09510-failure-as-process]] — CLI coding agent failure trajectories: epistemic errors, early onset, late discovery
 - [[wiki/sources/arxiv-2607-12747-oat-failure-attribution]] — OAT: unsupervised failure attribution from successful trajectories via neural CDEs
@@ -44,15 +45,19 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/openai-hf-security-incident]] — OpenAI/Hugging Face model evaluation security incident
 - [[wiki/sources/antirez-news-170]] — antirez.com news #170
 
+### Model Releases
+- [[wiki/sources/anthropic-claude-opus-5]] — Claude Opus 5: near-Fable 5 intelligence at half cost; SOTA on Frontier-Bench, CursorBench, ARC-AGI 3; most aligned model to date
+
 ## Views
 
 - [[wiki/views/comparison-graph-vs-loop]] — Tutto grafo vs tutto loop: 4 tensioni irrisolte (routing, visibilità, design vs search, bitter lesson)
+- [[wiki/views/weekly/2026-W30]] — Weekly review W30: 15 fonti, 6 pagine, harness come fulcro convergente
 
 ## Timeline
 
 | Week | Sources Ingested | Pages Touched | Notes |
 |------|-----------------|---------------|-------|
-| W30/2026 (Jul 25–Aug 1) | 14 | 7 | Vault v2 reset + bulk ingest + 6 conceptual pages created. +1 source (code review load) Jul 24. +1 source (Inkling-Small) Jul 31, moe-sparsity page updated. |
+| W30/2026 (Jul 18–Aug 1) | 15 | 7 | Vault v2 reset + bulk ingest (12 sources Jul 23) + 6 conceptual pages + 1 comparison view. +1 source Jul 24 (code review load). +2 sources Jul 25 (Harness Handbook, Claude Opus 5). +1 source Jul 31 (Inkling-Small), moe-sparsity page updated. Weekly review W30 generated. |
 
 ## Reflections
 

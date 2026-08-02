@@ -5,10 +5,13 @@ the URLs into `raw/web/`. Check items after fetching.
 
 ## To process
 
+
 <!-- Paste URLs here. Agent will fetch + ingest on command. -->
 
 ## Done
 
+- https://arxiv.org/pdf/2607.13285 → `raw/papers/arxiv-2607.13285.pdf` (2026-07-25) <!-- arXiv 2607.13285 Harness Handbook -->
+- https://www.anthropic.com/news/claude-opus-5 → `raw/web/introducing-claude-opus-5/` (2026-07-25) <!-- Anthropic: Claude Opus 5 -->
 - https://newsletter.pragmaticengineer.com/p/the-pulse-new-trend-concern-about <!-- Pragmatic Engineer: code review load increase trend -->
 - https://thinkingmachines.ai/news/inkling-small/ <!-- Thinking Machines: Inkling Small → raw/web/introducing-inkling-small/ (2026-07-31) -->
 
@@ -24,3 +27,4 @@ the URLs into `raw/web/`. Check items after fetching.
 - https://arxiv.org/pdf/2607.09197 <!-- arXiv 2607.09197 -->
 - https://arxiv.org/pdf/2607.12747 <!-- arXiv 2607.12747 -->
 - https://arxiv.org/pdf/2607.09510 <!-- arXiv 2607.09510 -->
+- https://x.com/Vtrivedy10/status/2079976006644072796 → `raw/web/Vtrivedy10-2079976006644072796` (2026-07-25) <!-- X/Twitter: Vtrivedy10 (LangChain) on eval-driven agent dev -->
