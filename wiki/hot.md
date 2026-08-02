@@ -12,7 +12,9 @@ Read by the agent at session start.
 
 ## Current state
 
-2026-08-01: Cron daily fetch + ingest. 6/9 URLs fetched (3 failed: need Playwright). Cluster dominante: agent harness + context management. Tre fonti convergenti (OpenAI ARC-AGI-3, Anthropic Claude 5, Harness Handbook) ribadiscono che l'harness è la variabile misurata, non solo il modello. PRO-LONG introduce programmatic memory come quarto paradigma oltre L1/L2/L3. harness-design page ora ha 5 visioni invece di 3. Vault: 20 sources, 9 pages touched in W30.
+2026-08-01: Weekly review W31 generata (prima del vault). 24 sources, 6 pages, 1 view. Tre thread chiave emersi: (1) harness come variabile misurata, (2) WHAT vs HOW risolve tensione ARC-AGI-3 vs Claude 5, (3) memoria con 3 paradigmi convergenti. Index timeline corretta (W30 Jul 22-Aug 1, non Jul 25). View comparison-graph-vs-loop outdated: non include le 5 fonti harness di 1 ago.
+
+2026-08-01 (cron): Daily fetch + ingest. 6/9 URLs fetched (3 failed: need Playwright). Cluster dominante: agent harness + context management. PRO-LONG introduce programmatic memory come quarto paradigma oltre L1/L2/L3.
 
 2026-07-31: Inkling-Small ingested. 14 sources total.
 
@@ -26,11 +28,10 @@ Read by the agent at session start.
 
 ## Open threads
 
-- 3 inbox URLs failed (agentbehavior.dev, danielmiessler.com, kaitchup.substack.com): need Playwright fallback in interactive session
-- Cron path bug: prompt says `fetch_inbox.py` but script is at `.claude/skills/inbox-fetcher/scripts/fetch_inbox.py` — broken since Jul 27, needs cron prompt fix
-- Inbox format drift: was `- URL`, fetcher requires `- [ ] URL` — converted today, may regress
-- Weekly review W30 scheduled Saturday 13:00 (first run today at 13:00)
-- Pages with no conceptual home yet: gemini-robotics-er-2 (embodied reasoning), openai-gpt-5-6-pricing (pricing/efficiency)
-- PRO-LONG + OpenAI ARC-AGI-3 + Harness Handbook: emerging thread on behavior localization as the real bottleneck of agent systems, not capability generation
+- Pagine senza casa concettuale: gemini-robotics-er-2 (embodied reasoning), openai-gpt-5-6-pricing (pricing/efficiency)
+- 3 inbox URLs failano nel cron (JS rendering): agentbehavior.dev, danielmiessler.com, kaitchup.substack.com. Servono in sessione interattiva o fallback Playwright
+- Comparison view (23 lug) outdated: mancano ARC-AGI-3, Claude 5, Harness Handbook, Miessler. Aggiornare prossima sessione
+- Behavior localization come potenziale nuova page dedicata (Harness Handbook + ARC-AGI-3 + Agent Behavior)
+- PRO-LONG + ARC-AGI-3 + Harness Handbook: thread su behavior localization come bottleneck reale degli agent systems
 - Compass.md vuoto: `/reflect` non ancora eseguito
 - Lint non ancora eseguito sul vault
