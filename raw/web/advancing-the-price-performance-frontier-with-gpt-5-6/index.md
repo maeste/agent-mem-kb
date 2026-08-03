@@ -2,7 +2,7 @@
 source_url: https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/?utm_source=tldrai
 title: Advancing the price-performance frontier with GPT-5.6
 published: 2026-07-30
-fetched: 2026-08-01
+fetched: 2026-08-03
 ---
 
 # Advancing the price-performance frontier with GPT-5.6
@@ -13,7 +13,7 @@ url: https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-
 hostname: openai.com
 description: Explore lower GPT‑5.6 pricing for Luna and Terra—and how OpenAI’s more efficient models help enterprises deploy AI workflows at scale.
 sitename: OpenAI
-date: 2026-07-30
+date: "2026-07-30"
 ---
 # Advancing the price-performance frontier with GPT‑5.6
 

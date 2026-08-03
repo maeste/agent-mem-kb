@@ -2,7 +2,7 @@
 source_url: https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/?utm_source=tldrai
 title: How enabling two settings tripled our scores on the ARC-AGI-3 benchmark
 published: 2026-07-29
-fetched: 2026-08-01
+fetched: 2026-08-03
 ---
 
 # How enabling two settings tripled our scores on the ARC-AGI-3 benchmark
@@ -13,13 +13,11 @@ url: https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/
 hostname: openai.com
 description: How two API settings improved GPT-5.6 performance on ARC-AGI-3, boosting scores and efficiency by retaining reasoning and enabling compaction.
 sitename: OpenAI
-date: 2026-07-29
+date: "2026-07-29"
 ---
 # How enabling two settings tripled our scores on the ARC-AGI-3 benchmark
 
-*A sped-up video of GPT‑5.6 Sol attempting to solve puzzles in the ARC-AGI-3 benchmark, with the official harness (left) and our Responses API harness (right), which retains reasoning and enables compaction. On the leaderboard for *__ this game__(opens in a new window)
-
-*, no frontier model solves any level beyond the first. With our harness, GPT‑5.6 Sol solves all six.*
+*A sped-up video of GPT‑5.6 Sol attempting to solve puzzles in the ARC-AGI-3 benchmark, with the official harness (left) and our Responses API harness (right), which retains reasoning and enables compaction. On the leaderboard for* __*this game*__(opens in a new window)*, no frontier model solves any level beyond the first. With our harness, GPT‑5.6 Sol solves all six.*
 
 When we first saw GPT‑5.6 Sol’s low scores on the [ARC-AGI-3(opens in a new window)](https://arcprize.org/arc-agi/3) benchmark, we were puzzled.
 
@@ -29,7 +27,7 @@ Were 2D puzzle games unusually difficult for our models? Or was something else g
 
 Benchmarks rarely measure AI models in isolation. They also measure less visible choices about API settings, harness design, and prompting. In the case of ARC-AGI-3, we discovered that turning on two API settings we use in ChatGPT and Codex—retained reasoning and compaction—tripled scores and cut output tokens by 6x on the public task set.
 
-*With the official harness, GPT‑5.6 Sol scored 13.3% on the ARC-AGI-3 public set. With retained reasoning and compaction, it scored 38.3%. Scores measure Relative Human Action Efficiency (**RHAE*(opens in a new window)*)*—*a metric comparing model performance to a human baseline. Based on **official gameplay logs*(opens in a new window)*, we estimate the average human tester scored 48%. Models are not told how they will be scored, and cannot see their score throughout*—*actions only return a text representation of each frame and what level they are on.*
+*With the official harness, GPT‑5.6 Sol scored 13.3% on the ARC-AGI-3 public set. With retained reasoning and compaction, it scored 38.3%. Scores measure Relative Human Action Efficiency (**RHAE*(opens in a new window)*)*—*a metric comparing model performance to a human baseline. Based on* *official gameplay logs*(opens in a new window)*, we estimate the average human tester scored 48%. Models are not told how they will be scored, and cannot see their score throughout*—*actions only return a text representation of each frame and what level they are on.*
 
 ARC-AGI-3 is a benchmark designed to measure how well AI agents learn and reason. Agents explore unfamiliar 2D games and infer how they work without explicit instructions. You can play 25 demo games at [arcprize.org/tasks(opens in a new window)](https://arcprize.org/tasks).
 
@@ -39,7 +37,7 @@ In gaming, GPT‑5.6 Sol has beaten Pokémon FireRed with a vision-only harness 
 
 ![GPT-5.6 Sol in Codex completing a randomized daily challenge in Slay the Spire 2.](assets/3a3020063046.png)
 
-*Ethan Mollick **shows*(opens in a new window)* GPT‑5.6 Sol in Codex beating a randomized daily challenge in Slay the Spire 2, a game released after GPT‑5.6 Sol’s knowledge cutoff.*
+*Ethan Mollick* *shows*(opens in a new window) *GPT‑5.6 Sol in Codex beating a randomized daily challenge in Slay the Spire 2, a game released after GPT‑5.6 Sol’s knowledge cutoff.*
 
 Inspired by [ARC’s analysis of GPT‑5.5’s shortcomings(opens in a new window)](https://arcprize.org/blog/arc-agi-3-gpt-5-5-opus-4-7-analysis), we examined some of the GPT‑5.6 Sol’s attempts. Like ARC, we saw that the model didn’t appear too bright. It dwelled a long time on each action and struggled to make progress.
 

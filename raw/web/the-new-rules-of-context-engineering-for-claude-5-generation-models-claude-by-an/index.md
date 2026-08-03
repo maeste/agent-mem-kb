@@ -2,7 +2,7 @@
 source_url: https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models?utm_source=tldrai
 title: The new rules of context engineering for Claude 5 generation models | Claude by Anthropic
 published: 2026-07-24
-fetched: 2026-08-01
+fetched: 2026-08-03
 ---
 
 # The new rules of context engineering for Claude 5 generation models | Claude by Anthropic
@@ -13,7 +13,7 @@ url: https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-g
 hostname: claude.com
 description: We removed over 80% of Claude Code's system prompt for more advanced models. How to apply the lessons we learned to your own context engineering in Claude Code and with your own agents.
 sitename: Claude
-date: 2026-07-24
+date: "2026-07-24"
 ---
 The new rules of context engineering for Claude 5 generation models
 
