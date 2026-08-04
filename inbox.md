@@ -5,12 +5,12 @@ the URLs into `raw/web/`. Check items after fetching.
 
 ## To process
 
-
-<!-- Paste URLs here. Agent will fetch + ingest on command. -->
+*(empty)*
 
 
 ## Done
 
+- [x] https://qwen.ai/blog?id=qwen3.8&utm_source=tldrai → `raw/web/qwen3-8-max/` (2026-08-04) <!-- Qwen3.8-Max; fetched via API reverse-engineering (CSR-only site) -->
 - https://arxiv.org/pdf/2607.13285 → `raw/papers/arxiv-2607.13285.pdf` (2026-07-25) <!-- arXiv 2607.13285 Harness Handbook -->
 - https://www.anthropic.com/news/claude-opus-5 → `raw/web/introducing-claude-opus-5/` (2026-07-25) <!-- Anthropic: Claude Opus 5 -->
 - https://newsletter.pragmaticengineer.com/p/the-pulse-new-trend-concern-about <!-- Pragmatic Engineer: code review load increase trend -->

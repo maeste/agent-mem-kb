@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-23
-updated: 2026-08-01
+updated: 2026-08-04
 tags: [moe, sparsity, inference, scaling, model-architecture, concept]
 ---
 
@@ -19,6 +19,7 @@ Dati da Bajwa ([[wiki/sources/akash-bajwa-sparse-by-design]]):
 | Kimi K2/K2.5/K2.6 | 1T | 32B | ~3% |
 | Kimi K3 | 2.8T | 16B | <2% |
 | Inkling-Small | 276B | 12B | ~4.4% |
+| Qwen3.8-Max | 2.4T | 95B | ~4% |
 | GLM-5.2 | meno sparse di V4-Pro | - | - |
 
 Inkling-Small ([[wiki/sources/thinking-machines-inkling-small]], Thinking Machines Lab, Jul 2026) si colloca nel range 2-5%: meno estremo di K3 ma più efficiente di Mixtral. Raggiunge prestazioni comparabili al modello maggiore Inkling (41B/975B, ~4.2% attivi) a un quarto della dimensione, con reasoning effort controllabile come grado di libertà.
@@ -52,3 +53,7 @@ Laguna S 2.1 (118B/8B MoE, 256 expert top-10 + 1 shared) per coding long-horizon
 ## DeepSeek V4 Flash
 
 V4-Flash a $0.14/$0.28 per 1M token (cache miss/hit $0.0028), context 1M, max output 384K ([[wiki/sources/deepseek-v4-flash-api]]). Posizionamento ultra-competitivo per workload agentic. V4-Pro mantiene compressione KV cache (~10% predecessore a 1M context).
+
+## Qwen3.8-Max: sparsity con parametri attivi alti
+
+Qwen3.8-Max ([[wiki/sources/qwen3-8-max]], ago 2026) porta i parametri totali a **2.4T con 95B attivi** (~4%). La percentuale è simile a Inkling-Small, ma la scala dei parametri attivi è senza precedenti nella tabella: 95B vs 16B (K3) o 32B (K2.6). Il modello non massimizza la sparsity relativa, sceglie **più expert attivi contemporaneamente** su base parametrica più larga. Hint architetturale: la capability long-horizon (16 giorni autonomi, 500 turni RTL) potrebbe richiedere più expert concurrently attivi. Annunciati open weights (primo Max-class della serie).

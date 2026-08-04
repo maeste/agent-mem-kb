@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-23
-updated: 2026-08-01
+updated: 2026-08-04
 tags: [harness, agentic, loop, architecture, concept]
 ---
 
@@ -40,3 +40,9 @@ Agent Behavior ([[wiki/sources/agent-behavior]]) formalizza questo principio: `B
 ## Tensione centrale
 
 Il harness deve essere abbastanza strutturato da rendere il comportamento dell'agente prevedibile e verificabile, ma abbastanza flessibile da non soffocare la generalizzazione. Osmani suggerisce **grafi** (state machine con edge condizionali) come via di mezzo tra loop liberi e workflow deterministici. La chiave WHAT/HOW di Miessler risolve la tensione ARC-AGI-3 vs Claude 5: preserva il contenuto del pensiero (WHAT), alleggerisci i vincoli operativi (HOW).
+
+## La sesta visione: l'harness che costruisce sé stesso
+
+**Qwen3.8-Max** ([[wiki/sources/qwen3-8-max]]) introduce un caso qualitativamente nuovo. Nel progetto oh-my-cli, il modello non usa un harness dato: lo **genera come output**. Issue state machine, dispatcher, monitor, watchdog, E2E test trigger, CI gate, session replay: tutto prodotto dall'agente stesso in 16 giorni di esecuzione autonoma (265 commit, 127 PR). Il feedback loop si chiude sull'architettura del loop, non solo sul codice.
+
+Questo va oltre il framework WHAT vs HOW: qui l'harness non è né dato né alleggerito, è **auto-prodotto**. Suggerisce che per modelli sufficientemente capaci il confine tra "programma che gira nel harness" e "programma che scrive il harness" si dissolve. La domanda aperta: un harness auto-prodotto è verificabile? La self-evolution architetturale è esattamente il caso in cui il back pressure di Osmani è più difficile da esercitare.
