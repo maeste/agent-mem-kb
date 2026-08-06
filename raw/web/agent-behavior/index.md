@@ -1,7 +1,7 @@
 ---
 source_url: https://www.agentbehavior.dev/?utm_source=tldrai
 title: Agent behavior
-fetched: 2026-08-01
+fetched: 2026-08-03
 ---
 
 # Agent behavior
@@ -74,17 +74,17 @@ Describe when cost-sensitive behavior applies, what cost evidence the agent shou
 
 The body is free-form Markdown, so choose the headings and labels that communicate the behavior clearly. These questions are strongly recommended authoring prompts when they add useful clarity:
 
-- What evidence should the agent gather?
-- What decision should the agent make from that evidence?
-- What should the agent do after deciding?
-- What should the agent do when evidence is incomplete or the first path fails?
+1. What evidence should the agent gather?
+2. What decision should the agent make from that evidence?
+3. What should the agent do after deciding?
+4. What should the agent do when evidence is incomplete or the first path fails?
 
 For cost-sensitive actions:
 
-- **Evidence:**inspect or estimate cost, credits, infrastructure impact, and alternatives.
-- **Decision:**determine whether the action creates a material cost tradeoff.
-- **Execution:**surface the cost and ask before crossing meaningful thresholds.
-- **Recovery:**if cost is unknown, inspect more, ask for confirmation, or mark uncertainty.
+- **Evidence:** inspect or estimate cost, credits, infrastructure impact, and alternatives.
+- **Decision:** determine whether the action creates a material cost tradeoff.
+- **Execution:** surface the cost and ask before crossing meaningful thresholds.
+- **Recovery:** if cost is unknown, inspect more, ask for confirmation, or mark uncertainty.
 
 You can answer these questions in ordinary prose, combine them, rename them, or omit ones that are trivial or redundant.
 
@@ -151,9 +151,9 @@ The format is intentionally small. This section is the normative reference. The 
 
 ### Terminology
 
-- **Agent behavior**is the name of this format.
-- A **behavior spec**consists of a`.agents/behaviors/<name>/BEHAVIOR.md`file and its directory. It can describe one or more behaviors.
-- A **behavior**is a recurring pattern of agent conduct.
+- **Agent behavior** is the name of this format.
+- A **behavior spec** consists of a`.agents/behaviors/<name>/BEHAVIOR.md` file and its directory. It can describe one or more behaviors.
+- A **behavior** is a recurring pattern of agent conduct.
 
 ### Directory structure
 
@@ -168,7 +168,7 @@ Behavior specs live under `.agents/behaviors/`. Each spec has its own directory 
 ```
 The directory name is the behavior spec's stable identifier and MUST match the `name` field in `BEHAVIOR.md`.
 
-`BEHAVIOR.md` format
+### `BEHAVIOR.md` format
 
 The canonical file name is `BEHAVIOR.md`. Clients MUST look for this exact name when discovering behavior specs and MAY also accept case variants. For portability, behavior specs SHOULD use `BEHAVIOR.md`. A `BEHAVIOR.md` file MUST contain YAML frontmatter followed by Markdown content.
 
@@ -279,17 +279,17 @@ Validation has two layers: structural validity, which tools can check, and quali
 A structurally valid behavior directory:
 
 - is a directory under `.agents/behaviors/`
-- contains `BEHAVIOR.md`or a client-supported case variant
+- contains `BEHAVIOR.md` or a client-supported case variant
 - has YAML frontmatter delimited by `---`
 - has frontmatter that parses as a YAML mapping
-- includes a non-empty `name`field
-- uses a `name`that is at most 64 characters
-- uses a `name`containing only lowercase letters, numbers, and hyphens
-- uses a `name`that does not start or end with a hyphen
-- uses a `name`that matches the parent directory
-- includes a non-empty `description`field
-- uses a `description`that is at most 1024 characters
-- if present, uses `metadata`as a key-value mapping
+- includes a non-empty `name` field
+- uses a `name` that is at most 64 characters
+- uses a `name` containing only lowercase letters, numbers, and hyphens
+- uses a `name` that does not start or end with a hyphen
+- uses a `name` that matches the parent directory
+- includes a non-empty `description` field
+- uses a `description` that is at most 1024 characters
+- if present, uses `metadata` as a key-value mapping
 
 Clients SHOULD skip structurally invalid specs and surface a diagnostic rather than load partial or ambiguous content.
 

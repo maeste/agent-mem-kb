@@ -14,6 +14,8 @@ Read by the agent at session start.
 
 2026-08-01: Weekly review W31 generata (prima del vault). 24 sources, 6 pages, 1 view. Tre thread chiave emersi: (1) harness come variabile misurata, (2) WHAT vs HOW risolve tensione ARC-AGI-3 vs Claude 5, (3) memoria con 3 paradigmi convergenti. Index timeline corretta (W30 Jul 22-Aug 1, non Jul 25). View comparison-graph-vs-loop outdated: non include le 5 fonti harness di 1 ago.
 
+2026-08-03 (cron): Daily fetch re-run. 9/9 URL fetched (no Playwright failure stavolta). Tutte già ingested Aug 1 — diff solo cosmetico. Inbox deduped. Nessun nuovo contenuto.
+
 2026-08-01 (cron): Daily fetch + ingest. 6/9 URLs fetched (3 failed: need Playwright). Cluster dominante: agent harness + context management. PRO-LONG introduce programmatic memory come quarto paradigma oltre L1/L2/L3.
 
 2026-07-31: Inkling-Small ingested. 14 sources total.

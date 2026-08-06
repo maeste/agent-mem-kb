@@ -3,7 +3,7 @@ source_url: https://blog.google/innovation-and-ai/models-and-research/google-dee
 title: Introducing Gemini Robotics ER 2
 author: Steven Hansen; Peng Xu
 published: 2026-07-30
-fetched: 2026-08-01
+fetched: 2026-08-03
 ---
 
 # Introducing Gemini Robotics ER 2
@@ -15,14 +15,14 @@ url: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/g
 hostname: blog.google
 description: Gemini Robotics ER 2 is a step change in video understanding, tool orchestration, and multi-robot collaboration for robotic applications.
 sitename: Google
-date: 2026-07-30
+date: "2026-07-30"
 tags: ['None', 'Developer tools,Gemini models,Google DeepMind']
 ---
 # Introducing Gemini Robotics ER 2
 
 ![Two robots: Duo and Apollo](assets/e8296ae74168.webp) 
 
-        For robots to assist humans in everyday environments, accurate spatial reasoning is not enough. Robots must also think fast, timing their decisions and reasoning with the real-time speed of the physical world.
+For robots to assist humans in everyday environments, accurate spatial reasoning is not enough. Robots must also think fast, timing their decisions and reasoning with the real-time speed of the physical world.
 
 That’s why today we’re launching [Gemini Robotics ER 2](https://deepmind.google/models/model-cards/gemini-robotics-er-2/), our most capable “embodied reasoning” model for robotics. Think of Gemini Robotics ER 2 as a high-level brain for robots. It allows robots to chat with humans, understand the physical world, and plan multi-step tasks. It then hands off motor execution to any given lower level vision-language-action (VLA) model. Gemini Robotics ER 2 can also natively call tools like Google Search to find information, or any other user-defined function. The design of Gemini Robotics ER 2 allows the robot to “think” about what comes next while simultaneously performing its actions.
 
@@ -40,7 +40,7 @@ Gemini Robotics ER 2 consistently outperforms ER 1.6 for tool orchestration acro
 
 ![Chart comparing physical agent performance of Gemini Robotics ER 1.6 and Gemini Robotics ER 2](assets/2c4393385c9f.webp) 
 
-      In robotics, high-level reasoning depends on execution speed. Gemini Robotics ER 2 integrates into the [Gemini Live API](https://ai.google.dev/gemini-api/docs/live-api), using a bidirectional streaming endpoint optimized for latency-sensitive tasks. The result is fluid orchestration: Gemini Robotics ER 2 commands action models and robotics APIs to complete multi-step tasks without the jarring “stop-and-think” pauses.
+In robotics, high-level reasoning depends on execution speed. Gemini Robotics ER 2 integrates into the [Gemini Live API](https://ai.google.dev/gemini-api/docs/live-api), using a bidirectional streaming endpoint optimized for latency-sensitive tasks. The result is fluid orchestration: Gemini Robotics ER 2 commands action models and robotics APIs to complete multi-step tasks without the jarring “stop-and-think” pauses.
 
 To illustrate this, we’ve built a demo with [Spot](https://bostondynamics.com/products/spot/) from our partners at [Boston Dynamics](https://bostondynamics.com/). We use Gemini Robotics ER 2 to orchestrate [Spot APIs](https://dev.bostondynamics.com/python/readme), such as navigation and manipulator movement, creating an interactive robot that fetches objects for you.
 
@@ -62,7 +62,7 @@ Gemini Robotics ER 2 achieves 57.4% accuracy on progress classification tasks, o
 
 ![Chart comparing progress classification of different robots](assets/a82509497a37.webp) 
 
-      ### Precision moment-finding
+### Precision moment-finding
 
 Moment-finding measures a model's ability to identify the exact video frame where a critical event takes place (i.e. when to stop pouring coffee into a cup). Gemini Robotics ER 2 achieves significant gains in performance on moment finding, enabling robots to precisely switch between tasks, verify success and suggest corrections.
 
@@ -70,7 +70,7 @@ For moment-finding tasks, Gemini Robotics ER 2 achieves 91.3% accuracy and a 0.9
 
 ![Graph of Moment finding: Accuracy vs distance](assets/e2dc926dc7e1.webp) 
 
-      ### Multi-robot collaboration
+### Multi-robot collaboration
 
 No single robot fits every task — a wheeled rover excels indoors, while a humanoid robot may excel at uneven terrain. Gemini Robotics 2 enables multi-robot collaboration, allowing diverse machines to communicate via a shared semantic understanding to handoff and complete complex tasks. See how Gemini Robotics ER 2 enables [Apptronik](https://apptronik.com/)’s [Apollo 2](https://apptronik.com/apollo/apollo-2) and [Franka F3 Duo](https://franka.de/mobile-fr3-duo) to collaborate [here](https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots).
 
@@ -78,15 +78,15 @@ No single robot fits every task — a wheeled rover excels indoors, while a huma
 
 Gemini Robotics ER 2 advances our core spatial reasoning capability, as measured by three benchmarks:
 
-- **Success/failure detection:**Now operates on raw video feeds rather than static snapshots to catch mid-execution failures like spills, slips, or misalignments.
-- **General instrument reading:**Extends beyond circular dials and sight glasses to include digital displays, linear scales, rulers, and liquid thermometers. We tested it across 10 different types of instruments.
-- **Enhanced spatial VQA:**Improves Visual Question Answering throughGemini’s advancements in multi-modal understanding.
+- **Success/failure detection:** Now operates on raw video feeds rather than static snapshots to catch mid-execution failures like spills, slips, or misalignments.
+- **General instrument reading:** Extends beyond circular dials and sight glasses to include digital displays, linear scales, rulers, and liquid thermometers. We tested it across 10 different types of instruments.
+- **Enhanced spatial VQA:** Improves Visual Question Answering throughGemini’s advancements in multi-modal understanding.
 
 Gemini Robotics ER 2 consistently achieves the highest accuracy across all core capabilities, with highlights including success detection (image/video), Question Answering (ERQA), and generalized instrument reading.
 
 ![Comparison fo ER metrics of different robots](assets/ddaf857d12e9.webp) 
 
-      ## Advancing safety for embodied intelligence
+## Advancing safety for embodied intelligence
 
 Gemini Robotics ER 2 is our safest model, achieving significant gains on Safety Instruction Following and Human Proximity benchmarks, which evaluate how a model adheres to physical constraints during reasoning tasks and spatial awareness for detecting humans. We found that Gemini Robotics ER 2 successfully halts a humanoid robot when a person is nearby and autonomously resumes work only once the area is clear. To advance safety for physical agents, we’re introducing a benchmark that evaluates a foundation model's ability to act as a safe VLA orchestrator by testing its capacity to enforce safety constraints, monitor the environment, assess physical feasibility, and seek human clarification. For details, see our [safety technical report](https://storage.googleapis.com/deepmind-media/gemini-robotics/Gemini-Robotics-2-Safety.pdf).
 
@@ -94,4 +94,4 @@ Gemini Robotics ER 2 outperforms ER 1.6 and other frontier models on Safety Inst
 
 ![Comparison of safety performance of different robots](assets/1b8f2bcf5002.webp) 
 
-      Looking ahead, our plans are to push these models towards even more complex tasks to accelerate the development of helpful robots and support the robotics community.
+Looking ahead, our plans are to push these models towards even more complex tasks to accelerate the development of helpful robots and support the robotics community.

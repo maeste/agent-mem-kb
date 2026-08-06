@@ -2,7 +2,7 @@
 source_url: https://danielmiessler.com/blog/the-answer-to-the-harness-question
 title: The Answer to the Harness Question
 published: 2019-03-13
-fetched: 2026-08-01
+fetched: 2026-08-03
 ---
 
 # The Answer to the Harness Question
@@ -13,14 +13,14 @@ url: https://danielmiessler.com/blog/the-answer-to-the-harness-question
 hostname: danielmiessler.com
 description: Harnesses are for intent; models are for execution
 sitename: Danielmiessler
-date: 2019-03-13
+date: "2019-03-13"
 ---
 ![The Answer to the Harness Question](assets/65ae5e52007e.webp)
 
 
 Martin Casado posted something about AI harnesses that captures where a lot of smart people are stuck right now.
 
-On harnesses, I vacillate between three beliefs: the less harness, the better. Models are the magic. Post training a model and harness is dramatically better and the model providers win. Harnesses have real independent value from the model. I have no idea which is right.[Martin Casado](https://x.com/martin_casado/status/2082527395920347362)
+ On harnesses, I vacillate between three beliefs: the less harness, the better. Models are the magic. Post training a model and harness is dramatically better and the model providers win. Harnesses have real independent value from the model. I have no idea which is right. [Martin Casado](https://x.com/martin_casado/status/2082527395920347362)
 
 I think I can answer this.
 

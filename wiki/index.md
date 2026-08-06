@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-22
-updated: 2026-08-01
+updated: 2026-08-04
 tags: [index, weekly-review-W30, weekly-review-W31]
 ---
 
@@ -47,6 +47,7 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/google-gemini-3-6-flash]] — Gemini 3.6 Flash, 3.5 Flash Lite, 3.5 Flash Cyber
 - [[wiki/sources/kaitchup-agentic-two-scales]] — Nanbeige4.2-3B (Looped Transformer, sparsity temporale) + Laguna S 2.1 (118B/8B MoE coding); benchmark transparency
 - [[wiki/sources/deepseek-v4-flash-api]] — DeepSeek V4-Flash/Pro API: $0.14/$0.28 per 1M, 1M context, 384K output, thinking + non-thinking modes
+- [[wiki/sources/qwen3-8-max]] — Qwen3.8-Max: 2.4T/95B MoE, primo Max-class open weights; self-evolving harness (oh-my-cli), coding autonomo 16 giorni, multimodal feedback loop
 
 ### Robotics & Embodied Reasoning
 - [[wiki/sources/gemini-robotics-er-2]] — Gemini Robotics ER 2: embodied reasoning, temporal intelligence, multi-robot collaboration
@@ -72,7 +73,7 @@ Catalog of the vault. Updated on every write operation.
 | Week | Sources Ingested | Pages Touched | Notes |
 |------|-----------------|---------------|-------|
 | W30/2026 (Jul 22–Aug 1) | 24 | 6 created + 6 modified | Vault v2 reset + bulk ingest (12 sources Jul 23) + 6 conceptual pages + 1 comparison view. +1 source Jul 24 (code review load). +2 sources Jul 25 (Harness Handbook, Claude Opus 5). +1 source Jul 31 (Inkling-Small). +6 sources Aug 1 cron + 4 sources Aug 1 manual. harness-design cresciuta da 3 a 5 visioni + cornice WHAT/HOW. moe-sparsity (+Looped Transformer, +DeepSeek V4). Weekly reviews W30 + W31 generated. |
-| W31/2026 (Aug 1→) | 0 | 0 | Settimana appena iniziata. |
+| W31/2026 (Aug 1→) | 1 | 2 modified | +1 source Aug 4 (Qwen3.8-Max). harness-design +6a visione (harness auto-prodotto). moe-sparsity +2.4T/95B. |
 
 ## Reflections
 

@@ -3,19 +3,19 @@ source_url: https://kaitchup.substack.com/p/agentic-ai-at-two-different-scales?u
 title: "Agentic AI at Two Different Scales: Nanbeige4.2-3B and Laguna S2.1"
 author: Benjamin Marie
 published: 2026-07-25
-fetched: 2026-08-01
+fetched: 2026-08-03
 ---
 
 # Agentic AI at Two Different Scales: Nanbeige4.2-3B and Laguna S2.1
 
 ---
-title: Agentic AI at Two Different Scales: Nanbeige4.2-3B and Laguna S2.1
+title: "Agentic AI at Two Different Scales: Nanbeige4.2-3B and Laguna S2.1"
 author: Benjamin Marie
 url: https://kaitchup.substack.com/p/agentic-ai-at-two-different-scales
 hostname: substack.com
-description: The Weekly Kaitchup #152
+description: "The Weekly Kaitchup #152"
 sitename: The Kaitchup – AI on a Budget
-date: 2026-07-25
+date: "2026-07-25"
 ---
 In this edition of The Weekly Kaitchup, I’m looking at two of the week’s most interesting releases for agentic workloads: Nanbeige4.2-3B and Laguna S 2.1.
 

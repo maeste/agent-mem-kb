@@ -5,21 +5,18 @@ the URLs into `raw/web/`. Check items after fetching.
 
 ## To process
 
+- https://x.com/i/status/2084761324786172347 <!-- X/Twitter status 2084761324786172347 -->
+- https://arxiv.org/pdf/2607.28576 <!-- arXiv 2607.28576 -->
+- https://openai.com/index/continuous-voice-interaction-with-gpt-live/ <!-- OpenAI: GPT Live continuous voice interaction -->
+- https://kiro.dev/blog/one-agent/ <!-- Kiro: One Agent -->
+- https://thezvi.wordpress.com/2026/08/03/openais-unreleased-model-astra-solves-ten-major-open-mathematics-problems/ <!-- Zvi: OpenAI Astra solves 10 open math problems -->
+- https://arxiv.org/pdf/2608.00146 <!-- arXiv 2608.00146 -->
+- https://x.com/i/status/2085080750034940201 <!-- X/Twitter status 2085080750034940201 -->
 
-<!-- Paste URLs here. Agent will fetch + ingest on command. -->
-
-- [ ] https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/?utm_source=tldrai <!-- Google DeepMind: Gemini Robotics ER 2 -->
-- [ ] https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/?utm_source=tldrai <!-- OpenAI: GPT-5.6 price-performance frontier -->
-- [ ] https://www.agentbehavior.dev/?utm_source=tldrai <!-- Agent Behavior -->
-- [ ] https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/?utm_source=tldrai <!-- OpenAI: two settings tripled ARC-AGI-3 scores -->
-- [ ] https://danielmiessler.com/blog/the-answer-to-the-harness-question <!-- Daniel Miessler: the answer to the harness question -->
-- [ ] https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models?utm_source=tldrai <!-- Claude: new rules of context engineering for gen-5 models -->
-- [ ] https://kaitchup.substack.com/p/agentic-ai-at-two-different-scales?utm_source=tldrai <!-- Kaitchup: agentic AI at two different scales -->
-- [ ] https://arxiv.org/pdf/2607.13285 <!-- arXiv 2607.13285 -->
-- [ ] https://arxiv.org/pdf/2607.20064 <!-- arXiv 2607.20064 -->
 
 ## Done
 
+- [x] https://qwen.ai/blog?id=qwen3.8&utm_source=tldrai → `raw/web/qwen3-8-max/` (2026-08-04) <!-- Qwen3.8-Max; fetched via API reverse-engineering (CSR-only site) -->
 - https://arxiv.org/pdf/2607.13285 → `raw/papers/arxiv-2607.13285.pdf` (2026-07-25) <!-- arXiv 2607.13285 Harness Handbook -->
 - https://www.anthropic.com/news/claude-opus-5 → `raw/web/introducing-claude-opus-5/` (2026-07-25) <!-- Anthropic: Claude Opus 5 -->
 - https://newsletter.pragmaticengineer.com/p/the-pulse-new-trend-concern-about <!-- Pragmatic Engineer: code review load increase trend -->
@@ -37,17 +34,20 @@ the URLs into `raw/web/`. Check items after fetching.
 - https://arxiv.org/pdf/2607.09197 <!-- arXiv 2607.09197 -->
 - https://arxiv.org/pdf/2607.12747 <!-- arXiv 2607.12747 -->
 - https://arxiv.org/pdf/2607.09510 <!-- arXiv 2607.09510 -->
-- https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/?utm_source=tldrai <!-- Google DeepMind: Gemini Robotics ER 2 -->
-- https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/?utm_source=tldrai <!-- OpenAI: GPT-5.6 price-performance frontier -->
-- https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/?utm_source=tldrai <!-- OpenAI: two settings tripled ARC-AGI-3 scores -->
-- https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models?utm_source=tldrai <!-- Claude: new rules of context engineering for gen-5 models -->
-- https://arxiv.org/pdf/2607.13285 <!-- arXiv 2607.13285 -->
-- https://arxiv.org/pdf/2607.20064 <!-- arXiv 2607.20064 -->
 
 ## Processati
 
-- [x] https://www.agentbehavior.dev/?utm_source=tldrai → `/home/maeste/knowledge-bases/agent-me-kb/raw/web/agent-behavior` (2026-08-01)
-- [x] https://danielmiessler.com/blog/the-answer-to-the-harness-question → `/home/maeste/knowledge-bases/agent-me-kb/raw/web/the-answer-to-the-harness-question` (2026-08-01)
-- [x] https://kaitchup.substack.com/p/agentic-ai-at-two-different-scales?utm_source=tldrai → `/home/maeste/knowledge-bases/agent-me-kb/raw/web/agentic-ai-at-two-different-scales-nanbeige4-2-3b-and-laguna-s2-1` (2026-08-01)
+- [x] https://www.agentbehavior.dev/?utm_source=tldrai → `raw/web/agent-behavior` (2026-08-01)
+- [x] https://danielmiessler.com/blog/the-answer-to-the-harness-question → `raw/web/the-answer-to-the-harness-question` (2026-08-01)
+- [x] https://kaitchup.substack.com/p/agentic-ai-at-two-different-scales?utm_source=tldrai → `raw/web/agentic-ai-at-two-different-scales-nanbeige4-2-3b-and-laguna-s2-1` (2026-08-01)
 - https://www.reddit.com/r/singularity/comments/1vbm5m8/deepseekv4flash_official_api_is_now_live_in/ <!-- Reddit: DeepSeek V4 Flash (post blocked, ingested from official docs) -->
 - https://x.com/Vtrivedy10/status/2079976006644072796 → `raw/web/Vtrivedy10-2079976006644072796` (2026-07-25) <!-- X/Twitter: Vtrivedy10 (LangChain) on eval-driven agent dev -->
+- [x] https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/?utm_source=tldrai → `raw/web/introducing-gemini-robotics-er-2` (2026-08-03)
+- [x] https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/?utm_source=tldrai → `raw/web/advancing-the-price-performance-frontier-with-gpt-5-6` (2026-08-03)
+- [x] https://www.agentbehavior.dev/?utm_source=tldrai → `raw/web/agent-behavior` (2026-08-03)
+- [x] https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/?utm_source=tldrai → `raw/web/how-enabling-two-settings-tripled-our-scores-on-the-arc-agi-3-benchmark` (2026-08-03)
+- [x] https://danielmiessler.com/blog/the-answer-to-the-harness-question → `raw/web/the-answer-to-the-harness-question` (2026-08-03)
+- [x] https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models?utm_source=tldrai → `raw/web/the-new-rules-of-context-engineering-for-claude-5-generation-models-claude-by-an` (2026-08-03)
+- [x] https://kaitchup.substack.com/p/agentic-ai-at-two-different-scales?utm_source=tldrai → `raw/web/agentic-ai-at-two-different-scales-nanbeige4-2-3b-and-laguna-s2-1` (2026-08-03)
+- [x] https://arxiv.org/pdf/2607.13285 → `raw/papers/arxiv-2607.13285.pdf` (2026-08-03)
+- [x] https://arxiv.org/pdf/2607.20064 → `raw/papers/arxiv-2607.20064.pdf` (2026-08-03)
