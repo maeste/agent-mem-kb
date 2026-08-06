@@ -6,6 +6,12 @@ the URLs into `raw/web/`. Check items after fetching.
 ## To process
 
 - https://x.com/i/status/2084761324786172347 <!-- X/Twitter status 2084761324786172347 -->
+- https://arxiv.org/pdf/2607.28576 <!-- arXiv 2607.28576 -->
+- https://openai.com/index/continuous-voice-interaction-with-gpt-live/ <!-- OpenAI: GPT Live continuous voice interaction -->
+- https://kiro.dev/blog/one-agent/ <!-- Kiro: One Agent -->
+- https://thezvi.wordpress.com/2026/08/03/openais-unreleased-model-astra-solves-ten-major-open-mathematics-problems/ <!-- Zvi: OpenAI Astra solves 10 open math problems -->
+- https://arxiv.org/pdf/2608.00146 <!-- arXiv 2608.00146 -->
+- https://x.com/i/status/2085080750034940201 <!-- X/Twitter status 2085080750034940201 -->
 
 
 ## Done
