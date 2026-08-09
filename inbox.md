@@ -5,16 +5,10 @@ the URLs into `raw/web/`. Check items after fetching.
 
 ## To process
 
-- https://x.com/i/status/2084761324786172347 <!-- X/Twitter status 2084761324786172347 -->
-- https://arxiv.org/pdf/2607.28576 <!-- arXiv 2607.28576 -->
-- https://openai.com/index/continuous-voice-interaction-with-gpt-live/ <!-- OpenAI: GPT Live continuous voice interaction -->
-- https://kiro.dev/blog/one-agent/ <!-- Kiro: One Agent -->
-- https://thezvi.wordpress.com/2026/08/03/openais-unreleased-model-astra-solves-ten-major-open-mathematics-problems/ <!-- Zvi: OpenAI Astra solves 10 open math problems -->
-- https://arxiv.org/pdf/2608.00146 <!-- arXiv 2608.00146 -->
-- https://x.com/i/status/2085080750034940201 <!-- X/Twitter status 2085080750034940201 -->
-
 
 ## Done
+
+- [x] https://www.dwarkesh.com/p/era-of-continual-learning → `raw/web/dwarkesh-era-of-continual-learning/` (2026-08-08) <!-- Dwarkesh: Era of Continual Learning -->
 
 - [x] https://qwen.ai/blog?id=qwen3.8&utm_source=tldrai → `raw/web/qwen3-8-max/` (2026-08-04) <!-- Qwen3.8-Max; fetched via API reverse-engineering (CSR-only site) -->
 - https://arxiv.org/pdf/2607.13285 → `raw/papers/arxiv-2607.13285.pdf` (2026-07-25) <!-- arXiv 2607.13285 Harness Handbook -->
@@ -51,3 +45,6 @@ the URLs into `raw/web/`. Check items after fetching.
 - [x] https://kaitchup.substack.com/p/agentic-ai-at-two-different-scales?utm_source=tldrai → `raw/web/agentic-ai-at-two-different-scales-nanbeige4-2-3b-and-laguna-s2-1` (2026-08-03)
 - [x] https://arxiv.org/pdf/2607.13285 → `raw/papers/arxiv-2607.13285.pdf` (2026-08-03)
 - [x] https://arxiv.org/pdf/2607.20064 → `raw/papers/arxiv-2607.20064.pdf` (2026-08-03)
+- https://www.kucoin.com/news/flash/bytedance-training-10-trillion-parameter-ai-model-aiming-for-global-leadership → `raw/web/bytedance-trains-a-10-trillion-parameter-ai-model-aiming-for-global-leadership-k` (2026-08-08)
+- https://github.com/huangruiteng/loopx → `raw/web/github-huangruiteng-loopx-lightweight-loop-engineering-state-kernel-for-long-run` (2026-08-08)
+- https://blog.google/company-news/inside-google/message-ceo/next-chapter-ai-momentum/ → `raw/web/the-next-chapter-of-our-ai-momentum` (2026-08-08)
