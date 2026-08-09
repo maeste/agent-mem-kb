@@ -5,9 +5,10 @@ the URLs into `raw/web/`. Check items after fetching.
 
 ## To process
 
-- https://www.dwarkesh.com/p/era-of-continual-learning <!-- Dwarkesh: Era of Continual Learning -->
 
 ## Done
+
+- [x] https://www.dwarkesh.com/p/era-of-continual-learning → `raw/web/dwarkesh-era-of-continual-learning/` (2026-08-08) <!-- Dwarkesh: Era of Continual Learning -->
 
 - [x] https://qwen.ai/blog?id=qwen3.8&utm_source=tldrai → `raw/web/qwen3-8-max/` (2026-08-04) <!-- Qwen3.8-Max; fetched via API reverse-engineering (CSR-only site) -->
 - https://arxiv.org/pdf/2607.13285 → `raw/papers/arxiv-2607.13285.pdf` (2026-07-25) <!-- arXiv 2607.13285 Harness Handbook -->
