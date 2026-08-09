@@ -82,7 +82,8 @@ Catalog of the vault. Updated on every write operation.
 
 ## Views
 
-- [[wiki/views/comparison-graph-vs-loop]] — Tutto grafo vs tutto loop: 4 tensioni irrisolte (routing, visibilità, design vs search, bitter lesson)
+- [[wiki/views/slides-self-improvement-continuous-learning]] — Slide deck: self-improvement continuo degli agenti (modello + harness/memoria), 12 slide
+- [[wiki/views/comparison-graph-vs-loop]] — Grafo vs loop: 8 dimensioni, 4 tensioni irrisolte
 - [[wiki/views/weekly/2026-W30]] — Weekly review W30: 15 fonti, 6 pagine, harness come fulcro convergente
 - [[wiki/views/weekly/2026-W31]] — Weekly review W31: 17 fonti, cluster harness espanso a 7 visioni, agent security, self-reflection debunked, 4 paradigmi memoria, continual learning
 
