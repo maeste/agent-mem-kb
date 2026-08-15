@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-22
-updated: 2026-08-01
+updated: 2026-08-15
 tags: [log]
 ---
 
@@ -43,3 +43,7 @@ Week runs Saturday 13:00 → next Saturday 12:59 (custom week boundary).
 ## [W31/2026] 2026-08-09 | view | Created slides view: slides-self-improvement-continuous-learning. 12 slide su self-improvement continuo degli agenti (modello + harness/memoria). Sintesi: 3 path modello (weight updates continual, self-evolving feedback Qwen, continuous learning comportamentale), 3 path harness (Prime `/refine`, Muse co-training, Qwen auto-prodotto), 4 paradigmi memoria (MSCE/PRO-LONG/Claude 5/Zero-Mem), self-reflection debunked, chiave WHAT/HOW, vincolo back pressure. Based on 14 sources/pages. Index updated.
 
 ## [W31/2026] 2026-08-08 | ingest | Dwarkesh "8 Predictions for the Era of Continual Learning" fetched + ingested. Created raw/web/dwarkesh-era-of-continual-learning/ + wiki/sources/dwarkesh-era-of-continual-learning.md. Fonte aggiunta al cluster W31 come 17a source, nuova sezione "AI Economics & Continual Learning" nel weekly. Continual learning: deployment diventa training, switching cost come moat, economies of scale inference (batch size >2.400 sparse model), regolazione train-then-deploy obsoleta. Connection #7 nel weekly: collega al filone harness self-improving. Index, timeline, metriche aggiornate (17 sources, 43 totali).
+
+## [W33/2026] 2026-08-15 | recovery | Ripristinati da branch locale vault/2026-08-07-daily (push fallito 7-8 ago, mai compensato): 15 source pages W31 (prime-agent, loopx, kiro-agent-harness, meta-muse-code-spark-1-2, zero-mem, diffusiongemma, uber-adr, openai-hf-black-hat-debrief, openai-astra-math, openai-gpt-live, xiaomi-robotics-1, firecrawl-anydoc, hassabis-dean-exit, bytedance-10t-model, arxiv-2607.28576-more-reflect-less), aggiornamenti 8 ago a harness-design (7a visione) e moe-sparsity (ByteDance 10T), ~20 raw dirs. Erano dead link in index e slides view da una settimana. Nessuna modifica ai contenuti: checkout byte-identico dal branch. Vault torna a 43 sources.
+
+## [W33/2026] 2026-08-15 | weekly | Weekly review W33 generata (periodo 8-15 ago): 0 sources ingested (inbox vuota), 0 pagine modificate, 1 view creata nella finestra (slides self-improvement, 9 ago). Review documentata come incidente branch + recupero, connessione con comprehension-debt (metadata che descrivono contenuti assenti = dead link come comprehension debt del vault). Lint eseguito per la prima volta. Convenzione label settimane chiarita in index (1-8 ago = W31 inaugurale; W33 = 8-15 ago ISO). hot.md riscritto. Nota: la cron prompt richiedeva YYYY-Www da date +%Y-W%V del 15 ago = 2026-W33 (ISO), non W32.
