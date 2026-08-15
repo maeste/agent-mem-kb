@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-23
-updated: 2026-08-04
+updated: 2026-08-08
 tags: [harness, agentic, loop, architecture, concept]
 ---
 
@@ -46,3 +46,9 @@ Il harness deve essere abbastanza strutturato da rendere il comportamento dell'a
 **Qwen3.8-Max** ([[wiki/sources/qwen3-8-max]]) introduce un caso qualitativamente nuovo. Nel progetto oh-my-cli, il modello non usa un harness dato: lo **genera come output**. Issue state machine, dispatcher, monitor, watchdog, E2E test trigger, CI gate, session replay: tutto prodotto dall'agente stesso in 16 giorni di esecuzione autonoma (265 commit, 127 PR). Il feedback loop si chiude sull'architettura del loop, non solo sul codice.
 
 Questo va oltre il framework WHAT vs HOW: qui l'harness non è né dato né alleggerito, è **auto-prodotto**. Suggerisce che per modelli sufficientemente capaci il confine tra "programma che gira nel harness" e "programma che scrive il harness" si dissolve. La domanda aperta: un harness auto-prodotto è verificabile? La self-evolution architetturale è esattamente il caso in cui il back pressure di Osmani è più difficile da esercitare.
+
+## LoopX: il control plane externalizzato
+
+**LoopX** ([[wiki/sources/loopx]], Huang Ruiteng 2026) prende la direzione opposta a Qwen: invece di far generare l'harness al modello, lo **externalizza** in un kernel di stato provider-neutral. Il runtime (Codex, Claude Code, Cursor) esegue turni bounded; LoopX possiede obiettivo, gate, evidence, quota, handoff. È implementazione concreta del principio WHAT vs HOW di Miessler: il WHAT (obiettivo, scope, autorità, evidence) vive nel kernel; il HOW (esecuzione del turno) vive nel runtime. Il tick core è minimale: `quota should-run` decide se agire, `todo claim` assegna ownership, `todo update` registra evidence, `quota spend-slot` contabilizza. Il quota system risponde alla domanda di Wang (harness evolution eval): il loop smette di spendere quando non produce transizione utile.
+
+Il contrasto Qwen vs LoopX definisce uno spettro: l'harness può essere generato dal modello (auto-produzione, massima flessibilità, minima governabilità), externalizzato in un control plane (massima governabilità, minima flessibilità), o da qualche parte in mezzo. Dove posizionarsi dipende dalla capability del modello e dal costo del failure.

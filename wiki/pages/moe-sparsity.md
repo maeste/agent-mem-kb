@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-23
-updated: 2026-08-04
+updated: 2026-08-08
 tags: [moe, sparsity, inference, scaling, model-architecture, concept]
 ---
 
@@ -57,3 +57,7 @@ V4-Flash a $0.14/$0.28 per 1M token (cache miss/hit $0.0028), context 1M, max ou
 ## Qwen3.8-Max: sparsity con parametri attivi alti
 
 Qwen3.8-Max ([[wiki/sources/qwen3-8-max]], ago 2026) porta i parametri totali a **2.4T con 95B attivi** (~4%). La percentuale è simile a Inkling-Small, ma la scala dei parametri attivi è senza precedenti nella tabella: 95B vs 16B (K3) o 32B (K2.6). Il modello non massimizza la sparsity relativa, sceglie **più expert attivi contemporaneamente** su base parametrica più larga. Hint architetturale: la capability long-horizon (16 giorni autonomi, 500 turni RTL) potrebbe richiedere più expert concurrently attivi. Annunciati open weights (primo Max-class della serie).
+
+## ByteDance 10T: la frontiera in pre-training
+
+ByteDance ([[wiki/sources/bytedance-10t-model]], ago 2026, FT via 3 insider) è in fase di pre-training di un modello stimato a **~10T parametri**, ~3x sopra Kimi K3 (2.8T, il più grande modello cinese rilasciato). La scala finale non è ancora fissata; pre-training tipicamente 3-6 mesi. Per contesto: Anthropic Mythos 5 stimato ~8T, Fable 5 ~5T (non confermati da Anthropic). Se confermato MoE, supererebbe ogni voce della tabella. Nessuno ha risorse per 10T dense in pre-training: il salto suggerisce MoE estremo con parametri attivi probabilmente bassi. Fonte secondaria, da verificare con annuncio ufficiale.

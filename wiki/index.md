@@ -1,8 +1,8 @@
 ---
 type: page
 created: 2026-07-22
-updated: 2026-08-08
-tags: [index, weekly-review-W30, weekly-review-W31, weekly-W31-corrected]
+updated: 2026-08-15
+tags: [index, weekly-review-W30, weekly-review-W31, weekly-W31-corrected, weekly-review-W33]
 ---
 
 # Index
@@ -86,13 +86,17 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/views/comparison-graph-vs-loop]] — Grafo vs loop: 8 dimensioni, 4 tensioni irrisolte
 - [[wiki/views/weekly/2026-W30]] — Weekly review W30: 15 fonti, 6 pagine, harness come fulcro convergente
 - [[wiki/views/weekly/2026-W31]] — Weekly review W31: 17 fonti, cluster harness espanso a 7 visioni, agent security, self-reflection debunked, 4 paradigmi memoria, continual learning
+- [[wiki/views/weekly/2026-W33]] — Weekly review W33: 0 nuovi ingest, slides view, recupero incidente branch (15 fonti ripristinate)
 
 ## Timeline
+
+*Convenzione label: la settimana 1-8 ago è etichettata W31 in tutta la vault (label inaugurale; ISO sarebbe W32). Dalla settimana di Aug 8-15 le label seguono `date +%Y-W%V` del sabato di generazione.*
 
 | Week | Sources Ingested | Pages Touched | Notes |
 |------|-----------------|---------------|-------|
 | W30/2026 (Jul 22–Aug 1) | 24 | 6 created + 6 modified | Vault v2 reset + bulk ingest (12 sources Jul 23) + 6 conceptual pages + 1 comparison view. +1 source Jul 24 (code review load). +2 sources Jul 25 (Harness Handbook, Claude Opus 5). +1 source Jul 31 (Inkling-Small). +6 sources Aug 1 cron + 4 sources Aug 1 manual. harness-design cresciuta da 3 a 5 visioni + cornice WHAT/HOW. moe-sparsity (+Looped Transformer, +DeepSeek V4). Weekly reviews W30 + W31 generated. |
 | W31/2026 (Aug 1–8) | 17 | 2 modified | Cluster harness espanso a 7 visioni: +auto-prodotto (Qwen), +externalizzato (LoopX), +continual (Prime Agent, Muse Code), +standalone (Kiro). Agent security emerso (HF Black Hat collusion + Uber ADR). Self-reflection debunked (More-Reflect-Less). Zero-Mem quarto paradigma memoria. Scale race: ByteDance 10T, Qwen 2.4T/95B. DiffusionGemma nuova Pareto speed/capability. Dwarkesh: continual learning come discontinuità (switching cost, moat, economies of scale inference). 6 fonti senza casa concettuale. |
+| W33/2026 (Aug 8–15) | 0 | 0 (1 view created) | Inbox vuota tutta la settimana. Creata slides view self-improvement (12 slide, 14 based_on). Incidente recuperato: 15 source pages W31 + 2 aggiornamenti pagine + ~20 raw dirs rimasti su branch locale mai pushato (daily cron 7-8 ago), ripristinati su disco il 15 ago. Prima esecuzione lint. |
 
 ## Reflections
 

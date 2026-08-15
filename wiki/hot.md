@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-22
-updated: 2026-08-08
+updated: 2026-08-15
 tags: [hot-cache]
 ---
 
@@ -12,22 +12,20 @@ Read by the agent at session start.
 
 ## Current state
 
-2026-08-08 (cron weekly): Weekly review W31 riscritta completamente. La versione precedente elencava fonti W30 con date errate. Nuova versione: 16 fonti reali W31 (2-8 ago), 2 pagine modificate (harness-design +7 visioni, moe-sparsity +Qwen/ByteDance), 6 connessioni documentate. Cluster harness esploso: 6 nuove fonti lungo lo spettro auto-prodotto (Qwen) ↔ externalizzato (LoopX), con continual (Prime, Muse) e standalone (Kiro) in mezzo. Agent security emerso come dominio (HF Black Hat + Uber ADR). Self-reflection empiricamente debunked. 42 sources totali.
+2026-08-15 (cron weekly W33): Settimana senza ingest (inbox vuota dall'8 ago). Review W33 generata. RECUPERATO incidente: il lavoro del daily cron 7-8 ago (15 source pages W31, 7a visione harness-design, ByteDance in moe-sparsity, ~20 raw dirs) era rimasto su branch locale vault/2026-08-07-daily mai pushato; index e view in main li referenziavano come dead link. Ripristinati con checkout dal branch. Vault ora integra: 43 sources su disco (26 W30 + 17 W31), 0 W33. Lint eseguito per la prima volta (report .lint/report.md).
 
-2026-08-08 (cron daily): 3 new URLs fetched: ByteDance 10T (~10T params pre-training), LoopX (state kernel provider-neutral), Google Pichai blog (fonte primaria Hassabis/Dean exit). 2 new source pages, 1 arricchito.
+2026-08-09: Creata slides view self-improvement-continuous-learning (12 slide, 14 based_on): due superfici di miglioramento (modello vs harness/memoria), 3+3 path, 4 paradigmi memoria, self-reflection debunked, WHAT/HOW, back pressure.
 
-2026-08-07: 9 source pages created (cron batch): hassabis-dean-exit, prime-agent, zero-mem, kiro-agent-harness, meta-muse-code-spark-1-2, openai-gpt-live, openai-astra-math, diffusiongemma, firecrawl-anydoc, uber-adr, xiaomi-robotics-1, openai-hf-black-hat-debrief, arxiv-2607.28576-more-reflect-less.
-
-2026-08-04: Qwen3.8-Max ingested. 2.4T/95B MoE, harness auto-prodotto (6a visione).
-
-2026-08-01: Weekly review W31 (versione errata, poi corretta). 24 sources, 6 pages, 1 view.
+2026-08-08: Weekly review W31 riscritta con periodo corretto (1-8 ago, 17 fonti reali). Cluster harness a 7 visioni. Dwarkesh continual learning ingested (ultima fonte).
 
 ## Open threads
 
+- ROBUSTEZZA CRON: commit_and_pr.sh non verifica l'esito del push. Il push del 7-8 ago è fallito/saltato silenziosamente. Aggiungere retry/errore esplicito + guardia "branch locali non pushati" nel weekly
+- Dopo merge PR: git checkout main && git pull && systemctl --user restart quartz.service (sennò il sito serve contenuti vecchi)
 - memory-skills page manca Zero-Mem (quarto paradigma non propagato)
 - agent-failure-analysis page manca 3 fonti W31 (More-Reflect-Less, Uber ADR, HF Black Hat)
-- 6 fonti senza casa concettuale: diffusiongemma, openai-astra-math, openai-gpt-live, xiaomi-robotics-1, firecrawl-anydoc, hassabis-dean-exit. Pagine candidate: agent-security, diffusion-architecture, realtime-systems
-- Comparison view (23 lug) pesantemente outdated: mancano tutte le 7 fonti harness W30-W31
+- 6 fonti senza casa concettuale: diffusiongemma, openai-astra-math, openai-gpt-live, xiaomi-robotics-1, firecrawl-anydoc, hassabis-dean-exit
+- Comparison view (23 lug) pesantemente outdated: mancano tutte le fonti harness W30-W31
 - Compass.md vuoto: `/reflect` non eseguito
-- Lint non ancora eseguito sul vault
-- 3 inbox URLs failano nel cron (JS rendering): serve fallback Playwright
+- Branch locali non mergiati (vault/2026-05-*, giugno, luglio): molti con contenuto unico pre-reset, da potare dopo verifica
+- Convenzione label settimane: 1-8 ago = W31 ovunque (inaugurale); da Aug 8-15 in poi label ISO (%V del sabato). Nessun contenuto W32
