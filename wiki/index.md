@@ -11,7 +11,7 @@ Catalog of the vault. Updated on every write operation.
 
 ## Pages
 
-- [[wiki/pages/harness-design]] — Harness come ambiente del loop; sei visioni (Osmani, Zhang, Wang eval, OpenAI ARC-AGI, Anthropic, Miessler + LoopX) + cornice WHAT vs HOW; behavior localization, harness come variabile misurata, spettro auto-prodotto vs externalizzato
+- [[wiki/pages/harness-design]] — Harness come ambiente del loop; sette visioni (Osmani, Zhang, Wang eval, OpenAI ARC-AGI, Anthropic, Miessler + LoopX + Trivedy eval-skill) + cornice WHAT vs HOW; behavior localization, harness come variabile misurata, spettro auto-prodotto vs externalizzato
 - [[wiki/pages/comprehension-debt]] — Divario tra codice esistente e codice capito; dark vs lit factory; back pressure
 - [[wiki/pages/compositional-generalization]] — RLM, locally in-distribution, equivalence classes; generalizzazione via harness
 - [[wiki/pages/moe-sparsity]] — Trend sparsity nei modelli aperti; active vs total params; compute-to-storage shift; ByteDance 10T in pre-training
@@ -35,6 +35,7 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/sources/danielmiessler-harness-question]] — Harness = WHAT (apprezza) + HOW (marcisce); intent engineering; risolve tensione ARC-AGI-3 vs Claude 5
 - [[wiki/sources/agent-behavior]] — Formato standard per behavior spec: BEHAVIOR.md vs AGENTS.md, dimensioni (Intent/Evidence/Decision/Execution/Recovery)
 - [[wiki/sources/loopx]] — LoopX: state kernel provider-neutral per loop engineering long-running; control plane externalizzato vs harness auto-prodotto
+- [[wiki/sources/vtrivedy-eval-engineering]] — LangChain eval-engineering skill: eval interview-driven ("create an eval with me"), formato Harbor, verifier design come attrito
 - [[wiki/sources/arxiv-2607-16621-msce-memory-skills]] — Memory-to-skills co-evolution: L1/L2/L3 memory hierarchy, skill crystallization
 - [[wiki/sources/arxiv-2607-09510-failure-as-process]] — CLI coding agent failure trajectories: epistemic errors, early onset, late discovery
 - [[wiki/sources/arxiv-2607-12747-oat-failure-attribution]] — OAT: unsupervised failure attribution from successful trajectories via neural CDEs
@@ -97,6 +98,7 @@ Catalog of the vault. Updated on every write operation.
 | W30/2026 (Jul 22–Aug 1) | 24 | 6 created + 6 modified | Vault v2 reset + bulk ingest (12 sources Jul 23) + 6 conceptual pages + 1 comparison view. +1 source Jul 24 (code review load). +2 sources Jul 25 (Harness Handbook, Claude Opus 5). +1 source Jul 31 (Inkling-Small). +6 sources Aug 1 cron + 4 sources Aug 1 manual. harness-design cresciuta da 3 a 5 visioni + cornice WHAT/HOW. moe-sparsity (+Looped Transformer, +DeepSeek V4). Weekly reviews W30 + W31 generated. |
 | W31/2026 (Aug 1–8) | 17 | 2 modified | Cluster harness espanso a 7 visioni: +auto-prodotto (Qwen), +externalizzato (LoopX), +continual (Prime Agent, Muse Code), +standalone (Kiro). Agent security emerso (HF Black Hat collusion + Uber ADR). Self-reflection debunked (More-Reflect-Less). Zero-Mem quarto paradigma memoria. Scale race: ByteDance 10T, Qwen 2.4T/95B. DiffusionGemma nuova Pareto speed/capability. Dwarkesh: continual learning come discontinuità (switching cost, moat, economies of scale inference). 6 fonti senza casa concettuale. |
 | W33/2026 (Aug 8–15) | 0 | 0 (1 view created) | Inbox vuota tutta la settimana. Creata slides view self-improvement (12 slide, 14 based_on). Incidente recuperato: 15 source pages W31 + 2 aggiornamenti pagine + ~20 raw dirs rimasti su branch locale mai pushato (daily cron 7-8 ago), ripristinati su disco il 15 ago. Prima esecuzione lint. |
+| W34/2026 (Aug 15–22) | 1 | 1 modified | Recupero backlog: thread X Trivedy/LangChain eval-engineering (fetched 25 lug, mai ingestato) → sources page + sezione "Harness che produce eval" in harness-design. the-next-chapter-of-our-ai-momentum registrato come copia canonica in hassabis-dean-exit. |
 
 ## Reflections
 

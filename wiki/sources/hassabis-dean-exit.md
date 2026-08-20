@@ -5,6 +5,7 @@ updated: 2026-08-08
 tags: [industry, google-deepmind, hassabis, jeff-dean, discovery-loop, talent, recursive-self-improvement]
 source_path: raw/web/hassabis-steps-aside-at-google-deepmind-jeff-dean-exits/index.md
 ingested: 2026-W31 (Sat-Sat)
+canonical: raw/web/the-next-chapter-of-our-ai-momentum/index.md # copia fetchata dell'annuncio ufficiale blog.google (5 ago), usata come riferimento testuale
 ---
 
 # Hassabis Steps Aside at Google DeepMind, Jeff Dean Exits

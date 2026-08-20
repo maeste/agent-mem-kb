@@ -1,7 +1,7 @@
 ---
 type: page
 created: 2026-07-23
-updated: 2026-08-08
+updated: 2026-08-20
 tags: [harness, agentic, loop, architecture, concept]
 ---
 
@@ -36,6 +36,12 @@ Miessler ([[wiki/sources/danielmiessler-harness-question]]) fornisce la cornice 
 Questo risolve direttamente la tensione ARC-AGI-3 vs Claude 5: retained reasoning preserva il **contenuto del pensiero** (WHAT), la rimozione delle regole alleggerisce i **vincoli operativi** (HOW). Entrambe le direzioni sono corrette perché operano su metà diverse.
 
 Agent Behavior ([[wiki/sources/agent-behavior]]) formalizza questo principio: `BEHAVIOR.md` cattura il WHAT (aspettative durature, failure modes per reviewer), mentre `AGENTS.md` gestisce il HOW (direttive runtime). Lo strato di intento sta sopra l'esecuzione.
+
+## Harness che produce eval
+
+**Trivedy** ([[wiki/sources/vtrivedy-eval-engineering]], thread X lug 2026, ingestato W34) mostra il gradino successivo: l'harness include le skill per costruire le proprie eval. Il prompt di partenza, "create an eval with me", codifica interview-driven come alternativa a oneshot generation: ispeziona l'agente, propone abilità da testare, ne raccomanda una, la costruisce insieme. Formato Harbor per task+verifier. "Verifier design is hard" è il punto di attrito riconosciuto; la domanda aperta del thread (chi verifica il verifier quando modello e contesto generano entrambi?) non ha risposta nel thread.
+
+Interseca tre direttrici: il verification gate di Osmani (back pressure), la lezione ARC-AGI-3 (evals misurano pacchetti modello+harness), e il filone self-improving (Prime `/refine`, Muse co-training). Le eval non sono più solo misurazione esterna: diventano parte del loop che l'harness può estendere.
 
 ## Tensione centrale
 
