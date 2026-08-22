@@ -88,6 +88,7 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/views/weekly/2026-W30]] — Weekly review W30: 15 fonti, 6 pagine, harness come fulcro convergente
 - [[wiki/views/weekly/2026-W31]] — Weekly review W31: 17 fonti, cluster harness espanso a 7 visioni, agent security, self-reflection debunked, 4 paradigmi memoria, continual learning
 - [[wiki/views/weekly/2026-W33]] — Weekly review W33: 0 nuovi ingest, slides view, recupero incidente branch (15 fonti ripristinate)
+- [[wiki/views/weekly/2026-W34]] — Weekly review W34: 1 fonte recuperata dal backlog (eval-engineering Trivedy), ottava visione harness-design, PR #22 in accumulo
 
 ## Timeline
 
@@ -98,7 +99,7 @@ Catalog of the vault. Updated on every write operation.
 | W30/2026 (Jul 22–Aug 1) | 24 | 6 created + 6 modified | Vault v2 reset + bulk ingest (12 sources Jul 23) + 6 conceptual pages + 1 comparison view. +1 source Jul 24 (code review load). +2 sources Jul 25 (Harness Handbook, Claude Opus 5). +1 source Jul 31 (Inkling-Small). +6 sources Aug 1 cron + 4 sources Aug 1 manual. harness-design cresciuta da 3 a 5 visioni + cornice WHAT/HOW. moe-sparsity (+Looped Transformer, +DeepSeek V4). Weekly reviews W30 + W31 generated. |
 | W31/2026 (Aug 1–8) | 17 | 2 modified | Cluster harness espanso a 7 visioni: +auto-prodotto (Qwen), +externalizzato (LoopX), +continual (Prime Agent, Muse Code), +standalone (Kiro). Agent security emerso (HF Black Hat collusion + Uber ADR). Self-reflection debunked (More-Reflect-Less). Zero-Mem quarto paradigma memoria. Scale race: ByteDance 10T, Qwen 2.4T/95B. DiffusionGemma nuova Pareto speed/capability. Dwarkesh: continual learning come discontinuità (switching cost, moat, economies of scale inference). 6 fonti senza casa concettuale. |
 | W33/2026 (Aug 8–15) | 0 | 0 (1 view created) | Inbox vuota tutta la settimana. Creata slides view self-improvement (12 slide, 14 based_on). Incidente recuperato: 15 source pages W31 + 2 aggiornamenti pagine + ~20 raw dirs rimasti su branch locale mai pushato (daily cron 7-8 ago), ripristinati su disco il 15 ago. Prima esecuzione lint. |
-| W34/2026 (Aug 15–22) | 1 | 1 modified | Recupero backlog: thread X Trivedy/LangChain eval-engineering (fetched 25 lug, mai ingestato) → sources page + sezione "Harness che produce eval" in harness-design. the-next-chapter-of-our-ai-momentum registrato come copia canonica in hassabis-dean-exit. |
+| W34/2026 (Aug 15–22) | 1 | 1 modified | Recupero backlog: thread X Trivedy/LangChain eval-engineering (fetched 25 lug, mai ingestato) → sources page + sezione "Harness che produce eval" in harness-design. the-next-chapter-of-our-ai-momentum registrato come copia canonica in hassabis-dean-exit. Weekly review W34 generata. PR #22 ancora aperta (W33 review + daily 20 ago + W34 review): main ferma al 9 ago. |
 
 ## Reflections
 
