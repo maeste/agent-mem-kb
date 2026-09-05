@@ -1,8 +1,8 @@
 ---
 type: page
 created: 2026-07-22
-updated: 2026-08-29
-tags: [index, weekly-review-W30, weekly-review-W31, weekly-W31-corrected, weekly-review-W33, weekly-review-W35]
+updated: 2026-09-05
+tags: [index, weekly-review-W30, weekly-review-W31, weekly-W31-corrected, weekly-review-W33, weekly-review-W35, weekly-review-W36]
 ---
 
 # Index
@@ -90,6 +90,7 @@ Catalog of the vault. Updated on every write operation.
 - [[wiki/views/weekly/2026-W33]] — Weekly review W33: 0 nuovi ingest, slides view, recupero incidente branch (15 fonti ripristinate)
 - [[wiki/views/weekly/2026-W34]] — Weekly review W34: 1 fonte recuperata dal backlog (eval-engineering Trivedy), ottava visione harness-design, PR #22 in accumulo
 - [[wiki/views/weekly/2026-W35]] — Weekly review W35: 0 nuovi ingest, 0 pagine, vault coerente; PR #22 a due settimane
+- [[wiki/views/weekly/2026-W36]] — Weekly review W36: 0 nuovi ingest (terza settimana vuota di fila), 0 pagine; PR #22 a tre settimane, main ferma al 9 ago
 
 ## Timeline
 
@@ -102,6 +103,7 @@ Catalog of the vault. Updated on every write operation.
 | W33/2026 (Aug 8–15) | 0 | 0 (1 view created) | Inbox vuota tutta la settimana. Creata slides view self-improvement (12 slide, 14 based_on). Incidente recuperato: 15 source pages W31 + 2 aggiornamenti pagine + ~20 raw dirs rimasti su branch locale mai pushato (daily cron 7-8 ago), ripristinati su disco il 15 ago. Prima esecuzione lint. |
 | W34/2026 (Aug 15–22) | 1 | 1 modified | Recupero backlog: thread X Trivedy/LangChain eval-engineering (fetched 25 lug, mai ingestato) → sources page + sezione "Harness che produce eval" in harness-design. the-next-chapter-of-our-ai-momentum registrato come copia canonica in hassabis-dean-exit. Weekly review W34 generata. PR #22 ancora aperta (W33 review + daily 20 ago + W34 review): main ferma al 9 ago. |
 | W35/2026 (Aug 22–29) | 0 | 0 | Settimana vuota verificata: inbox vuota dall'8 ago, nessun backlog nascosto (check raw/ ↔ sources/ pulito). Prima settimana senza divergence metadati/contenuti da luglio. Tutti i thread aperti sono consolidamento, non input. PR #22 compie due settimane, accumula anche la W35 review. |
+| W36/2026 (Aug 29–Sep 5) | 0 | 0 | Terza settimana consecutiva vuota: 0 ingest (inbox ferma dall'8 ago), 0 pagine. Il regime è la quiete: collo della bottiglia a monte (flusso URL → inbox). PR #22 compie tre settimane (W33→W36 review + daily 20 ago), main ferma al 9 ago: debt a tre livelli, finestra di esposizione invariata. |
 
 ## Reflections
 
